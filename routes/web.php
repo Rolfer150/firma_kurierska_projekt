@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HelloWorldController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KurierController;
 /*
@@ -16,4 +17,12 @@ use App\Http\Controllers\KurierController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('hello', [HelloWorldController::class, 'show']);
+
+
 Route::get('kuriers',[KurierController::class,'getData']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
