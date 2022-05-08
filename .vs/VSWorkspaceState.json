@@ -5,9 +5,12 @@
     "\\app\\Console",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\bootstrap",
-    "\\public"
+    "\\app\\Models",
+    "\\database",
+    "\\database\\migrations",
+    "\\public",
+    "\\routes"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\app\\Http\\Controllers\\HomeController.php",
   "PreviewInSolutionExplorer": false
 }

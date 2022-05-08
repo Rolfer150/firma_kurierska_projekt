@@ -25,6 +25,7 @@ Route::get('kuriers',[KurierController::class,'getData']);
 
 Route::get('magazyniers',[MagazynierController::class,'getData']);
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
