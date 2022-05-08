@@ -11,6 +11,6 @@
     "\\resources\\views\\auth",
     "\\routes"
   ],
-  "SelectedNode": "\\database\\migrations\\2022_05_08_090240_create_magazyniers_table.php",
+  "SelectedNode": "\\database\\migrations\\2022_05_03_104357_create_kuriers_table.php",
   "PreviewInSolutionExplorer": false
 }
