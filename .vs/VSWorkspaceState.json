@@ -1,8 +1,22 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\app"
   ],
   "SelectedNode": "\\.env",
+=======
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\database",
+    "\\database\\migrations",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\auth",
+    "\\routes"
+  ],
+  "SelectedNode": "\\database\\migrations\\2022_05_03_104357_create_kuriers_table.php",
+>>>>>>> main
   "PreviewInSolutionExplorer": false
 }

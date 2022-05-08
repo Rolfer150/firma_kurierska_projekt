@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('klients', function (Blueprint $table) {
+        Schema::create('pojazds', function (Blueprint $table) {
             $table->id();
-            $table->string('imie_klienta');
-            $table->string('nazwisko_klienta');
-            $table->integer('nr_tel_klienta');
-            $table->string('email_klienta')->unique();
-            $table->timestamp('email_verified_at_klient')->nullable();
-            $table->string('haslo_klient');
-            $table->rememberToken();
+            $table->string('marka');
+            $table->string('model');
+            $table->string('nr_rejestracyjny');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('klients');
+        Schema::dropIfExists('pojazds');
     }
 };

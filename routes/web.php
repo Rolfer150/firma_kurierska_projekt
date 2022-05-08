@@ -4,6 +4,10 @@ use App\Http\Controllers\HelloWorldController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KurierController;
 use App\Http\Controllers\KlientController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\MagazynierController;
+>>>>>>> main
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +24,15 @@ Route::get('/', function () {
 });
 
 Route::get('hello', [HelloWorldController::class, 'show']);
+<<<<<<< HEAD
 
 Route::get('kuriers',[KurierController::class,'getData']);
 Route::get('klients',[KlientController::class,'getData']);
+=======
+Route::get('kuriers',[KurierController::class,'getData']);
+Route::get('klients',[KlientController::class,'getData']);
+Route::get('magazyniers',[MagazynierController::class,'getData']);
+>>>>>>> main
 
 Auth::routes();
 
