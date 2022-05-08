@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('hello', [HelloWorldController::class, 'show']);
-Route::get('/users/list', [UserController::class, 'index']);
+Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
 Route::get('kuriers',[KurierController::class,'getData']);
 Route::get('klients',[KlientController::class,'getData']);
 Route::get('magazyniers',[MagazynierController::class,'getData']);
