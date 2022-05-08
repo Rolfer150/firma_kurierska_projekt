@@ -2,12 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Console",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\bootstrap",
-    "\\public"
+    "\\database",
+    "\\database\\migrations",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\auth",
+    "\\routes"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\database\\migrations\\2022_05_08_090240_create_magazyniers_table.php",
   "PreviewInSolutionExplorer": false
 }
