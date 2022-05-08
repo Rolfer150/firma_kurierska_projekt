@@ -1,13 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Console",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\bootstrap",
-    "\\public"
+    "\\app"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\.env",
   "PreviewInSolutionExplorer": false
 }
