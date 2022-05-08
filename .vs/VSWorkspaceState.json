@@ -6,8 +6,12 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\app\\Http\\Controllers\\Auth",
+<<<<<<< Updated upstream
+=======
+    "\\database",
+>>>>>>> Stashed changes
     "\\database\\migrations"
   ],
-  "SelectedNode": "\\app",
+  "SelectedNode": "\\database\\migrations\\2022_05_08_090240_create_magazyniers_table.php",
   "PreviewInSolutionExplorer": false
 }
