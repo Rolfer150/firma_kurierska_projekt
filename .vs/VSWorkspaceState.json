@@ -2,15 +2,23 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Console",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+<<<<<<< HEAD
     "\\app\\Http\\Controllers\\Auth",
 <<<<<<< Updated upstream
 =======
     "\\database",
 >>>>>>> Stashed changes
     "\\database\\migrations"
+=======
+    "\\database",
+    "\\database\\migrations",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\auth",
+    "\\routes"
+>>>>>>> 7ea157128c3843de4eb17b25220fa5811966a3bb
   ],
   "SelectedNode": "\\database\\migrations\\2022_05_08_090240_create_magazyniers_table.php",
   "PreviewInSolutionExplorer": false

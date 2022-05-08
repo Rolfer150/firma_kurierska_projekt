@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('kuriers', function (Blueprint $table) {
             $table->id();
+            $table->string('imie_kuriera');
+            $table->string('nazwisko_kuriera');
+            $table->integer('nr_tel_kuriera');
+            $table->string('email_kuriera')->unique();
+            $table->timestamp('email_verified_at_kurier')->nullable();
+            $table->string('haslo_kurier');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
