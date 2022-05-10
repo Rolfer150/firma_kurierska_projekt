@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pojazds', function (Blueprint $table) {
-            $table->id('id_pojazdu');
-            $table->string('marka');
-            $table->string('model');
-            $table->string('nr_rejestracyjny');
+        Schema::create('status_przesylkis', function (Blueprint $table) {
+            $table->id('id_statusu_przesylki');
+            $table->date('data_dostarczenia');
+            $table->date('data_zamownienia');
+            $table->string('status_realizacji');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pojazds');
+        Schema::dropIfExists('status_przesylkis');
     }
 };
