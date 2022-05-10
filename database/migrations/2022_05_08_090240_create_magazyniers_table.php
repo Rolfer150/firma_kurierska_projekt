@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('magazyniers', function (Blueprint $table) {
             $table->id();
+            $table->string('imie_magazyniera');
+            $table->string('nazwisko_magazyniera');
+            $table->integer('nr_tel_magazyniera');
+            $table->string('email_magazyniera')->unique();
+            $table->timestamp('email_verified_at_magazynier')->nullable();
+            $table->string('haslo_magazynier');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
