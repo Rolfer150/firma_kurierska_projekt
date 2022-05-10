@@ -3,6 +3,7 @@
     "",
     "\\app",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "\\app\\Http",
 =======
 >>>>>>> 93af63dd24ca4780db7c29e85d6070734d612913
@@ -21,5 +22,26 @@
   ],
   "SelectedNode": "\\app\\Models\\Klient.php",
 >>>>>>> 93af63dd24ca4780db7c29e85d6070734d612913
+=======
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+<<<<<<< HEAD
+    "\\app\\Http\\Controllers\\Auth",
+<<<<<<< Updated upstream
+=======
+    "\\database",
+>>>>>>> Stashed changes
+    "\\database\\migrations"
+=======
+    "\\database",
+    "\\database\\migrations",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\auth",
+    "\\routes"
+>>>>>>> 7ea157128c3843de4eb17b25220fa5811966a3bb
+  ],
+  "SelectedNode": "\\database\\migrations\\2022_05_08_090240_create_magazyniers_table.php",
+>>>>>>> a4b0fa99021d86ba6c29c6992503c1e7645476e1
   "PreviewInSolutionExplorer": false
 }
