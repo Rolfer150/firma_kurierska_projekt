@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KurierController;
 use App\Http\Controllers\KlientController;
 use App\Http\Controllers\MagazynierController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +23,10 @@ Route::get('/', function () {
 });
 
 Route::get('hello', [HelloWorldController::class, 'show']);
+Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
 Route::get('kuriers',[KurierController::class,'getData']);
 Route::get('klients',[KlientController::class,'getData']);
 Route::get('magazyniers',[MagazynierController::class,'getData']);
-
 
 Auth::routes();
 
