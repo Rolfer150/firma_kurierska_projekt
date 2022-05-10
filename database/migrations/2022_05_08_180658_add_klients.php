@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kuriers', function (Blueprint $table) {
-            $table->id();
-            $table->string('imie_kuriera');
-            $table->string('nazwisko_kuriera');
-            $table->integer('nr_tel_kuriera');
-            $table->string('email_kuriera')->unique();
-            $table->timestamp('email_verified_at_kurier')->nullable();
-            $table->string('haslo_kurier');
+        Schema::create('klients', function (Blueprint $table) {
+            $table->id('id_klienta');
+            $table->string('imie_klienta');
+            $table->string('nazwisko_klienta');
+            $table->integer('nr_tel_klienta');
+            $table->string('email_klienta')->unique();
+            $table->timestamp('email_verified_at_klient')->nullable();
+            $table->string('haslo_klient');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kuriers');
+        Schema::dropIfExists('klients');
     }
 };
