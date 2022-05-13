@@ -6,36 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     /**
      * Run the migrations.
      *
      * @return void
      */
-
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('phone_number');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('status_przesylkis', function (Blueprint $table) {
+            $table->id('id_statusu_przesylki');
+            $table->date('data_dostarczenia');
+            $table->date('data_zamownienia');
+            $table->string('status_realizacji');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('status_przesylkis');
     }
-
 };

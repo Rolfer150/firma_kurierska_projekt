@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Przesylka extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
     /**
      * The attributes that are mass assignable.
@@ -21,4 +22,6 @@ class Przesylka extends Model
         'email',
         'password',
     ];
+=======
+>>>>>>> main
 }

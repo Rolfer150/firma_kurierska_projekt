@@ -2,34 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Przesylka;
-<<<<<<< HEAD
-=======
-use Illuminate\Contracts\View\View;
->>>>>>> main
+use App\Models\Status_przesylki;
 use Illuminate\Http\Request;
 
-class PrzesylkaController extends Controller
+class StatusPrzesylkiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
-=======
-     * @return View
-     */
-    public function index(): View
-    {
-        return view("Przesylkas.index",[
-            'przesylkas' => Przesylka::paginate(10)
-
-        ]);
->>>>>>> main
     }
 
     /**
@@ -37,17 +22,9 @@ class PrzesylkaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function create()
     {
         //
-=======
-    public function create(): View
-    {
-        return view("Przesylkas.create", [
-
-        ]);
->>>>>>> main
     }
 
     /**
@@ -64,10 +41,10 @@ class PrzesylkaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Przesylka  $przesylka
+     * @param  \App\Models\Status_przesylki  $status_przesylki
      * @return \Illuminate\Http\Response
      */
-    public function show(Przesylka $przesylka)
+    public function show(Status_przesylki $status_przesylki)
     {
         //
     }
@@ -75,10 +52,10 @@ class PrzesylkaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Przesylka  $przesylka
+     * @param  \App\Models\Status_przesylki  $status_przesylki
      * @return \Illuminate\Http\Response
      */
-    public function edit(Przesylka $przesylka)
+    public function edit(Status_przesylki $status_przesylki)
     {
         //
     }
@@ -87,10 +64,10 @@ class PrzesylkaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Przesylka  $przesylka
+     * @param  \App\Models\Status_przesylki  $status_przesylki
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Przesylka $przesylka)
+    public function update(Request $request, Status_przesylki $status_przesylki)
     {
         //
     }
@@ -98,10 +75,10 @@ class PrzesylkaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Przesylka  $przesylka
+     * @param  \App\Models\Status_przesylki  $status_przesylki
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Przesylka $przesylka)
+    public function destroy(Status_przesylki $status_przesylki)
     {
         //
     }
