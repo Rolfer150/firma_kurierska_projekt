@@ -31,10 +31,6 @@ return new class extends Migration
             $table->decimal('cena');
             $table->string('rodzaj_przesylki');
             $table->date('data_dostarczenia');
-            $table->string('miasto');
-            $table->string('ulica');
-            $table->string('numer_mieszkania');
-            $table->string('rozmiar_przesylki');
             $table->timestamps();
         });
     }
