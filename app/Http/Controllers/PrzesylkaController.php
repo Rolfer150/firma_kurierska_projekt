@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Przesylka;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class PrzesylkaController extends Controller
@@ -10,11 +11,14 @@ class PrzesylkaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view("Przesylkas.index",[
+            'przesylkas' => Przesylka::paginate(10)
+
+        ]);
     }
 
     /**
@@ -22,9 +26,11 @@ class PrzesylkaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view("Przesylkas.create", [
+
+        ]);
     }
 
     /**
