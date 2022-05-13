@@ -16,7 +16,7 @@
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Id przesylki</th>
+                    <th scope="col">#</th>
                     <th scope="col">Rodzaj platnosci</th>
                     <th scope="col">Cena</th>
                     <th scope="col">Rodzaj przesylki</th>
