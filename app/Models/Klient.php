@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Klient extends Model
 {
     use HasFactory;
+
+    protected $fillable = array(
+        'imie_klienta',
+        'nazwisko_klienta',
+        'nr_tel_klienta',
+        'email_klienta',
+        'haslo_klient',
+    );
+
+    protected $hidden = [
+        'haslo_klient',
+        'remember_token',
+    ];
 }
