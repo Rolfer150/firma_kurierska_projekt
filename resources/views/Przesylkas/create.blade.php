@@ -1,92 +1,98 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dodawanie przesyłek</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Dodawanie przesyłek</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('Przesylkas.store') }}">
-                        @csrf
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('Przesylkas.store') }}">
+                            @csrf
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">Id przesyłki</label>
+                            <div class="row mb-3">
+                                <label for="id_przesylki" class="col-md-4 col-form-label text-md-end">Id przesyłki</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <div class="col-md-6">
+                                    <input id="id_przesylki" type="text" class="form-control @error('id_przesylki') is-invalid @enderror" name="name" value="{{ old('id_przesylki') }}" required autocomplete="id_przesylki" autofocus>
 
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
+                                    @error('id_przesylki')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
 
-                            <div class="col-md-6">
-                                <input id="Rodzaj_platnosci" type="text" class="form-control @error('Rodzaj_platnosci') is-invalid @enderror" name="Rodzja_platnosci" value="{{ old('Rodzaj_platnosci') }}" required autocomplete="name" autofocus>
+                                <div class="col-md-6">
+                                    <input id="rodzaj_platnosci" type="text" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="rodzaj_platnosci" value="{{ old('rodzaj_platnosci') }}" required autocomplete="rodzaj_platnosci" autofocus>
 
-                                @error('Rodzaj_platnosci')
-                                <span class="invalid-feedback" role="alert">
+                                    @error('rodzaj_platnosci')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="Data_dostarczenia" class="col-md-4 col-form-label text-md-end">Data dostarczenia</label>
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Data dostarczenia</label>
 
-                            <div class="col-md-6">
-                                <input id="Data_dostarczenia" type="date" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('Data_dostarczenia') }}" required autocomplete="Rodzaj_przesylki" autofocus>
+                                <div class="col-md-6">
+                                    <input id="data_dostarczenia" type="date" class="form-control @error('data_dostarczenia') is-invalid @enderror" name="data_dostarczenia" value="{{ old('data_dostarczenia') }}" required autocomplete="data_dostarczenia" autofocus>
 
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
+                                    @error('data_dostarczenia')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="Rodzaj_przesylki" class="col-md-4 col-form-label text-md-end">Rodzaj przesyłki</label>
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj przesyłki</label>
 
-                            <div class="col-md-6">
-                                <input id="Rodzaj_przesylki" type="text" class="form-control @error('Rodzaj_przesylki') is-invalid @enderror" name="Rodzaj_przesylki" value="{{ old('Rodzaj_przesylki') }}" required autocomplete="Rodzaj_przesylki">
+                                <div class="col-md-6">
+                                    <input id="rodzaj_przesylki" type="text" class="form-control @error('rodzaj_przesylki') is-invalid @enderror" name="rodzaj_przesylki" value="{{ old('rodzaj_przesylki') }}" required autocomplete="rodzaj_przesylki">
 
-                                @error('Rodzaj_przesylki')
-                                <span class="invalid-feedback" role="alert">
+                                    @error('rodzaj_przesylki')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">Cena (w złotówkach)</label>
+                            <div class="row mb-3">
+                                <label for="cena" class="col-md-4 col-form-label text-md-end">Cena (w złotówkach)</label>
 
-                            <div class="col-md-6">
-                                <input id="Cena" type="number" step="0.01" min="0" class="form-control" name="Cena" required autocomplete="Cena">
+                                <div class="col-md-6">
+                                    <input id="cena" type="number" step="0.01" min="0" class="form-control @error('cena') is-invalid @enderror" name="cena" required autocomplete="cena">
+
+                                    @error('cena')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Zapisz wszystko
-                                </button>
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Zapisz wszystko
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
-
