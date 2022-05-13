@@ -26,9 +26,8 @@ Route::get('/', function () {
 Route::get('hello', [HelloWorldController::class, 'show']);
 Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('Przesylkas.index')->middleware('can:isAdmin');
 Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
-Route::get('/deliveryman/homepage', [UserController::class, 'index'])->middleware('can:isAdmin');
-Route::get('kuriers',[KurierController::class,'getData']);
-Route::get('klients',[KlientController::class,'getData']);
+Route::get('kuriers',[KurierController::class,'index'])->name('deliveryman.hello')->middleware('can:isDeliveryman');
+Route::get('klients',[KlientController::class,'index'])->name('users.hello')->middleware('can:isUser');
 Route::get('magazyniers',[MagazynierController::class,'getData']);
 
 Auth::routes();

@@ -15,4 +15,8 @@ class Przesylka extends Model
         'rodzaj_przesylki',
         'data_dostarczenia',
     );
+
+    protected $hidden = [
+        'remember_token',
+    ];
 }
