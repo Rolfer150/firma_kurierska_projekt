@@ -8,13 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Dane_przesylki extends Model
 {
     use HasFactory;
-
-    protected $fillable = array(
-        'dlugosc',
-        'produkt_dostepny_w_magazynie',
-        'rodzaj_produktu',
-        'szerokosc',
-        'waga',
-        'wysokosc',
-    );
 }
