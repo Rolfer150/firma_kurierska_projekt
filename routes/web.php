@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HelloWorldController;
+use App\Http\Controllers\PrzesylkaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KurierController;
 use App\Http\Controllers\KlientController;
@@ -23,6 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('hello', [HelloWorldController::class, 'show']);
+Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('przesylkas.index')->middleware('auth');
 Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
 Route::get('kuriers',[KurierController::class,'getData']);
 Route::get('klients',[KlientController::class,'getData']);
