@@ -2,6 +2,17 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>Lista przesyłek</h1>
+        </div>
+        <div class="col-6">
+            <a class="float-end" href="{{ route('Przesylkas.create') }}">
+                <button type="button" class="btn btn-primary">Dodaj</button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -32,6 +43,7 @@
   </tbody>
 </table>
     {{ $przesylkas->links() }}
+    </div>
 </div>
 @endsection
 @section('javascript')
