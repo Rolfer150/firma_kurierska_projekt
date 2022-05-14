@@ -27,13 +27,11 @@ class PrzesylkaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create(): View
     {
-        return view("Przesylkas.create", [
-
-        ]);
+        return view("Przesylkas.create");
     }
 
     /**
@@ -52,12 +50,14 @@ class PrzesylkaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Przesylka  $przesylka
+     * @return View
      */
-    public function show(Przesylka $przesylka)
+    public function show(Przesylka $przesylka): View
     {
-        //
+        return view("Przesylkas.show", [
+        'przesylka' => $przesylka
+    ]);
     }
 
     /**
