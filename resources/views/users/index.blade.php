@@ -6,7 +6,9 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
+
       <th scope="col">Imie</th>
+
       <th scope="col">Nazwisko</th>
       <th scope="col">Numer telefonu</th>
       <th scope="col">Email</th>

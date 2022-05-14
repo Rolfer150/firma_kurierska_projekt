@@ -26,7 +26,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('przesylkas', function (Blueprint $table) {
-            $table->id('id_przesylki');
+            $table->id();
             $table->string('rodzaj_platnosci');
             $table->decimal('cena');
             $table->string('rodzaj_przesylki');

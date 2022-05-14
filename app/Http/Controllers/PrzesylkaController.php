@@ -68,20 +68,21 @@ class PrzesylkaController extends Controller
     {
         return view("Przesylkas.edit", [
             'przesylka' => $przesylka
-
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Przesylka  $przesylka
+     * @return RedirectResponse
      */
-    public function update(Request $request, Przesylka $przesylka)
+    public function update(Request $request, Przesylka $przesylka): RedirectResponse
     {
-        //
+        $przesylka->fill($request->all());
+        $przesylka->save();
+        return redirect(route('Przesylkas.index'));
     }
 
     /**
