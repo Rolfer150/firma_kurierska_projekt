@@ -12,7 +12,7 @@
                                 <label for="id_przesylki" class="col-md-4 col-form-label text-md-end">Id przesyłki</label>
 
                                 <div class="col-md-6">
-                                    <input id="id_przesylki" type="text" class="form-control" name="name" value="{{ $przesylka->name }}" disabled>
+                                    <input id="id_przesylki" type="text" class="form-control" name="name" value="{{ $przesylka->id }}" disabled>
                                 </div>
                             </div>
 
@@ -28,7 +28,7 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Data dostarczenia</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="data_dostarczenia" type="date" class="form-control" name="data_dostarczenia" disabled>{{ $przesylka->data_dostarczenia }}</textarea>
+                                    <input id="data_dostarczenia" type="date" class="form-control" name="data_dostarczenia" value="{{ $przesylka->data_dostarczenia }}" disabled>
                                 </div>
                             </div>
 

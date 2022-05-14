@@ -33,6 +33,9 @@
                         <td>{{$przesylka->rodzaj_przesylki}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
                         <td>
+                            <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
+                                <button class="btn btn-primary btn-sm">P</button>
+                            </a>
                             <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
                             <button class="btn btn-success btn-sm">E</button>
                             </a>
