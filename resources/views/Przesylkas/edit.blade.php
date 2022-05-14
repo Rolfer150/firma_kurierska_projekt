@@ -8,22 +8,8 @@
                     <div class="card-header">Edycja przesyłek</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('Przesylkas.update', $przesylka->id_przesylki) }}">
+                        <form method="POST" action="{{ route('Przesylkas.update', $przesylka->id) }}">
                             @csrf
-
-                            <div class="row mb-3">
-                                <label for="id_przesylki" class="col-md-4 col-form-label text-md-end">Id przesyłki</label>
-
-                                <div class="col-md-6">
-                                    <input id="id_przesylki" type="text" class="form-control @error('id_przesylki') is-invalid @enderror" name="name" value="{{ $przesylka->id_przesylki }}" required autocomplete="id_przesylki" autofocus>
-
-                                    @error('id_przesylki')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
 
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
