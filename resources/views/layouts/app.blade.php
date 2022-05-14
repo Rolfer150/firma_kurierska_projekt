@@ -24,9 +24,9 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             @can('isAdmin')
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
             @endcan
             @can('isUser')
                 <a class="navbar-brand" href="{{ url('klients') }}">
@@ -69,12 +69,6 @@
                                 {{ Auth::user()->name }}
                             </a>
 
-<<<<<<< HEAD
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/users/list">Użytkownicy</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-=======
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 @can('isAdmin')
                                     <a class="dropdown-item" href="/users/list">Użytkownicy</a>
@@ -82,7 +76,6 @@
                                 @endcan
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
->>>>>>> main
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Wyloguj się') }}
                                 </a>
