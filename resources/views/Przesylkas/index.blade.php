@@ -36,7 +36,7 @@
                             <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
                             <button class="btn btn-success btn-sm">E</button>
                             </a>
-                            <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id }}">X</button>
+                            <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id_przesylki }}">X</button>
                         </td>
                     </tr>
                 @endforeach

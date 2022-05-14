@@ -28,7 +28,7 @@ Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
 Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('Przesylkas.index')->middleware('can:isAdmin');
 Route::get('/przesylkas/create', [PrzesylkaController::class, 'create'])->name('Przesylkas.create')->middleware('can:isAdmin');
 Route::post('/przesylkas', [PrzesylkaController::class, 'store'])->name('Przesylkas.store')->middleware('can:isAdmin');
-Route::get('/przesylkas/edit', [PrzesylkaController::class, 'edit'])->name('Przesylkas.edit')->middleware('can:isAdmin');
+Route::get('/przesylkas/edit/{przesylka}', [PrzesylkaController::class, 'edit'])->name('Przesylkas.edit')->middleware('can:isAdmin');
 Route::post('/przesylkas/update', [PrzesylkaController::class, 'update'])->name('Przesylkas.update')->middleware('can:isAdmin');
 
 Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
