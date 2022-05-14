@@ -70,7 +70,6 @@ class PrzesylkaController extends Controller
     {
         return view("Przesylkas.edit", [
             'przesylka' => $przesylka
-
         ]);
     }
 

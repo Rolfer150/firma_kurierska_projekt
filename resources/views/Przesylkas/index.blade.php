@@ -33,10 +33,10 @@
                         <td>{{$przesylka->rodzaj_przesylki}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
                         <td>
-                            <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
+                            <a href="{{ route('Przesylkas.edit', $przesylka->id_przesylki) }}">
                             <button class="btn btn-success btn-sm">E</button>
                             </a>
-                            <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id }}">X</button>
+                            <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id_przesylki }}">X</button>
                         </td>
                     </tr>
                 @endforeach
