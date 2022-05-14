@@ -24,6 +24,6 @@ class Klient extends Model
     ];
 
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at_klient' => 'datetime',
     ];
 }
