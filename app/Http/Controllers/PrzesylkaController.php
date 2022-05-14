@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Przesylka;
+use Exception;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -89,11 +91,21 @@ class PrzesylkaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Przesylka  $przesylka
+     * @return JsonResponse
      */
-    public function destroy(Przesylka $przesylka)
+    public function destroy(Przesylka $przesylka): JsonResponse
     {
-        //
+            try {
+                $przesylka->delete();
+                return response()->json([
+                    'status' => 'success'
+                ]);
+            } catch (Exception $e) {
+                return Response()->json([
+                    'status' => 'error',
+                    'message' => 'Wystąpił błąd!'
+                ])->setStatusCode(500);
+            }
     }
 }
