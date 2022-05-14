@@ -25,19 +25,17 @@ Route::get('/', function () {
 
 Route::get('hello', [HelloWorldController::class, 'show']);
 Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
-
 Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('Przesylkas.index')->middleware('can:isAdmin');
 Route::get('/przesylkas/create', [PrzesylkaController::class, 'create'])->name('Przesylkas.create')->middleware('can:isAdmin');
-Route::post('/przesylkas/store', [PrzesylkaController::class, 'store'])->name('Przesylkas.store')->middleware('can:isAdmin');
+Route::post('/przesylkas', [PrzesylkaController::class, 'store'])->name('Przesylkas.store')->middleware('can:isAdmin');
 Route::get('/przesylkas/edit', [PrzesylkaController::class, 'edit'])->name('Przesylkas.edit')->middleware('can:isAdmin');
-Route::post('/przesylkas', [PrzesylkaController::class, 'update'])->name('Przesylkas.update')->middleware('can:isAdmin');
-Route::delete( 'przesylkas/destroy', [PrzesylkaController::class, 'destroy'])->name('Przesylkas.destroy')->middleware('can:isAdmin');
+Route::post('/przesylkas/update', [PrzesylkaController::class, 'update'])->name('Przesylkas.update')->middleware('can:isAdmin');
 
 Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
 Route::get('kuriers',[KurierController::class,'index'])->name('deliveryman.hello')->middleware('can:isDeliveryman');
 Route::get('klients',[KlientController::class,'index'])->name('users.hello')->middleware('can:isUser');
 Route::get('magazyniers',[MagazynierController::class,'getData']);
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

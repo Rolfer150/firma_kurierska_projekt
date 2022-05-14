@@ -27,7 +27,7 @@
                 <tbody>
                 @foreach($przesylkas as $przesylka)
                     <tr>
-                        <th scope="row">{{$przesylka->id_przesylki}}</th>
+                        <th scope="row">{{$przesylka->id}}</th>
                         <td>{{$przesylka->rodzaj_platnosci}}</td>
                         <td>{{$przesylka->cena}}</td>
                         <td>{{$przesylka->rodzaj_przesylki}}</td>
