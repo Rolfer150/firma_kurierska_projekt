@@ -61,12 +61,15 @@ class PrzesylkaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Przesylka  $przesylka
+     * @return View
      */
-    public function edit(Przesylka $przesylka)
+    public function edit(Przesylka $przesylka): View
     {
-        //
+        return view("Przesylkas.edit", [
+            'przesylkas' => $przesylka
+
+        ]);
     }
 
     /**
