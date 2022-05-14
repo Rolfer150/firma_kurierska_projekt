@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Przesylka;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class PrzesylkaController extends Controller
@@ -36,12 +37,14 @@ class PrzesylkaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $przesylka = new Przesylka($request->all());
+        $przesylka->save();
+        return redirect(route('Przesylkas.index'));
     }
 
     /**
@@ -58,12 +61,15 @@ class PrzesylkaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Przesylka  $przesylka
+     * @return View
      */
-    public function edit(Przesylka $przesylka)
+    public function edit(Przesylka $przesylka): View
     {
-        //
+        return view("Przesylkas.edit", [
+            'przesylka' => $przesylka
+
+        ]);
     }
 
     /**

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Status_przesylki extends Model
 {
     use HasFactory;
+
+    protected $fillable = array(
+        'data_dostarczenia',
+        'data_zamownienia',
+        'status_realizacji',
+    );
 }

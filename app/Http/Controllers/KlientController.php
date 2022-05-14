@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Przesylka;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Klient;
 
 class KlientController extends Controller
 {
     //
-    function getData()
+    public function index(): View
     {
-        return Klient::all();
+        return view("users.hello",);
     }
 }

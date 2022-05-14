@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Przesylka extends Model
 {
     use HasFactory;
+
+    protected $fillable = array(
+        'rodzaj_platnosci',
+        'cena',
+        'rodzaj_przesylki',
+        'data_dostarczenia',
+    );
+
+    protected $hidden = [
+        'remember_token',
+    ];
 }

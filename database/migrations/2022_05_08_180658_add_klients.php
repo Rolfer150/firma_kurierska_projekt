@@ -6,19 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-<<<<<<< HEAD
+
     /*
-=======
+
     /**
->>>>>>> dd39b74d83ed085946e9f249ac796f497d3f9cd3
+
      * Run the migrations.
      *
      * @return void
      */
-<<<<<<< HEAD
+
     /*
-=======
->>>>>>> dd39b74d83ed085946e9f249ac796f497d3f9cd3
+
+
     public function up()
     {
         Schema::create('klients', function (Blueprint $table) {
@@ -39,16 +39,16 @@ return new class extends Migration
      *
      * @return void
      */
-<<<<<<< HEAD
+
     /*
-=======
->>>>>>> dd39b74d83ed085946e9f249ac796f497d3f9cd3
+
+
     public function down()
     {
         Schema::dropIfExists('klients');
     }
-<<<<<<< HEAD
+
     */
-=======
->>>>>>> dd39b74d83ed085946e9f249ac796f497d3f9cd3
+
+
 };
