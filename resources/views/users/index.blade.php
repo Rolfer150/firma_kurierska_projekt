@@ -9,7 +9,7 @@
       <th scope="col">Imie</th>
       <th scope="col">Nazwisko</th>
       <th scope="col">Numer telefonu</th>
-      <th scope="col">Email</th>
+      <th scope="col">E-mail</th>
       <th scope="col">Akcje</th>
     </tr>
   </thead>
@@ -21,15 +21,33 @@
       <td>{{$user->surname}}</td>
       <td>{{$user->phone_number}}</td>
       <td>{{$user->email}}</td>
-        <td>
+       <td>
 
-            <button class="btn btn-danger btn-sm">
+            <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}">
                 X
             </button>
-    </td>
+       </td>
     </tr>
    @endforeach
   </tbody>
 </table>
 </div>
 @endsection
+@section('javascript')
+    $(function() {
+        $('.delete').click(function () {
+        $.ajax({
+            method:"DELETE",
+            url: "http://firma_kurierska.test/users/" + $(this).data("id"),
+            data: { id: $(this).data("id") }
+        })
+        .done(function(response) {
+            window.location.reload();
+            })
+            .fail(function(response) {
+                alert("ERROR");
+        });
+    });
+});
+@endsection
+

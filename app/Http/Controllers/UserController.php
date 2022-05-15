@@ -79,21 +79,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  User  $user
-     * @return JsonResponse
+     * @param  int  $uid
+     * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user): JsonResponse
+    public function destroy($id)
     {
-        try {
-            $user->delete();
+            $flight= User::find($id);
+            $flight->delete();
             return response()->json([
                 'status' => 'success'
             ]);
-        } catch (Exception $e) {
-            return Response()->json([
-                'status' => 'error',
-                'message' => 'Wystąpił błąd!'
-            ])->setStatusCode(500);
-        }
     }
 }
