@@ -15,7 +15,7 @@ class Przesylka extends Model
         'cena',
         'rodzaj_przesylki',
         'data_dostarczenia',
-        'id_adres'
+        'id_adres',
     );
 
     protected $hidden = [
