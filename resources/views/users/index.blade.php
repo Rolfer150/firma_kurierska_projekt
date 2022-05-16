@@ -38,7 +38,7 @@
         $('.delete').click(function () {
         $.ajax({
             method:"DELETE",
-            url: "http://localhost:8000/users/" + $(this).data("id"),
+            url: "http://firma_kurierska.test/users/" + $(this).data("id"),
             data: { id: $(this).data("id") }
         })
         .done(function(response) {
