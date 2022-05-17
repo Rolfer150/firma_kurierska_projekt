@@ -34,6 +34,7 @@
 </div>
 @endsection
 @section('javascript')
+<<<<<<< HEAD
     var $1 = $(function() {
     $('.delete').click(function () {
     $.ajax({
@@ -46,6 +47,21 @@
     })
     .fail(function(response) {
     alert("ERROR");
+=======
+    $(function() {
+        $('.delete').click(function () {
+        $.ajax({
+            method:"DELETE",
+            url: "http://firma_kurierska.test/users/" + $(this).data("id"),
+            data: { id: $(this).data("id") }
+        })
+        .done(function(response) {
+            window.location.reload();
+            })
+            .fail(function(response) {
+                alert("ERROR");
+        });
+>>>>>>> e296c4718e6f026da36fd5588fbf677547139a70
     });
     });
     });
