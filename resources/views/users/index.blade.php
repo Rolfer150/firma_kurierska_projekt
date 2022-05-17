@@ -34,21 +34,22 @@
 </div>
 @endsection
 @section('javascript')
-    $(function() {
-        $('.delete').click(function () {
-        $.ajax({
-            method:"DELETE",
-            url: "http://localhost:8000/users/" + $(this).data("id"),
-            data: { id: $(this).data("id") }
-        })
-        .done(function(response) {
-            window.location.reload();
-            })
-            .fail(function(response) {
-                alert("ERROR");
-        });
+    var $1 = $(function() {
+    $('.delete').click(function () {
+    $.ajax({
+    method:"DELETE",
+    url: "http://localhost:8000/users/" + $(this).data("id"),
+    data: { id: $(this).data("id") }
+    })
+    .done(function(response) {
+    window.location.reload();
+    })
+    .fail(function(response) {
+    alert("ERROR");
     });
-});
-</script>
+    });
+    });
+    </script>
+
 @endsection
 

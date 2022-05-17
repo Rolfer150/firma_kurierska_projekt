@@ -49,10 +49,23 @@
         </div>
     </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 @section('javascript')
-    const deleteUrl = "{{ url('przesylkas') }}/";
+    var $1 = $(function() {
+    $('.delete').click(function () {
+    $.ajax({
+    method:"DELETE",
+    url: "http://localhost:8000/przesylkas/" + $(this).data("id"),
+    data: { id: $(this).data("id") }
+    })
+    .done(function(response) {
+    window.location.reload();
+    })
+    .fail(function(response) {
+    alert("ERROR");
+    });
+    });
+    });
+    </script>
 
-@endsection
-@section('js-files')
-    <script src="{{ asset('js/delete.js') }}"></script>
 @endsection
