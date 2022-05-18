@@ -27,7 +27,6 @@ return new class extends Migration
     {
         Schema::create('przesylkas', function (Blueprint $table) {
             $table->id();
-            $table->string('rodzaj_platnosci');
             $table->decimal('cena');
             $table->string('rodzaj_przesylki');
             $table->date('data_dostarczenia');

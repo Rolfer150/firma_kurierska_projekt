@@ -14,4 +14,19 @@ class KurierController extends Controller
     {
         return view("deliveryman.hello",);
     }
+
+    public function przesylka(): View
+    {
+        return view("deliveryman.przesylka",);
+    }
+
+    public function mapa(): View
+    {
+        return view("deliveryman.mapa",);
+    }
+
+    public function powiadomienie(): View
+    {
+        return view("deliveryman.powiadomienie",);
+    }
 }
