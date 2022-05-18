@@ -37,7 +37,7 @@
                                 <button class="btn btn-primary btn-sm">P</button>
                             </a>
                             <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
-                            <button class="btn btn-success btn-sm">E</button>
+                                <button class="btn btn-success btn-sm">E</button>
                             </a>
                             <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id }}">X</button>
                         </td>

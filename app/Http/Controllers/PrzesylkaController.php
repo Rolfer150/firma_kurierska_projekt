@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Przesylka;
-<<<<<<< HEAD
 use Exception;
-=======
 use App\Models\Rodzaj_platnosci;
->>>>>>> develop2
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -35,13 +32,10 @@ class PrzesylkaController extends Controller
      */
     public function create(): View
     {
-<<<<<<< HEAD
-        return view("Przesylkas.create");
-=======
         return view("Przesylkas.create", [
             'platnosc' => Rodzaj_platnosci::all()
         ]);
->>>>>>> develop2
+
     }
 
     /**
