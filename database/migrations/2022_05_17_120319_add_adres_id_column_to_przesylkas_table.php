@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->unsignedBigInteger('adres_id')->nullable()->after('rodzaj_przesylki');
+            $table->unsignedBigInteger('adres_id')->nullable()->after('cena');
             $table->foreign('adres_id')->references('id')->on('adres');
         });
     }

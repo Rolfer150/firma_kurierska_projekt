@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Przesylka;
+use App\Models\Rodzaj_platnosci;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class PrzesylkaController extends Controller
     public function create(): View
     {
         return view("Przesylkas.create", [
-
+            'platnosc' => Rodzaj_platnosci::all()
         ]);
     }
 

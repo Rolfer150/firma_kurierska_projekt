@@ -15,7 +15,12 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
 
                                 <div class="col-md-6">
-                                    <input id="rodzaj_platnosci" type="text" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="rodzaj_platnosci" value="{{ old('rodzaj_platnosci') }}" required autocomplete="rodzaj_platnosci" autofocus>
+                                    <select id="rodzaj_platnosci" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="platnosc" required>
+                                        <option>Brak</option>
+                                        @foreach($platnosc as $placenie)
+                                            <option value="{{$placenie->id}}">{{$placenie->platnosc}}</option>
+                                        @endforeach
+                                    </select>
 
                                     @error('rodzaj_platnosci')
                                     <span class="invalid-feedback" role="alert">
@@ -70,9 +75,9 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <a class="float-end" href="{{ route('Adres.create') }}">
-                                        <button type="button" class="btn btn-primary">Dalej</button>
-                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        Zapisz wszystko
+                                    </button>
                                 </div>
                             </div>
                         </form>
