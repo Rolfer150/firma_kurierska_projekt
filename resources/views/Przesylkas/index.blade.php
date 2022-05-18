@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row">
-            <table class="table">
+            <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
@@ -33,6 +33,9 @@
                         <td>{{$przesylka->rodzaj_przesylki}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
                         <td>
+                            <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
+                                <button class="btn btn-primary btn-sm">P</button>
+                            </a>
                             <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
                             <button class="btn btn-success btn-sm">E</button>
                             </a>
@@ -46,10 +49,23 @@
         </div>
     </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 @section('javascript')
-    const deleteUrl = "{{ url('przesylkas') }}/";
+    var $1 = $(function() {
+    $('.delete').click(function () {
+    $.ajax({
+    method:"DELETE",
+    url: "http://localhost:8000/przesylkas/" + $(this).data("id"),
+    data: { id: $(this).data("id") }
+    })
+    .done(function(response) {
+    window.location.reload();
+    })
+    .fail(function(response) {
+    alert("ERROR");
+    });
+    });
+    });
+    </script>
 
-@endsection
-@section('js-files')
-    <script src="{{ asset('js/delete.js') }}"></script>
 @endsection

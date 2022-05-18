@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Przesylka;
+use Exception;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -25,13 +27,11 @@ class PrzesylkaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create(): View
     {
-        return view("Przesylkas.create", [
-
-        ]);
+        return view("Przesylkas.create");
     }
 
     /**
@@ -50,12 +50,14 @@ class PrzesylkaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Przesylka  $przesylka
+     * @return View
      */
-    public function show(Przesylka $przesylka)
+    public function show(Przesylka $przesylka): View
     {
-        //
+        return view("Przesylkas.show", [
+        'przesylka' => $przesylka
+    ]);
     }
 
     /**
@@ -88,11 +90,21 @@ class PrzesylkaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Przesylka  $przesylka
-     * @return \Illuminate\Http\Response
+     * @param  Przesylka  $przesylka
+     * @return JsonResponse
      */
-    public function destroy(Przesylka $przesylka)
+    public function destroy(Przesylka $przesylka): JsonResponse
     {
-        //
+            try {
+                $przesylka->delete();
+                return response()->json([
+                    'status' => 'success'
+                ]);
+            } catch (Exception $e) {
+                return Response()->json([
+                    'status' => 'error',
+                    'message' => 'Wystąpił błąd!'
+                ])->setStatusCode(500);
+            }
     }
 }
