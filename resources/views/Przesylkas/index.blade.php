@@ -55,7 +55,7 @@
     $('.delete').click(function () {
     $.ajax({
     method:"DELETE",
-    url: "http://localhost:8000/przesylkas/" + $(this).data("id"),
+    url: "http://firma_kurierska.test/przesylkas/" + $(this).data("id"),
     data: { id: $(this).data("id") }
     })
     .done(function(response) {
