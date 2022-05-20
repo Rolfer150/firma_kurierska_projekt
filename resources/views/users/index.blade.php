@@ -44,21 +44,8 @@
     </div>
 @endsection
 @section('javascript')
-    var $1 = $(function() {
-    $('.delete').click(function () {
-    $.ajax({
-    method:"DELETE",
-    url: "http://firma_kurierska.test/users/" + $(this).data("id"),
-    data: { id: $(this).data("id") }
-    })
-    .done(function(response) {
-    window.location.reload();
-    })
-    .fail(function(response) {
-    alert("ERROR");
-    });
-    });
-    });
-    </script>
-
+    const deleteUrl = "{{ url('users') }}/";
+@endsection
+@section('js-files')
+    <script src="{{ asset('js/delete.js') }}"></script>
 @endsection
