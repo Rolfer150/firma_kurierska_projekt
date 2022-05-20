@@ -16,6 +16,7 @@
 
                                 <div class="col-md-6">
                                     <select id="platnosc_id" class="form-control @error('platnosc_id') is-invalid @enderror" name="platnosc_id" required>
+                                    <select id="platnosc" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="platnosc" required>
                                         <option>Brak</option>
                                         @foreach($platnosc as $placenie)
                                             <option value="{{$placenie->id}}">{{$placenie->platnosc}}</option>
