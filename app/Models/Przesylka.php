@@ -11,6 +11,7 @@ class Przesylka extends Model
     use HasFactory;
 
     protected $fillable = array(
+        'platnosc_id',
         'cena',
         'rodzaj_przesylki',
         'data_dostarczenia',
@@ -29,5 +30,10 @@ class Przesylka extends Model
     public function platnosc(): BelongsTo
     {
         return $this->belongsTo(Rodzaj_platnosci::class);
+    }
+
+    public function dostawa(): BelongsTo
+    {
+        return $this->belongsTo(Rodzaj_dostawy::class);
     }
 }
