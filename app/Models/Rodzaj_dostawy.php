@@ -14,5 +14,8 @@ class Rodzaj_dostawy extends Model
         'dostawa',
     );
 
-
+    public function przesylkas(): HasMany
+    {
+        return $this->hasMany(Przesylka::class);
+    }
 }

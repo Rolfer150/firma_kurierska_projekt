@@ -12,10 +12,10 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
+                                <label for="platnosc" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
 
                                 <div class="col-md-6">
-                                    <select id="rodzaj_platnosci" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="platnosc" required>
+                                    <select id="platnosc_id" class="form-control @error('platnosc_id') is-invalid @enderror" name="platnosc_id" required>
                                         <option>Brak</option>
                                         @foreach($platnosc as $placenie)
                                             <option value="{{$placenie->id}}">{{$placenie->platnosc}}</option>
