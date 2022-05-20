@@ -16,10 +16,9 @@
 
                                 <div class="col-md-6">
                                     <select id="platnosc_id" class="form-control @error('platnosc_id') is-invalid @enderror" name="platnosc_id" required>
-                                    <select id="platnosc" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="platnosc" required>
                                         <option>Brak</option>
-                                        @foreach($platnosc as $placenie)
-                                            <option value="{{$placenie->id}}">{{$placenie->platnosc}}</option>
+                                        @foreach($platnosci as $platnosc)
+                                            <option value="{{$platnosc->id}}">{{$platnosc->platnosc}}</option>
                                         @endforeach
                                     </select>
 
@@ -46,13 +45,13 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
+                                <label for="dostawa" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
 
                                 <div class="col-md-6">
-                                    <select id="rodzaj_dostawy" class="form-control @error('rodzaj_dostawy') is-invalid @enderror" name="dostawa" required>
+                                    <select id="dostawa_id" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" required>
                                         <option>Brak</option>
-                                        @foreach($dostawa as $dostarczenie)
-                                            <option value="{{$dostarczenie->id}}">{{$dostarczenie->dostawa}}</option>
+                                        @foreach($dostawy as $dostawa)
+                                            <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
                                         @endforeach
                                     </select>
 
@@ -81,8 +80,8 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Zapisz wszystko
+                                    <button class="btn btn-primary">
+                                        Dalej
                                     </button>
                                 </div>
                             </div>

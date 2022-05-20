@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adres;
+use App\Models\Przesylka;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class AdresController extends Controller
 {
@@ -32,12 +35,14 @@ class AdresController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $adres = new Adres($request->all());
+        $adres->save();
+        return redirect(route('Przesylkas.index'));
     }
 
     /**

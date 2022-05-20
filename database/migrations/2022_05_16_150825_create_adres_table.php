@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('adres', function (Blueprint $table) {
                 $table->id();
                 $table->string('miasto');
-                $table->string('numer_domu');
-                $table->string('numer_mieszkania');
+                $table->integer('numer_domu');
+                $table->integer('numer_mieszkania')->nullable();
                 $table->string('ulica');
                 $table->timestamps();
         });

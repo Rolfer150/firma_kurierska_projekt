@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdresController;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\PrzesylkaController;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,8 @@ Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('Przesylk
 Route::get('/przesylkas/create', [PrzesylkaController::class, 'create'])->name('Przesylkas.create')->middleware('can:isAdmin');
 Route::post('/przesylkas', [PrzesylkaController::class, 'store'])->name('Przesylkas.store')->middleware('can:isAdmin');
 Route::get('/przesylkas/{przesylka}', [PrzesylkaController::class, 'show'])->name('Przesylkas.show')->middleware('can:isAdmin');
-Route::get('/przesylkas/create/adres', [PrzesylkaController::class, 'create'])->name('Adres.create')->middleware('can:isAdmin');
+Route::get('/przesylkas/create/adres', [AdresController::class, 'create'])->name('Adres.create')->middleware('can:isAdmin');
+Route::post('/przesylkas/adres/store', [AdresController::class, 'store'])->name('Adres.store')->middleware('can:isAdmin');
 Route::post('/przesylkas/store', [PrzesylkaController::class, 'store'])->name('Przesylkas.store')->middleware('can:isAdmin');
 Route::get('/przesylkas/edit/{przesylka}', [PrzesylkaController::class, 'edit'])->name('Przesylkas.edit')->middleware('can:isAdmin');
 Route::post('/przesylkas/{przesylka}', [PrzesylkaController::class, 'update'])->name('Przesylkas.update')->middleware('can:isAdmin');
