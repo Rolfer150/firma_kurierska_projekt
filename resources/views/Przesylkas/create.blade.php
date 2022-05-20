@@ -45,12 +45,17 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj przesyłki</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
 
                                 <div class="col-md-6">
-                                    <input id="rodzaj_przesylki" type="text" class="form-control @error('rodzaj_przesylki') is-invalid @enderror" name="rodzaj_przesylki" value="{{ old('rodzaj_przesylki') }}" required autocomplete="rodzaj_przesylki">
+                                    <select id="rodzaj_dostawy" class="form-control @error('rodzaj_dostawy') is-invalid @enderror" name="dostawa" required>
+                                        <option>Brak</option>
+                                        @foreach($dostawa as $dostarczenie)
+                                            <option value="{{$dostarczenie->id}}">{{$dostarczenie->dostawa}}</option>
+                                        @endforeach
+                                    </select>
 
-                                    @error('rodzaj_przesylki')
+                                    @error('rodzaj_platnosci')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

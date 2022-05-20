@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('rodzaj_dostawies', function (Blueprint $table) {
+            $table->id();
+            $table->string('dostawa');
+            $table->timestamps();
+        });
+
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->unsignedBigInteger('adres_id')->nullable()->after('cena');
-            $table->foreign('adres_id')->references('id')->on('adres');
+            $table->unsignedBigInteger('dostawa_id')->nullable()->after('platnosc_id');
+            $table->foreign('dostawa_id')->references('id')->on('rodzaj_dostawies');
         });
     }
 
@@ -26,9 +32,11 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('rodzaj_dostawies');
+
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->dropForeign('przesylkas_adres_id_foreign');
-            $table->dropColumn('adres_id');
+            $table->dropForeign('przesylkas_dostawa_id_foreign');
+            $table->dropColumn('dostawa_id');
         });
     }
 };
