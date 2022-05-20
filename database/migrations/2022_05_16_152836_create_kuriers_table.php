@@ -21,7 +21,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('kuriers', function (Blueprint $table) {
-            $table->id('id_kuriera');
+            $table->id();
             $table->string('imie_kuriera');
             $table->string('nazwisko_kuriera');
             $table->integer('nr_tel_kuriera');
@@ -39,14 +39,9 @@ return new class extends Migration
      * @return void
      */
 
-    /*
-
-
     public function down()
     {
         Schema::dropIfExists('kuriers');
     }
-
-    */
 
 };

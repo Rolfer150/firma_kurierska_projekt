@@ -6,16 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Adres extends Model
+class Rodzaj_platnosci extends Model
 {
     use HasFactory;
 
     protected $fillable = array(
-        'miasto',
-        'numer_domu',
-        'numer_mieszkania',
-        'email_kuriera',
-        'ulica',
+        'platnosc',
     );
 
     public function przesylkas(): HasMany
