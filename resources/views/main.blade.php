@@ -108,7 +108,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="img-fluid" src="{{ asset('img/carousel-1.jpg') }}" alt="Image">
+                <img class="img-fluid" style="width: 100%;" src="{{ asset('img/carousel-4.jpg') }}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-fluid" src="{{asset('img/carousel-2.jpg')}}" alt="Image">
+                <img class="img-fluid" style="width: 100%;" src="{{asset('img/carousel-5.jpg')}}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-fluid" src="{{asset('img/carousel-3.jpg')}}" alt="Image">
+                <img class="img-fluid" style="width: 100%;" src="{{asset('img/carousel-3.jpg')}}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<<<<<<< HEAD
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -130,7 +129,6 @@
             </div>
         </div>
     </body>
-=======
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -260,5 +258,4 @@
     </div>
 </div>
 </body>
->>>>>>> a3adc78a0e180f3da002e17ca41440ffadfd9071
 </html>
