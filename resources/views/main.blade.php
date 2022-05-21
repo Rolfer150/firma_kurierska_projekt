@@ -111,9 +111,9 @@
                 <img class="img-fluid" style="width: 100%;" src="{{ asset('img/carousel-4.jpg') }}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
-                        <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
-                        <h1 class="display-3 text-white mb-md-4">Best Quality Solution In Cleaning</h1>
-                        <a href="" class="btn btn-primary">Get A Quote</a>
+                        <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
+                        <h1 class="display-3 text-white mb-md-4">Najlepsi w dostarczaniu Twoich paczek</h1>
+                        <a href="" class="btn btn-primary">Sprawdź</a>
                     </div>
                 </div>
             </div>
@@ -121,9 +121,9 @@
                 <img class="img-fluid" style="width: 100%;" src="{{asset('img/carousel-5.jpg')}}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
-                        <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
-                        <h1 class="display-3 text-white mb-md-4">Highly Professional Cleaning Services</h1>
-                        <a href="" class="btn btn-primary">Get A Quote</a>
+                        <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
+                        <h1 class="display-3 text-white mb-md-4">Pełen profesjonalizm naszych kurierów</h1>
+                        <a href="" class="btn btn-primary">Sprawdź</a>
                     </div>
                 </div>
             </div>
@@ -131,9 +131,9 @@
                 <img class="img-fluid" style="width: 100%;" src="{{asset('img/carousel-3.jpg')}}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
-                        <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
-                        <h1 class="display-3 text-white mb-md-4">Experienced & Expert Cleaners</h1>
-                        <a href="" class="btn btn-primary">Get A Quote</a>
+                        <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
+                        <h1 class="display-3 text-white mb-md-4">Szybko oraz bezpieczenie do celu</h1>
+                        <a href="" class="btn btn-primary">Sprawdź</a>
                     </div>
                 </div>
             </div>
@@ -150,8 +150,8 @@
             <div class="contact-info-item d-flex align-items-center justify-content-center bg-primary text-white py-4 py-lg-0">
                 <i class="fa fa-3x fa-map-marker-alt text-secondary mr-4"></i>
                 <div class="">
-                    <h5 class="mb-2">Our Office</h5>
-                    <p class="m-0">123 Street, New York, USA</p>
+                    <h5 class="mb-2">Nasza firma</h5>
+                    <p class="m-0">123 Zamenhofa, Nowy Sącz, Polska</p>
                 </div>
             </div>
         </div>
@@ -159,8 +159,8 @@
             <div class="contact-info-item d-flex align-items-center justify-content-center bg-secondary text-white py-4 py-lg-0">
                 <i class="fa fa-3x fa-envelope-open text-primary mr-4"></i>
                 <div class="">
-                    <h5 class="mb-2">Email Us</h5>
-                    <p class="m-0">info@example.com</p>
+                    <h5 class="mb-2">Nasz adres mailowy</h5>
+                    <p class="m-0">firma_kurierska@projekt.com</p>
                 </div>
             </div>
         </div>
@@ -168,8 +168,8 @@
             <div class="contact-info-item d-flex align-items-center justify-content-center bg-primary text-white py-4 py-lg-0">
                 <i class="fa fa-3x fa-phone-alt text-secondary mr-4"></i>
                 <div class="">
-                    <h5 class="mb-2">Call Us</h5>
-                    <p class="m-0">+012 345 6789</p>
+                    <h5 class="mb-2">Kontakt pod numerem telefonu</h5>
+                    <p class="m-0">+123 456 789</p>
                 </div>
             </div>
         </div>
