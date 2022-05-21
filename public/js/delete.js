@@ -1,9 +1,4 @@
-/******/ (() => { // webpackBootstrap
-    var __webpack_exports__ = {};
-    /*!********************************!*\
-      !*** ./resources/js/delete.js ***!
-      \********************************/
-    $(function () {
+ $(function () {
         $('.delete').click(function () {
             var _this = this;
 
@@ -27,5 +22,3 @@
             });
         });
     });
-    /******/ })()
-;
