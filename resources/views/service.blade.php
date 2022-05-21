@@ -260,9 +260,9 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="font-weight-semi-bold text-primary mb-4">Get In Touch</h4>
-            <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>123 Street, New York, USA</p>
-            <p><i class="fa fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope text-primary mr-2"></i>info@example.com</p>
+            <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>123 Zamenhofa, Nowy Sącz, Polska</p>
+            <p><i class="fa fa-phone-alt text-primary mr-2"></i>+123 456 789</p>
+            <p><i class="fa fa-envelope text-primary mr-2"></i>firma_kurierska@projekt.com</p>
             <div class="d-flex justify-content-start mt-4">
                 <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
