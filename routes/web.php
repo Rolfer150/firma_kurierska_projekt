@@ -21,10 +21,14 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+Route::get('/about', [HelloWorldController::class, 'about']);
+Route::get('/service', [HelloWorldController::class, 'service']);
+Route::get('/project', [HelloWorldController::class, 'project']);
+Route::get('/contact', [HelloWorldController::class, 'contact']);
 
-Route::get('hello', [HelloWorldController::class, 'show']);
+Route::get('hello', [HelloWorldController::class, 'hello']);
 Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware('can:isAdmin');
 Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('Przesylkas.index')->middleware('can:isAdmin');

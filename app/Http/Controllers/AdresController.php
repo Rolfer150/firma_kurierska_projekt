@@ -41,7 +41,7 @@ class AdresController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $adres = new Adres($request->all());
-        $adres->save();
+        $adres->adres_id->save();
         return redirect(route('Przesylkas.index'));
     }
 
