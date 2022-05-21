@@ -16,7 +16,7 @@ $(function() {
                         window.location.reload();
                     })
                     .fail(function(data) {
-                        Swal.fire('Oops...', data.responseJSON.message, data.responseJSON.status);
+                        Swal.fire('Błąd!!!', data.responseJSON.message, data.responseJSON.status);
                     });
             }
         })
