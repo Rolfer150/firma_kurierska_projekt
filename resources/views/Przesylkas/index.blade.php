@@ -49,22 +49,9 @@
         </div>
     </div>
 @endsection
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 @section('javascript')
-    var $1 = $(function() {
-    $('.delete').click(function () {
-    $.ajax({
-    method:"DELETE",
-    url: "http://firma_kurierska.test/przesylkas/" + $(this).data("id"),
-    data: { id: $(this).data("id") }
-    })
-    .done(function(response) {
-    window.location.reload();
-    })
-    .fail(function(response) {
-    alert("ERROR");
-    });
-    });
-    });
-
+    const deleteUrl = "{{ url('$przesylkas') }}/";
+@endsection
+@section('js-files')
+    <script src="{{ asset('js/delete1.js') }}"></script>
 @endsection
