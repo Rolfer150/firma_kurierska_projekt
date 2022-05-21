@@ -50,7 +50,7 @@
     </div>
 @endsection
 @section('javascript')
-    const deleteUrl = "{{ url('$przesylkas') }}/";
+    const deleteUrl = "{{ url('przesylkas') }}/";
 @endsection
 @section('js-files')
     <script src="{{ asset('js/delete1.js') }}"></script>
