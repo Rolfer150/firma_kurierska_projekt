@@ -50,9 +50,6 @@
                                 <div class="col-md-6">
                                     <select id="rodzaj_dostawy" class="form-control @error('rodzaj_dostawy') is-invalid @enderror" name="dostawa" required>
                                         <option>Brak</option>
-                                        @foreach($dostawa as $dostarczenie)
-                                            <option value="{{$dostarczenie->id}}">{{$dostarczenie->dostawa}}</option>
-                                        @endforeach
                                     </select>
 
                                     @error('rodzaj_platnosci')
