@@ -11,7 +11,7 @@
                 <th scope="col">Numer telefonu</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">Rola</th>
-                <th scope="col">Akcje</th>
+                <th scope="col">Usuń konto</th>
             </tr>
             </thead>
             <tbody>
