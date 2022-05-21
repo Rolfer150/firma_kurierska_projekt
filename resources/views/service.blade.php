@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-lg-3 bg-secondary d-none d-lg-block">
             <a href="" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                <h1 class="m-0 display-3 text-primary">Firma kurierska</h1>
+                <h1 class="m-0 display-7 text-primary">Firma kurierska</h1>
             </a>
         </div>
         <div class="col-lg-9">
@@ -76,7 +76,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="/main" class="nav-item nav-link">Home</a>
+                        <a href="/" class="nav-item nav-link">Home</a>
                         <a href="/about" class="nav-item nav-link">About</a>
                         <a href="/service" class="nav-item nav-link active">Service</a>
                         <a href="/project" class="nav-item nav-link">Project</a>
@@ -88,7 +88,6 @@
                                 <a href="{{ route("register") }}" class="dropdown-item">Rejestracja</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
                 </div>
@@ -136,21 +135,21 @@
                             <i class="fa fa-2x fa-hotel"></i>
                         </div>
                         <h5 class="font-weight-bold mb-4 px-4">Home Cleaning</h5>
-                        <img src="img/blog-1.jpg" alt="">
+                        <img src="{{asset('img/blog-1.jpg')}}" alt="">
                     </div>
                     <div class="d-flex flex-column align-items-center text-center bg-light rounded overflow-hidden pt-4">
                         <div class="icon-box bg-light text-secondary shadow mt-2 mb-4">
                             <i class="fa fa-2x fa-city"></i>
                         </div>
                         <h5 class="font-weight-bold mb-4 px-4">Window Cleaning</h5>
-                        <img src="img/blog-3.jpg" alt="">
+                        <img src="{{asset('img/blog-3.jpg')}}" alt="">
                     </div>
                     <div class="d-flex flex-column align-items-center text-center bg-light rounded overflow-hidden pt-4">
                         <div class="icon-box bg-light text-secondary shadow mt-2 mb-4">
                             <i class="fa fa-2x fa-spa"></i>
                         </div>
                         <h5 class="font-weight-bold mb-4 px-4">Carpet Cleaning</h5>
-                        <img src="img/blog-2.jpg" alt="">
+                        <img src="{{asset('img/blog-2.jpg')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -215,7 +214,7 @@
                     </div>
                     <div class="d-flex flex-column">
                         <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                            <img class="img-fluid" src="{{asset('img/testimonial-2.jpg')}}" alt="">
                             <div class="ml-3">
                                 <h5>Client Name</h5>
                                 <i>Profession</i>
@@ -225,7 +224,7 @@
                     </div>
                     <div class="d-flex flex-column">
                         <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                            <img class="img-fluid" src="{{asset('img/testimonial-3.jpg')}}" alt="">
                             <div class="ml-3">
                                 <h5>Client Name</h5>
                                 <i>Profession</i>
@@ -237,7 +236,7 @@
             </div>
             <div class="col-lg-5" style="min-height: 400px;">
                 <div class="position-relative h-100 rounded overflow-hidden">
-                    <img class="position-absolute w-100 h-100" src="img/testimonial.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100" src="{{asset('img/testimonial.jpg')}}" style="object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -250,7 +249,7 @@
 <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="row pt-5">
         <div class="col-lg-3 col-md-6 mb-5">
-            <a href="index.html" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <h1 class="m-0 mt-n3 display-4 text-primary">Klean</h1>
             </a>
             <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>

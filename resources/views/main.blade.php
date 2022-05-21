@@ -3,14 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Klean - Cleaning Services Website Template</title>
+    <title>Firma kurierska - Strona główna</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('img/favicon.ico') }}" rel="icon">
+    <link href="{{asset('img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,11 +19,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('css/home/style.css') }}" rel="stylesheet">
+    <link href="{{asset('css/home/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +32,7 @@
     <div class="row">
         <div class="col-lg-3 bg-secondary d-none d-lg-block">
             <a href="" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                <h1 class="m-0 display-3 text-primary">Firma kurierska</h1>
+                <h1 class="m-0 display-7 text-primary">Firma kurierska</h1>
             </a>
         </div>
         <div class="col-lg-9">
@@ -77,18 +76,18 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="/main" class="nav-item nav-link">Strona główna</a>
-                        <a href="/about" class="nav-item nav-link active">O nas</a>
+                        <a href="/" class="nav-item nav-link active">Strona główna</a>
+                        <a href="/about" class="nav-item nav-link">O nas</a>
                         <a href="/service" class="nav-item nav-link">Serwis</a>
                         <a href="/project" class="nav-item nav-link">Projekt</a>
+                        <a href="/contact" class="nav-item nav-link">Kontakt</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Latest Blog</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
+                                <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
                             </div>
                         </div>
-                        <a href="/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
                 </div>
@@ -99,24 +98,84 @@
 <!-- Header End -->
 
 
-<!-- Page Header Start -->
-<div class="container-fluid bg-primary py-5 mb-5">
-    <div class="container py-5">
-        <div class="row align-items-center py-4">
-            <div class="col-md-6 text-center text-md-left">
-                <h1 class="display-4 mb-4 mb-md-0 text-secondary text-uppercase">About</h1>
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#header-carousel" data-slide-to="1"></li>
+            <li data-target="#header-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="img-fluid" style="width: 100%;" src="{{ asset('img/carousel-4.jpg') }}" alt="Image">
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5" style="width: 100%; max-width: 900px;">
+                        <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
+                        <h1 class="display-3 text-white mb-md-4">Best Quality Solution In Cleaning</h1>
+                        <a href="" class="btn btn-primary">Get A Quote</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 text-center text-md-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="btn btn-sm btn-outline-light" href="">Home</a>
-                    <i class="fas fa-angle-double-right text-light mx-2"></i>
-                    <a class="btn btn-sm btn-outline-light disabled" href="">About</a>
+            <div class="carousel-item">
+                <img class="img-fluid" style="width: 100%;" src="{{asset('img/carousel-5.jpg')}}" alt="Image">
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5" style="width: 100%; max-width: 900px;">
+                        <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
+                        <h1 class="display-3 text-white mb-md-4">Highly Professional Cleaning Services</h1>
+                        <a href="" class="btn btn-primary">Get A Quote</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" style="width: 100%;" src="{{asset('img/carousel-3.jpg')}}" alt="Image">
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5" style="width: 100%; max-width: 900px;">
+                        <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
+                        <h1 class="display-3 text-white mb-md-4">Experienced & Expert Cleaners</h1>
+                        <a href="" class="btn btn-primary">Get A Quote</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Page Header End -->
+<!-- Carousel End -->
+
+
+<!-- Contact Info Start -->
+<div class="container-fluid pb-5 contact-info">
+    <div class="row">
+        <div class="col-lg-4 p-0">
+            <div class="contact-info-item d-flex align-items-center justify-content-center bg-primary text-white py-4 py-lg-0">
+                <i class="fa fa-3x fa-map-marker-alt text-secondary mr-4"></i>
+                <div class="">
+                    <h5 class="mb-2">Our Office</h5>
+                    <p class="m-0">123 Street, New York, USA</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-0">
+            <div class="contact-info-item d-flex align-items-center justify-content-center bg-secondary text-white py-4 py-lg-0">
+                <i class="fa fa-3x fa-envelope-open text-primary mr-4"></i>
+                <div class="">
+                    <h5 class="mb-2">Email Us</h5>
+                    <p class="m-0">info@example.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-0">
+            <div class="contact-info-item d-flex align-items-center justify-content-center bg-primary text-white py-4 py-lg-0">
+                <i class="fa fa-3x fa-phone-alt text-secondary mr-4"></i>
+                <div class="">
+                    <h5 class="mb-2">Call Us</h5>
+                    <p class="m-0">+012 345 6789</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Info End -->
 
 
 <!-- About Start -->
@@ -169,8 +228,49 @@
 <!-- Video Modal End -->
 
 
+<!-- Services Start -->
+<div class="container-fluid bg-service py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Our Services</h6>
+                <h1 class="mb-4 section-title text-white">Awesome Cleaning Services For You</h1>
+                <p class="text-white">Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum</p>
+                <a href="" class="btn btn-primary mt-3 py-2 px-4">More Services</a>
+            </div>
+            <div class="col-lg-6 pt-5 pt-lg-0">
+                <div class="owl-carousel service-carousel position-relative">
+                    <div class="d-flex flex-column align-items-center text-center bg-white rounded overflow-hidden pt-4">
+                        <div class="icon-box bg-light text-secondary shadow mt-2 mb-4">
+                            <i class="fa fa-2x fa-hotel"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-4 px-4">Home Cleaning</h5>
+                        <img src="{{asset('img/blog-1.jpg')}}" alt="">
+                    </div>
+                    <div class="d-flex flex-column align-items-center text-center bg-white rounded overflow-hidden pt-4">
+                        <div class="icon-box bg-light text-secondary shadow mt-2 mb-4">
+                            <i class="fa fa-2x fa-city"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-4 px-4">Window Cleaning</h5>
+                        <img src="{{asset('img/blog-3.jpg')}}" alt="">
+                    </div>
+                    <div class="d-flex flex-column align-items-center text-center bg-white rounded overflow-hidden pt-4">
+                        <div class="icon-box bg-light text-secondary shadow mt-2 mb-4">
+                            <i class="fa fa-2x fa-spa"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-4 px-4">Carpet Cleaning</h5>
+                        <img src="{{asset('img/blog-2.jpg')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+
 <!-- Features Start -->
-<div class="container-fluid bg-light py-5">
+<div class="container-fluid py-5">
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-7 pt-lg-5 pb-3">
@@ -194,7 +294,7 @@
             </div>
             <div class="col-lg-5" style="min-height: 400px;">
                 <div class="position-relative h-100 rounded overflow-hidden">
-                    <img class="position-absolute w-100 h-100" src="{{ asset('img/feature.jpg') }}" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100" src="{{asset('img/feature.jpg')}}" style="object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -203,8 +303,127 @@
 <!-- Features End -->
 
 
+<!-- Portfolio Start -->
+<div class="container-fluid bg-portfolio py-5">
+    <div class="container py-5">
+        <div class="row m-0 portfolio-container">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                <div class="position-relative overflow-hidden">
+                    <div class="portfolio-img">
+                        <img class="img-fluid w-100" src="{{asset('img/portfolio-1.jpg')}}" alt="">
+                    </div>
+                    <div class="portfolio-text bg-primary">
+                        <h4 class="font-weight-bold mb-4">Project Name</h4>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-sm btn-secondary m-1" href="">
+                                <i class="fa fa-link"></i>
+                            </a>
+                            <a class="btn btn-sm btn-secondary m-1" href="{{asset('img/portfolio-1.jpg')}}" data-lightbox="portfolio">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                <div class="position-relative overflow-hidden">
+                    <div class="portfolio-img">
+                        <img class="img-fluid w-100" src="{{asset('img/portfolio-2.jpg')}}" alt="">
+                    </div>
+                    <div class="portfolio-text bg-primary">
+                        <h4 class="font-weight-bold mb-4">Project Name</h4>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-sm btn-secondary m-1" href="">
+                                <i class="fa fa-link"></i>
+                            </a>
+                            <a class="btn btn-sm btn-secondary m-1" href="{{asset('img/portfolio-2.jpg')}}" data-lightbox="portfolio">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                <div class="position-relative overflow-hidden">
+                    <div class="portfolio-img">
+                        <img class="img-fluid w-100" src="{{asset('img/portfolio-3.jpg')}}" alt="">
+                    </div>
+                    <div class="portfolio-text bg-primary">
+                        <h4 class="font-weight-bold mb-4">Project Name</h4>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-sm btn-secondary m-1" href="">
+                                <i class="fa fa-link"></i>
+                            </a>
+                            <a class="btn btn-sm btn-secondary m-1" href="{{asset('img/portfolio-3.jpg')}}" data-lightbox="portfolio">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                <div class="position-relative overflow-hidden">
+                    <div class="portfolio-img">
+                        <img class="img-fluid w-100" src="{{asset('img/portfolio-4.jpg')}}" alt="">
+                    </div>
+                    <div class="portfolio-text bg-primary">
+                        <h4 class="font-weight-bold mb-4">Project Name</h4>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-sm btn-secondary m-1" href="">
+                                <i class="fa fa-link"></i>
+                            </a>
+                            <a class="btn btn-sm btn-secondary m-1" href="{{asset('img/portfolio-4.jpg')}}" data-lightbox="portfolio">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                <div class="position-relative overflow-hidden">
+                    <div class="portfolio-img">
+                        <img class="img-fluid w-100" src="{{asset('img/portfolio-5.jpg')}}" alt="">
+                    </div>
+                    <div class="portfolio-text bg-primary">
+                        <h4 class="font-weight-bold mb-4">Project Name</h4>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-sm btn-secondary m-1" href="">
+                                <i class="fa fa-link"></i>
+                            </a>
+                            <a class="btn btn-sm btn-secondary m-1" href="{{asset('img/portfolio-5.jpg')}}" data-lightbox="portfolio">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                <div class="position-relative overflow-hidden">
+                    <div class="portfolio-img">
+                        <img class="img-fluid w-100" src="{{asset('img/portfolio-6.jpg')}}" alt="">
+                    </div>
+                    <div class="portfolio-text bg-primary">
+                        <h4 class="font-weight-bold mb-4">Project Name</h4>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-sm btn-secondary m-1" href="">
+                                <i class="fa fa-link"></i>
+                            </a>
+                            <a class="btn btn-sm btn-secondary m-1" href="{{asset('img/portfolio-6.jpg')}}" data-lightbox="portfolio">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Portfolio End -->
+
+
 <!-- Team Start -->
-<div class="container-fluid pt-5">
+<div class="container-fluid py-5">
     <div class="container py-5">
         <div class="row align-items-end mb-4">
             <div class="col-lg-6">
@@ -221,7 +440,7 @@
                     <div class="team d-flex flex-column text-center rounded overflow-hidden">
                         <div class="position-relative">
                             <div class="team-img">
-                                <img class="img-fluid w-100" src="{{ asset('img/team-1.jpg') }}" alt="">
+                                <img class="img-fluid w-100" src="{{assert('img/team-1.jpg')}}" alt="">
                             </div>
                             <div class="team-social d-flex flex-column align-items-center justify-content-center bg-primary">
                                 <a class="btn btn-secondary btn-social mb-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -237,7 +456,7 @@
                     <div class="team d-flex flex-column text-center rounded overflow-hidden">
                         <div class="position-relative">
                             <div class="team-img">
-                                <img class="img-fluid w-100" src="{{ asset('img/team-2.jpg') }}" alt="">
+                                <img class="img-fluid w-100" src="{{asset('img/team-2.jpg')}}" alt="">
                             </div>
                             <div class="team-social d-flex flex-column align-items-center justify-content-center bg-primary">
                                 <a class="btn btn-secondary btn-social mb-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -253,7 +472,7 @@
                     <div class="team d-flex flex-column text-center rounded overflow-hidden">
                         <div class="position-relative">
                             <div class="team-img">
-                                <img class="img-fluid w-100" src="{{ asset('img/team-3.jpg') }}" alt="">
+                                <img class="img-fluid w-100" src="{{asset('img/team-3.jpg')}}" alt="">
                             </div>
                             <div class="team-social d-flex flex-column align-items-center justify-content-center bg-primary">
                                 <a class="btn btn-secondary btn-social mb-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -269,7 +488,7 @@
                     <div class="team d-flex flex-column text-center rounded overflow-hidden">
                         <div class="position-relative">
                             <div class="team-img">
-                                <img class="img-fluid w-100" src="{{ asset('img/team-4.jpg') }}" alt="">
+                                <img class="img-fluid w-100" src="{{asset('img/team-4.jpg')}}" alt="">
                             </div>
                             <div class="team-social d-flex flex-column align-items-center justify-content-center bg-primary">
                                 <a class="btn btn-secondary btn-social mb-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -288,6 +507,127 @@
     </div>
 </div>
 <!-- Team End -->
+
+
+<!-- Testimonial Start -->
+<div class="container-fluid bg-testimonial py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-7 pt-lg-5 pb-5">
+                <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Testimonial</h6>
+                <h1 class="section-title text-white mb-5">What Our Clients Say</h1>
+                <div class="owl-carousel testimonial-carousel position-relative">
+                    <div class="d-flex flex-column text-white">
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="img-fluid" src="{{asset('img/testimonial-1.jpg')}}" alt="">
+                            <div class="ml-3">
+                                <h5 class="text-primary">Client Name</h5>
+                                <i>Profession</i>
+                            </div>
+                        </div>
+                        <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
+                    </div>
+                    <div class="d-flex flex-column text-white">
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="img-fluid" src="{{asset('img/testimonial-2.jpg')}}" alt="">
+                            <div class="ml-3">
+                                <h5 class="text-primary">Client Name</h5>
+                                <i>Profession</i>
+                            </div>
+                        </div>
+                        <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
+                    </div>
+                    <div class="d-flex flex-column text-white">
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="img-fluid" src="{{asset('img/testimonial-3.jpg')}}" alt="">
+                            <div class="ml-3">
+                                <h5 class="text-primary">Client Name</h5>
+                                <i>Profession</i>
+                            </div>
+                        </div>
+                        <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" style="min-height: 400px;">
+                <div class="position-relative h-100 rounded overflow-hidden">
+                    <img class="position-absolute w-100 h-100" src="{{asset('img/testimonial.jpg')}}" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+<!-- Blog Start -->
+<div class="container-fluid pt-5">
+    <div class="container pt-5">
+        <div class="row align-items-end mb-4">
+            <div class="col-lg-6">
+                <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Latest Blog</h6>
+                <h1 class="section-title mb-3">Latest Articles From Our Blog Post</h1>
+            </div>
+            <div class="col-lg-6">
+                <h4 class="font-weight-normal text-muted mb-3">Eirmod kasd duo eos et magna, diam dolore stet sea clita sit ea erat lorem. Ipsum eos ipsum magna lorem stet</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="position-relative mb-4">
+                    <img class="img-fluid rounded w-100" src="{{asset('img/blog-1.jpg')}}" alt="">
+                    <div class="blog-date">
+                        <h4 class="font-weight-bold mb-n1">01</h4>
+                        <small class="text-white text-uppercase">Jan</small>
+                    </div>
+                </div>
+                <div class="d-flex mb-2">
+                    <a class="text-secondary text-uppercase font-weight-medium" href="">Admin</a>
+                    <span class="text-primary px-2">|</span>
+                    <a class="text-secondary text-uppercase font-weight-medium" href="">Cleaning</a>
+                </div>
+                <h5 class="font-weight-medium mb-2">Rebum lorem eos ipsum diam</h5>
+                <p class="mb-4">Dolor justo sea kasd lorem clita justo no diam amet. Kasd magna dolor amet</p>
+                <a class="btn btn-sm btn-primary py-2" href="">Read More</a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="position-relative mb-4">
+                    <img class="img-fluid rounded w-100" src="{{asset('img/blog-2.jpg')}}" alt="">
+                    <div class="blog-date">
+                        <h4 class="font-weight-bold mb-n1">01</h4>
+                        <small class="text-white text-uppercase">Jan</small>
+                    </div>
+                </div>
+                <div class="d-flex mb-2">
+                    <a class="text-secondary text-uppercase font-weight-medium" href="">Admin</a>
+                    <span class="text-primary px-2">|</span>
+                    <a class="text-secondary text-uppercase font-weight-medium" href="">Cleaning</a>
+                </div>
+                <h5 class="font-weight-medium mb-2">Rebum lorem eos ipsum diam</h5>
+                <p class="mb-4">Dolor justo sea kasd lorem clita justo no diam amet. Kasd magna dolor amet</p>
+                <a class="btn btn-sm btn-primary py-2" href="">Read More</a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="position-relative mb-4">
+                    <img class="img-fluid rounded w-100" src="{{asset('img/blog-3.jpg')}}" alt="">
+                    <div class="blog-date">
+                        <h4 class="font-weight-bold mb-n1">01</h4>
+                        <small class="text-white text-uppercase">Jan</small>
+                    </div>
+                </div>
+                <div class="d-flex mb-2">
+                    <a class="text-secondary text-uppercase font-weight-medium" href="">Admin</a>
+                    <span class="text-primary px-2">|</span>
+                    <a class="text-secondary text-uppercase font-weight-medium" href="">Cleaning</a>
+                </div>
+                <h5 class="font-weight-medium mb-2">Rebum lorem eos ipsum diam</h5>
+                <p class="mb-4">Dolor justo sea kasd lorem clita justo no diam amet. Kasd magna dolor amet</p>
+                <a class="btn btn-sm btn-primary py-2" href="">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
 
 
 <!-- Footer Start -->
@@ -329,9 +669,7 @@
             <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum.</p>
             <div class="w-100">
                 <div class="input-group">
-                    <label>
-                        <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Your Email">
-                    </label>
+                    <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Your Email">
                     <div class="input-group-append">
                         <button class="btn btn-primary px-4">Sign Up</button>
                     </div>
@@ -374,19 +712,19 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-<script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-<script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
-<script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
+<script src="{{asset('lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+<script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
 
 <!-- Contact Javascript File -->
-<script src="{{ asset('mail/jqBootstrapValidation.min.js') }}"></script>
-<script src="{{ asset('mail/contact.js') }}"></script>
+<script src="{{asset('mail/jqBootstrapValidation.min.js')}}"></script>
+<script src="{{asset('mail/contact.js')}}"></script>
 
 <!-- Template Javascript -->
-<script src="{{ asset('js/home/main.js') }}"></script>
+<script src="{{asset('js/home/main.js')}}"></script>
 </body>
 
 </html>
