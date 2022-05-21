@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -76,18 +76,18 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="/main" class="nav-item nav-link">Strona główna</a>
+                        <a href="/" class="nav-item nav-link">Strona główna</a>
                         <a href="/about" class="nav-item nav-link active">O nas</a>
                         <a href="/service" class="nav-item nav-link">Serwis</a>
                         <a href="/project" class="nav-item nav-link">Projekt</a>
+                        <a href="/contact" class="nav-item nav-link">Kontakt</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Latest Blog</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
+                                <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
                             </div>
                         </div>
-                        <a href="/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
                 </div>
