@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adres;
 use App\Models\Przesylka;
+use App\Models\Rodzaj_dostawy;
 use Exception;
 use App\Models\Rodzaj_platnosci;
 use Illuminate\Contracts\View\View;
@@ -33,7 +35,9 @@ class PrzesylkaController extends Controller
     public function create(): View
     {
         return view("Przesylkas.create", [
-            'platnosc' => Rodzaj_platnosci::all()
+            'platnosci' => Rodzaj_platnosci::all(),
+            'dostawy' => Rodzaj_dostawy::all(),
+            'adresy' => Adres::all()
         ]);
 
     }
@@ -48,7 +52,7 @@ class PrzesylkaController extends Controller
     {
         $przesylka = new Przesylka($request->all());
         $przesylka->save();
-        return redirect(route('Przesylkas.index'));
+        return redirect(route('Adres.create'));
     }
 
     /**

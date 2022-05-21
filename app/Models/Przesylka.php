@@ -12,10 +12,11 @@ class Przesylka extends Model
 
     protected $fillable = array(
         'platnosc_id',
+        'dostawa_id',
+        'adres_id',
         'cena',
         'rodzaj_przesylki',
         'data_dostarczenia',
-        'id_adres',
     );
 
     protected $hidden = [

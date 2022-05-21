@@ -19,7 +19,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Rodzaj platnosci</th>
                     <th scope="col">Cena</th>
-                    <th scope="col">Rodzaj przesylki</th>
+                    <th scope="col">Rodzaj dostawy</th>
                     <th scope="col">Data dostarczenia</th>
                     <th scope="col">Akcje</th>
                 </tr>
@@ -28,9 +28,9 @@
                 @foreach($przesylkas as $przesylka)
                     <tr>
                         <th scope="row">{{$przesylka->id}}</th>
-                        <td>{{$przesylka->rodzaj_platnosci}}</td>
+                        <td>{{$przesylka->platnosc->platnosc}}</td>
                         <td>{{$przesylka->cena}}</td>
-                        <td>{{$przesylka->rodzaj_przesylki}}</td>
+                        <td>{{$przesylka->dostawa->dostawa}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
                         <td>
                             <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
