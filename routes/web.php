@@ -8,6 +8,9 @@ use App\Http\Controllers\KurierController;
 use App\Http\Controllers\KlientController;
 use App\Http\Controllers\MagazynierController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GoogleController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +22,7 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/kuriers/mapa', [GoogleController::class, 'deliveryman']);
 Route::get('/', function () {
     return view('main');
 });
