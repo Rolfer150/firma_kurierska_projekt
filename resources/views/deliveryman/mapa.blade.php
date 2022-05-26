@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style type="text/css">
         #map {
-            height: 400px;
+            height: 800px;
         }
     </style>
 </head>
@@ -21,7 +21,7 @@
 
 <script type="text/javascript">
     function initMap() {
-        const myLatLng = { lat: 22.2734719, lng: 70.7512559 };
+        const myLatLng = { lat: 49.625, lng: 20.695556 };
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 5,
             center: myLatLng,

@@ -14,9 +14,10 @@ class Przesylka extends Model
         'platnosc_id',
         'dostawa_id',
         'adres_id',
+        'paczkomat_id',
         'cena',
-        'rodzaj_przesylki',
         'data_dostarczenia',
+        'kod_paczkomat'
     );
 
     protected $hidden = [
