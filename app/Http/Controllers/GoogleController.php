@@ -16,3 +16,5 @@ class GoogleController extends Controller
         return view('kuriers/mapa');
     }
 }
+
+
