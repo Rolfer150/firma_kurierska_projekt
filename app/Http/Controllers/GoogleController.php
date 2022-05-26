@@ -15,6 +15,11 @@ class GoogleController extends Controller
     {
         return view('kuriers/mapa');
     }
+
+    public function mapa1()
+    {
+        return view('klients/mapa1');
+    }
 }
 
 

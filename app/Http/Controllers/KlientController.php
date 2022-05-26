@@ -14,4 +14,11 @@ class KlientController extends Controller
     {
         return view("users.hello",);
     }
+
+    public function mapa1(): View
+    {
+        return view("klients.mapa1",);
+    }
+
 }
+

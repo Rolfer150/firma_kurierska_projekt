@@ -19,7 +19,7 @@ return new class extends Migration
             $table->double('lng', 9, 6);
             $table->string('miasto_paczkomat');
             $table->integer('numer_paczkomat');
-            $table->string('ulica_paczkomat');
+            $table->string('nazwa_paczkomat');
             $table->string('haslo');
             $table->timestamps();
         });

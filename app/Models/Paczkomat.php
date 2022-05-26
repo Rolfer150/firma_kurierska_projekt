@@ -12,12 +12,18 @@ class Paczkomat extends Model
 
     protected $fillable = array(
         'powiat_id',
+        'lat',
+        'lng',
         'miasto_paczkomat',
         'numer_paczkomat',
-        'ulica_paczkomat',
-
+        'nazwa_paczkomat',
+        'haslo',
     );
 
+    protected $hidden = [
+        'haslo',
+        'remember_token',
+    ];
 
     public function powiat(): BelongsTo
     {
