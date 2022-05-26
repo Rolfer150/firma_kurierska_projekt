@@ -8,7 +8,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style type="text/css">
         #map {
+<<<<<<< HEAD
             height: 800px;
+=======
+            height: 650px;
+>>>>>>> ea76b3bb50664ab2401bab983dfa3174efdd06fa
         }
     </style>
 </head>
