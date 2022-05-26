@@ -21,6 +21,7 @@
                     <th scope="col">Cena</th>
                     <th scope="col">Rodzaj dostawy</th>
                     <th scope="col">Data dostarczenia</th>
+                    <th scope="col">Adres</th>
                     <th scope="col">Akcje</th>
                 </tr>
                 </thead>
@@ -32,6 +33,7 @@
                         <td>{{$przesylka->cena}}</td>
                         <td>{{$przesylka->dostawa->dostawa}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
+                        <td>{{$przesylka->adres_id}}</td>
                         <td>
                             <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
                                 <button class="btn btn-primary btn-sm">P</button>
