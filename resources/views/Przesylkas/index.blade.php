@@ -19,9 +19,9 @@
                     <th scope="col">#</th>
                     <th scope="col">Imie</th>
                     <th scope="col">Rodzaj platnosci</th>
-                    <th scope="col">Cena</th>
                     <th scope="col">Rodzaj dostawy</th>
                     <th scope="col">Wielkosc paczki</th>
+                    <th scope="col">Cena</th>
                     <th scope="col">Data dostarczenia</th>
                     <th scope="col">Adres</th>
                     <th scope="col">Akcje</th>
@@ -33,9 +33,9 @@
                         <th scope="row">{{$przesylka->id}}</th>
                         <td>{{$przesylka->user->name}}</td>
                         <td>{{$przesylka->platnosc->platnosc}}</td>
-                        <td>{{$przesylka->cena}}</td>
                         <td>{{$przesylka->dostawa->dostawa}}</td>
                         <td>{{$przesylka->wielkosc->wielkosc}}</td>
+                        <td>{{$przesylka->wielkosc->cena}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
                         <td>{{$przesylka->adres_id}}</td>
                         <td>

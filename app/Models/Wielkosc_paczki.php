@@ -12,6 +12,7 @@ class Wielkosc_paczki extends Model
 
     protected $fillable = array(
         'wielkosc',
+        'cena'
     );
 
     public function przesylkas(): HasMany

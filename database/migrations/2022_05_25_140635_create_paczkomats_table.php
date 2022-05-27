@@ -18,10 +18,17 @@ return new class extends Migration
             $table->double('lat', 9, 6);
             $table->double('lng', 9, 6);
             $table->string('miasto_paczkomat');
-            $table->integer('numer_paczkomat');
+            $table->integer('numer_ulicy_paczkomat');
             $table->string('ulica_paczkomat');
-            $table->string('haslo');
+            $table->string('kod_pocztowy_paczkomat');
+            $table->string('haslo_paczkomat');
+            $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->unsignedBigInteger('paczkomat_id')->nullable()->after('dostawa_id');
+            $table->foreign('paczkomat_id')->references('id')->on('paczkomats');
         });
     }
 
@@ -33,5 +40,10 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('paczkomats');
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->dropForeign('przesylkas_paczkomat_id_foreign');
+            $table->dropColumn('paczkomat_id');
+        });
     }
 };

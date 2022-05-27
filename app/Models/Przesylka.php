@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Przesylka extends Model
 {
@@ -15,9 +16,7 @@ class Przesylka extends Model
         'platnosc_id',
         'dostawa_id',
         'wielkosc_id',
-        'adres_id',
         'paczkomat_id',
-        'cena',
         'data_dostarczenia',
         'kod_paczkomat'
     );
@@ -44,5 +43,10 @@ class Przesylka extends Model
     public function wielkosc(): BelongsTo
     {
         return $this->belongsTo(Wielkosc_paczki::class);
+    }
+
+    public function adres(): HasOne
+    {
+        return $this->hasOne(Adres::class);
     }
 }

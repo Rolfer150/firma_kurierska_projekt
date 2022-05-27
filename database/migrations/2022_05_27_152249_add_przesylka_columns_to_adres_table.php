@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('adres_nadawcies', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('adres', function (Blueprint $table) {
+            $table->unsignedBigInteger('przesylka_id')->nullable()->after('id');
+            $table->foreign('przesylka_id')->references('id')->on('przesylkas');
         });
     }
 
@@ -26,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adres_nadawcies');
+        Schema::table('adres', function (Blueprint $table) {
+            $table->dropForeign('adres_przesylka_id_foreign');
+            $table->dropColumn('przesylka_id');
+        });
     }
 };

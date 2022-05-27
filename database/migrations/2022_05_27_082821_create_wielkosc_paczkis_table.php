@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('wielkosc_paczkis', function (Blueprint $table) {
             $table->id();
             $table->string('wielkosc');
+            $table->decimal('cena');
             $table->timestamps();
         });
 
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->unsignedBigInteger('wielkosc_id')->nullable()->after('dostawa_id');
+            $table->unsignedBigInteger('wielkosc_id')->nullable()->after('paczkomat_id');
             $table->foreign('wielkosc_id')->references('id')->on('wielkosc_paczkis');
         });
     }
