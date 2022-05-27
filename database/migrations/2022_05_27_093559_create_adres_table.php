@@ -14,12 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('adres', function (Blueprint $table) {
-                $table->id();
-                $table->string('miasto');
-                $table->integer('numer_domu');
-                $table->integer('numer_mieszkania')->nullable();
-                $table->string('ulica');
-                $table->timestamps();
+            $table->id();
+            $table->string('miasto');
+            $table->integer('numer_domu');
+            $table->integer('numer_mieszkania')->nullable();
+            $table->string('ulica');
+            $table->timestamps();
+        });
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->unsignedBigInteger('adres_id')->nullable()->after('cena');
+            $table->foreign('adres_id')->references('id')->on('adres')->onDelete('cascade');
         });
     }
 

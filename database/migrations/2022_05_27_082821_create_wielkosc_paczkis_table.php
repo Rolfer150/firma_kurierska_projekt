@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('wielkosc_paczkis', function (Blueprint $table) {
+            $table->id();
+            $table->string('wielkosc');
+            $table->timestamps();
+        });
+
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->unsignedBigInteger('adres_id')->nullable()->after('cena');
-            $table->foreign('adres_id')->references('id')->on('adres')->onDelete('cascade');
+            $table->unsignedBigInteger('wielkosc_id')->nullable()->after('dostawa_id');
+            $table->foreign('wielkosc_id')->references('id')->on('wielkosc_paczkis');
         });
     }
 
@@ -26,9 +32,11 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('wielkosc_paczkis');
+
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->dropForeign('przesylkas_adres_id_foreign');
-            $table->dropColumn('adres_id');
+            $table->dropForeign('przesylkas_wielkosc_id_foreign');
+            $table->dropColumn('wielkosc_id');
         });
     }
 };

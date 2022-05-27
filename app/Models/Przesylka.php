@@ -11,8 +11,10 @@ class Przesylka extends Model
     use HasFactory;
 
     protected $fillable = array(
+        'user_id',
         'platnosc_id',
         'dostawa_id',
+        'wielkosc_id',
         'adres_id',
         'paczkomat_id',
         'cena',
@@ -24,9 +26,9 @@ class Przesylka extends Model
         'remember_token',
     ];
 
-    public function adres(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(Adres::class);
+        return $this->belongsTo(User::class);
     }
 
     public function platnosc(): BelongsTo
@@ -37,5 +39,10 @@ class Przesylka extends Model
     public function dostawa(): BelongsTo
     {
         return $this->belongsTo(Rodzaj_dostawy::class);
+    }
+
+    public function wielkosc(): BelongsTo
+    {
+        return $this->belongsTo(Wielkosc_paczki::class);
     }
 }
