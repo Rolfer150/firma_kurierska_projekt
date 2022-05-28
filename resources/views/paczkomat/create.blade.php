@@ -12,17 +12,17 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="platnosc" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
+                                <label for="powiat" class="col-md-4 col-form-label text-md-end">Powiat</label>
 
                                 <div class="col-md-6">
-                                    <select id="platnosc_id" class="form-control @error('platnosc_id') is-invalid @enderror" name="platnosc_id" required>
+                                    <select id="powiat_id" class="form-control @error('powiat_id') is-invalid @enderror" name="powiat_id" required>
                                         <option>Brak</option>
-                                        @foreach($platnosci as $platnosc)
-                                            <option value="{{$platnosc->id}}">{{$platnosc->platnosc}}</option>
+                                        @foreach($powiaty as $powiat)
+                                            <option value="{{$powiat->id}}">{{$powiat->powiat}}</option>
                                         @endforeach
                                     </select>
 
-                                    @error('rodzaj_platnosci')
+                                    @error('powiat_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -31,12 +31,12 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Data dostarczenia</label>
+                                <label for="lat" class="col-md-4 col-form-label text-md-end">Szerokość geograficzna</label>
 
                                 <div class="col-md-6">
-                                    <input id="data_dostarczenia" type="date" class="form-control @error('data_dostarczenia') is-invalid @enderror" name="data_dostarczenia" value="{{ old('data_dostarczenia') }}" required autocomplete="data_dostarczenia" autofocus>
+                                    <input id="lat" type="text" class="form-control @error('lat') is-invalid @enderror" name="lat" value="{{ old('lat') }}" required autocomplete="lat" autofocus>
 
-                                    @error('data_dostarczenia')
+                                    @error('lat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -45,16 +45,12 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="dostawa" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
+                                <label for="lng" class="col-md-4 col-form-label text-md-end">Długość geograficzna</label>
 
                                 <div class="col-md-6">
-                                    <select id="dostawa_id" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" required>
-                                        <option>Brak</option>
-                                        @foreach($dostawy as $dostawa)
-                                            <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('rodzaj_platnosci')
+                                    <input id="lng" type="text" class="form-control @error('lng') is-invalid @enderror" name="lng" value="{{ old('lng') }}" required autocomplete="lng" autofocus>
+
+                                    @error('lng')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -63,16 +59,54 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="wielkosc" class="col-md-4 col-form-label text-md-end">Wielkosc paczki</label>
+                                <label for="miasto_paczkomat" class="col-md-4 col-form-label text-md-end">Miasto</label>
 
                                 <div class="col-md-6">
-                                    <select id="wielkosc_id" class="form-control @error('wielkosc_id') is-invalid @enderror" name="wielkosc_id" required>
-                                        <option>Brak</option>
-                                        @foreach($wielkosci as $wielkosc)
-                                            <option value="{{$wielkosc->id}}">{{$wielkosc->wielkosc}}, {{$wielkosc->cena}} zł</option>
-                                        @endforeach
-                                    </select>
-                                    @error('wielkosc_id')
+                                    <input id="miasto_paczkomat" type="text" class="form-control @error('miasto_paczkomat') is-invalid @enderror" name="miasto_paczkomat" required>
+
+                                    @error('miasto_paczkomat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="ulica_paczkomat" class="col-md-4 col-form-label text-md-end">Ulica</label>
+
+                                <div class="col-md-6">
+                                    <input id="ulica_paczkomat" type="text" class="form-control @error('ulica_paczkomat') is-invalid @enderror" name="ulica_paczkomat" required>
+
+                                    @error('ulica_paczkomat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="numer_ulicy_paczkomat" class="col-md-4 col-form-label text-md-end">Numer ulicy</label>
+
+                                <div class="col-md-6">
+                                    <input id="numer_ulicy_paczkomat" type="text" class="form-control @error('numer_ulicy_paczkomat') is-invalid @enderror" name="numer_ulicy_paczkomat" required>
+
+                                    @error('numer_ulicy_paczkomat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="kod_pocztowy_paczkomat" class="col-md-4 col-form-label text-md-end">Kod pocztowy</label>
+
+                                <div class="col-md-6">
+                                    <input id="kod_pocztowy_paczkomat" type="text" class="form-control @error('kod_pocztowy_paczkomat') is-invalid @enderror" name="kod_pocztowy_paczkomat" required>
+
+                                    @error('kod_pocztowy_paczkomat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -91,6 +125,7 @@
                         </form>
 
                     </div>
+                    <div class="card-body"></div>
                 </div>
             </div>
         </div>
