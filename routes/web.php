@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdresController;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\PrzesylkaController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KurierController;
 use App\Http\Controllers\KlientController;
