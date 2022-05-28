@@ -71,10 +71,6 @@
                                     <a class="dropdown-item" href="/users/list">Użytkownicy</a>
                                 @endcan
                                     <a class="dropdown-item" href="{{ route('Przesylkas.index') }}">Przesyłki</a>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6f3e8b9048111ca69a666f9e010f1a4e6a04ed61
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

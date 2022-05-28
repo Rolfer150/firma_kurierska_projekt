@@ -17,14 +17,6 @@ class Paczkomat extends Model
         'lng',
         'miasto_paczkomat',
         'numer_paczkomat',
-<<<<<<< HEAD
-        'nazwa_paczkomat',
-        'haslo',
-    );
-
-    protected $hidden = [
-        'haslo',
-=======
         'ulica_paczkomat',
         'haslo_paczkomat',
 
@@ -32,7 +24,6 @@ class Paczkomat extends Model
 
     protected $hidden = [
         'haslo_paczkomat',
->>>>>>> 6f3e8b9048111ca69a666f9e010f1a4e6a04ed61
         'remember_token',
     ];
 
