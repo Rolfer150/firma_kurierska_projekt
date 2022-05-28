@@ -20,6 +20,7 @@
                     <th scope="col">Powiat</th>
                     <th scope="col">Szerokość geograficzna</th>
                     <th scope="col">Długość geograficzna</th>
+                    <th scope="col">Opis</th>
                     <th scope="col">Miasto</th>
                     <th scope="col">Ulica</th>
                     <th scope="col">Numer ulicy</th>
@@ -33,6 +34,7 @@
                         <td>{{$paczkomat->powiat->powiat}}</td>
                         <td>{{$paczkomat->lat}}</td>
                         <td>{{$paczkomat->lng}}</td>
+                        <td>{{$paczkomat->opis_paczkomat}}</td>
                         <td>{{$paczkomat->miasto_paczkomat}}</td>
                         <td>{{$paczkomat->ulica_paczkomat}}</td>
                         <td>{{$paczkomat->numer_ulicy_paczkomat	}}</td>
