@@ -6,53 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
-    /*
-
     /**
      * Run the migrations.
      *
      * @return void
      */
-
-    /*
-
-/*
-* Run the migrations.
-*
-* @return void
-*/
-
     public function up()
     {
-        Schema::create('przesylkas', function (Blueprint $table) {
-            $table->id();
-            $table->date('data_dostarczenia');
-            $table->timestamps();
+        Schema::table('adres', function (Blueprint $table) {
+            $table->unsignedBigInteger('przesylka_id')->nullable()->after('id');
+            $table->foreign('przesylka_id')->references('id')->on('przesylkas');
         });
     }
-
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-
-    /*
-
-/*
-* Reverse the migrations.
-*
-* @return void
-*/
-
-
     public function down()
     {
-        Schema::dropIfExists('przesylkas');
+        Schema::table('adres', function (Blueprint $table) {
+            $table->dropForeign('adres_przesylka_id_foreign');
+            $table->dropColumn('przesylka_id');
+        });
     }
-
-
-
 };

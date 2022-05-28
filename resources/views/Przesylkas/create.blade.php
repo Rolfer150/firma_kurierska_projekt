@@ -63,12 +63,16 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="cena" class="col-md-4 col-form-label text-md-end">Cena (w złotówkach)</label>
+                                <label for="wielkosc" class="col-md-4 col-form-label text-md-end">Wielkosc paczki</label>
 
                                 <div class="col-md-6">
-                                    <input id="cena" type="number" step="0.01" min="0" class="form-control @error('cena') is-invalid @enderror" name="cena" required autocomplete="cena">
-
-                                    @error('cena')
+                                    <select id="wielkosc_id" class="form-control @error('wielkosc_id') is-invalid @enderror" name="wielkosc_id" required>
+                                        <option>Brak</option>
+                                        @foreach($wielkosci as $wielkosc)
+                                            <option value="{{$wielkosc->id}}">{{$wielkosc->wielkosc}}, {{$wielkosc->cena}} zł</option>
+                                        @endforeach
+                                    </select>
+                                    @error('wielkosc_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -78,12 +82,14 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button class="btn btn-primary">
-                                        Dalej
+                                    <button type="submit" class="btn btn-primary">
+                                        Zapisz wszystko
                                     </button>
                                 </div>
                             </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>

@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->unsignedBigInteger('adres_id')->nullable()->after('cena');
-            $table->foreign('adres_id')->references('id')->on('adres');
+            $table->unsignedBigInteger('user_id')->nullable()->after('wielkosc_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -27,8 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('przesylkas', function (Blueprint $table) {
-            $table->dropForeign('przesylkas_adres_id_foreign');
-            $table->dropColumn('adres_id');
+            $table->dropForeign('przesylkas_user_id_foreign');
+            $table->dropColumn('user_id');
         });
     }
 };

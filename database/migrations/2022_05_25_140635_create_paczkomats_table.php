@@ -18,10 +18,23 @@ return new class extends Migration
             $table->double('lat', 9, 6);
             $table->double('lng', 9, 6);
             $table->string('miasto_paczkomat');
+<<<<<<< HEAD
             $table->integer('numer_paczkomat');
             $table->string('nazwa_paczkomat');
             $table->string('haslo');
+=======
+            $table->integer('numer_ulicy_paczkomat');
+            $table->string('ulica_paczkomat');
+            $table->string('kod_pocztowy_paczkomat');
+            $table->string('haslo_paczkomat');
+            $table->rememberToken();
+>>>>>>> 6f3e8b9048111ca69a666f9e010f1a4e6a04ed61
             $table->timestamps();
+        });
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->unsignedBigInteger('paczkomat_id')->nullable()->after('dostawa_id');
+            $table->foreign('paczkomat_id')->references('id')->on('paczkomats');
         });
     }
 
@@ -33,5 +46,10 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('paczkomats');
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->dropForeign('przesylkas_paczkomat_id_foreign');
+            $table->dropColumn('paczkomat_id');
+        });
     }
 };

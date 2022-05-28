@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('adres', function (Blueprint $table) {
-                $table->id();
-                $table->string('miasto');
-                $table->integer('numer_domu');
-                $table->integer('numer_mieszkania')->nullable();
-                $table->string('ulica');
-                $table->timestamps();
+            $table->id();
+            $table->string('miasto', 255);
+            $table->string('ulica', 255);
+            $table->string('numer_domu', 5);
+            $table->string('numer_mieszkania', 5)->nullable();
+            $table->string('kod_pocztowy', 6);
+            $table->timestamps();
         });
     }
 

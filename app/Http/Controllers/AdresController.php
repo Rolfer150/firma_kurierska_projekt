@@ -28,7 +28,7 @@ class AdresController extends Controller
     public function create(): View
     {
         return view("Adres.create", [
-
+            'adresy' => Adres::all()
         ]);
     }
 
@@ -40,8 +40,10 @@ class AdresController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $przesylka = new Przesylka($request->all());
+        $przesylka->save();
         $adres = new Adres($request->all());
-        $adres->adres_id->save();
+        $adres->save();
         return redirect(route('Przesylkas.index'));
     }
 

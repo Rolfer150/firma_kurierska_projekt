@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Adres extends Model
@@ -18,8 +19,8 @@ class Adres extends Model
         'ulica',
     );
 
-    public function przesylkas(): HasMany
+    public function przesylka(): BelongsTo
     {
-        return $this->hasMany(Przesylka::class);
+        return $this->belongsTo(Przesylka::class);
     }
 }
