@@ -4,7 +4,7 @@
     <title>Mapa dla kuriera - Firma kurierska</title>
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style type="text/css">
