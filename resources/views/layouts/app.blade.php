@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/home/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -69,8 +69,8 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 @can('isAdmin')
                                     <a class="dropdown-item" href="/users/list">Użytkownicy</a>
-                                    <a class="dropdown-item" href="{{ route('Przesylkas.index') }}">Przesyłki</a>
                                 @endcan
+                                    <a class="dropdown-item" href="{{ route('Przesylkas.index') }}">Przesyłki</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
