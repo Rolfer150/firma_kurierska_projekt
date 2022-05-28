@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h1>Lista przesyłek</h1>
+                <h1>Lista paczkomatów</h1>
             </div>
             <div class="col-6">
-                <a class="float-end" href="{{ route('Przesylkas.create') }}">
+                <a class="float-end" href="{{ route('paczkomat.create') }}">
                     <button type="button" class="btn btn-primary">Dodaj</button>
                 </a>
             </div>
@@ -28,35 +28,35 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($przesylkas as $przesylka)
+                @foreach($paczkomaty as $paczkomat)
                     <tr>
-                        <th scope="row">{{$przesylka->id}}</th>
-                        <td>{{$przesylka->user->name}}</td>
-                        <td>{{$przesylka->platnosc->platnosc}}</td>
-                        <td>{{$przesylka->dostawa->dostawa}}</td>
-                        <td>{{$przesylka->wielkosc->wielkosc}}</td>
-                        <td>{{$przesylka->wielkosc->cena}}</td>
-                        <td>{{$przesylka->data_dostarczenia}}</td>
-                        <td>{{$przesylka->adres_id}}</td>
+                        <th scope="row">{{$paczkomat->id}}</th>
+                        <td>{{$paczkomat->powiat->powiat}}</td>
+                        <td>{{$paczkomat->lat}}</td>
+                        <td>{{$paczkomat->lng}}</td>
+                        <td>{{$paczkomat->miasto_paczkomat}}</td>
+                        <td>{{$paczkomat->numer_ulicy_paczkomat	}}</td>
+                        <td>{{$paczkomat->ulica_paczkomat}}</td>
+                        <td>{{$paczkomat->kod_pocztowy_paczkomat}}</td>
                         <td>
-                            <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
+                            <a href="{{ route('paczkomat.show', $paczkomat->id) }}">
                                 <button class="btn btn-primary btn-sm">P</button>
                             </a>
-                            <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
+                            <a href="{{ route('paczkomat.edit', $paczkomat->id) }}">
                                 <button class="btn btn-success btn-sm">E</button>
                             </a>
-                            <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id }}">X</button>
+                            <button class="btn btn-danger btn-sm delete" data-id="{{ $paczkomat->id }}">X</button>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            {{ $przesylkas->links() }}
+            {{ $paczkomaty->links() }}
         </div>
     </div>
 @endsection
 @section('javascript')
-    const deleteUrl = "{{ url('przesylkas') }}/";
+    const deleteUrl = "{{ url('paczkomats') }}/";
 @endsection
 @section('js-files')
     <script src="{{ asset('js/delete1.js') }}"></script>

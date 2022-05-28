@@ -10,6 +10,7 @@ use App\Http\Controllers\KlientController;
 use App\Http\Controllers\MagazynierController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\PaczkomatController;
 
 
 
@@ -35,18 +36,27 @@ Route::get('/project', [HelloWorldController::class, 'project']);
 Route::get('/contact', [HelloWorldController::class, 'contact']);
 
 Route::get('hello', [HelloWorldController::class, 'hello']);
-Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
+Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware('can:isAdmin');
+
+Route::get('/paczkomats', [PaczkomatController::class, 'index'])->name('paczkomat.index')->middleware('can:isAdmin');
+Route::get('/paczkomats/create', [PaczkomatController::class, 'create'])->name('paczkomat.create');
+Route::post('/paczkomats/store', [PaczkomatController::class, 'store'])->name('paczkomat.store');
+Route::get('/paczkomats/{paczkomat}', [PaczkomatController::class, 'show'])->name('paczkomat.show');
+Route::get('/paczkomats/edit/{paczkomat}', [PaczkomatController::class, 'edit'])->name('paczkomat.edit')->middleware('can:isAdmin');
+Route::post('/paczkomats/{paczkomat}', [PaczkomatController::class, 'update'])->name('paczkomat.update')->middleware('can:isAdmin');
+Route::delete('/paczkomats/{paczkomat}', [PaczkomatController::class, 'destroy'])->name('paczkomat.destroy')->middleware('can:isAdmin');
+
 Route::get('/przesylkas', [PrzesylkaController::class, 'index'])->name('Przesylkas.index');
 Route::get('/przesylkas/create', [PrzesylkaController::class, 'create'])->name('Przesylkas.create');
-Route::post('/przesylkas', [PrzesylkaController::class, 'store'])->name('Przesylkas.store');
 Route::get('/przesylkas/{przesylka}', [PrzesylkaController::class, 'show'])->name('Przesylkas.show');
-Route::get('/przesylkas/create/adres', [AdresController::class, 'create'])->name('Adres.create');
-Route::post('/przesylkas/adres/store', [AdresController::class, 'store'])->name('Adres.store');
 Route::post('/przesylkas/store', [PrzesylkaController::class, 'store'])->name('Przesylkas.store');
 Route::get('/przesylkas/edit/{przesylka}', [PrzesylkaController::class, 'edit'])->name('Przesylkas.edit');
 Route::post('/przesylkas/{przesylka}', [PrzesylkaController::class, 'update'])->name('Przesylkas.update');
 Route::delete('/przesylkas/{przesylka}', [PrzesylkaController::class, 'destroy'])->name('Przesylkas.destroy');
+
+Route::get('/przesylkas/create/adres', [AdresController::class, 'create'])->name('Adres.create');
+Route::post('/przesylkas/adres/store', [AdresController::class, 'store'])->name('Adres.store');
 
 Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
 
