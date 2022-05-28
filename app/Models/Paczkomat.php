@@ -15,10 +15,11 @@ class Paczkomat extends Model
         'powiat_id',
         'lat',
         'lng',
+        'opis_paczkomat',
         'miasto_paczkomat',
-        'numer_paczkomat',
         'ulica_paczkomat',
-        'haslo_paczkomat',
+        'numer_ulicy_paczkomat',
+        'kod_pocztowy_paczkomat',
 
     );
 
