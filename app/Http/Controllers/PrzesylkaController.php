@@ -39,7 +39,6 @@ class PrzesylkaController extends Controller
             'platnosci' => Rodzaj_platnosci::all(),
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
-            'adresy' => Adres::all(),
         ]);
 
     }
@@ -79,7 +78,10 @@ class PrzesylkaController extends Controller
     public function edit(Przesylka $przesylka): View
     {
         return view("Przesylkas.edit", [
-            'przesylka' => $przesylka
+            'przesylka' => $przesylka,
+            'platnosci' => Rodzaj_platnosci::all(),
+            'dostawy' => Rodzaj_dostawy::all(),
+            'wielkosci' => Wielkosc_paczki::all(),
         ]);
     }
 

@@ -21,7 +21,7 @@
                     <th scope="col">Rodzaj platnosci</th>
                     <th scope="col">Rodzaj dostawy</th>
                     <th scope="col">Wielkosc paczki</th>
-                    <th scope="col">Cena</th>
+                    <th scope="col">Cena (zł)</th>
                     <th scope="col">Data dostarczenia</th>
                     <th scope="col">Adres</th>
                     <th scope="col">Akcje</th>
