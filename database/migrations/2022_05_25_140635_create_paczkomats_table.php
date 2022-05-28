@@ -19,6 +19,12 @@ return new class extends Migration
             $table->double('lng', 9, 6);
             $table->string('opis_paczkomat');
             $table->string('miasto_paczkomat');
+<<<<<<< HEAD
+=======
+            $table->string('nazwa_paczkomat');
+            $table->string('haslo');
+            $table->integer('numer_ulicy_paczkomat');
+>>>>>>> 5c422986fadcff3cb8e862ac3a212b5ad35e2e5c
             $table->string('ulica_paczkomat');
             $table->string('numer_ulicy_paczkomat');
             $table->string('kod_pocztowy_paczkomat');
