@@ -2,12 +2,10 @@
 
 <head>
     <title>Mapa dla kuriera - Firma kurierska</title>
-<<<<<<< HEAD
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
     <meta charset="utf-8">
-=======
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style type="text/css">
         #map {
@@ -15,7 +13,6 @@
             height: 650px;
         }
     </style>
->>>>>>> 6f3e8b9048111ca69a666f9e010f1a4e6a04ed61
 </head>
 
 <body>
