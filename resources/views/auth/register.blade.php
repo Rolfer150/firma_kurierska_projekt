@@ -1,9 +1,15 @@
 @extends('layouts.app')
+<link href="{{ asset('css/home/login.css') }}" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
 @section('content')
+    <section class="login-block">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __('Rejestracja') }}</div>
 
@@ -91,9 +97,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Zarejestruj się') }}
-                                    </button>
+                                    <button type="submit" class="btn btn-login float-right">Zarejestruj się</button>
                                 </div>
                             </div>
                         </form>

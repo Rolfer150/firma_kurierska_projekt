@@ -1,21 +1,11 @@
 <html>
 
 <head>
-    <title>Mapa dla kuriera - Firma kurierska</title>
-<<<<<<< HEAD
+    <title>Mapa dla klienta - Firma kurierska</title>
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
     <meta charset="utf-8">
-=======
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <style type="text/css">
-        #map {
-            width: 800px;
-            height: 650px;
-        }
-    </style>
->>>>>>> 6f3e8b9048111ca69a666f9e010f1a4e6a04ed61
 </head>
 
 <body>
@@ -33,16 +23,10 @@
     $(document).ready(function() {
         //get data set from the backend in a json structure
         var data = [{
-            "description": "Siedziba - Firma kurierska",
-            "latitude": "49.608921",
-            "longitude": "20.703381"
-        },
-
-            {
-            "description": "Paczkomat na Jojku",
-            "latitude": "49.6176267",
-            "longitude": "20.7166797"
-        },
+                "description": "Paczkomat na Jojku",
+                "latitude": "49.6176267",
+                "longitude": "20.7166797"
+            },
             {
                 "description": "Paczkomat na ul. Lwowskiej",
                 "latitude": "49.624616",
@@ -78,8 +62,8 @@
         //create instance of google information windown
         infowindow = new google.maps.InfoWindow();
         var marker, i;
-         //var MarkerImg = "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle.png";
-         //var MarkerImg2 = "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle_blue.png";
+        //var MarkerImg = "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle.png";
+        //var MarkerImg2 = "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle_blue.png";
 
         //loop through all the locations and point the mark in the google map
         for (var i = 0; i < data.length; i++) {

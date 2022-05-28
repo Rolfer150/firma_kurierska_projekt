@@ -12,6 +12,13 @@ class KlientController extends Controller
     //
     public function index(): View
     {
-        return view("users.hello",);
+        return view("klient.hello",);
     }
+
+    public function mapa1(): View
+    {
+        return view("klient.mapa1",);
+    }
+
 }
+

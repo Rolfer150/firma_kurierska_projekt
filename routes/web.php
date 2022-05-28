@@ -24,6 +24,8 @@ use App\Http\Controllers\GoogleController;
 |
 */
 Route::get('/kuriers/mapa', [GoogleController::class, 'deliveryman']);
+Route::get('/klients/mapa1', [GoogleController::class, 'klient']);
+
 Route::get('/', function () {
     return view('main');
 });
@@ -54,7 +56,9 @@ Route::get('kuriers/mapa',[KurierController::class,'mapa'])->name('deliveryman.m
 Route::get('kuriers/powiadomienie',[KurierController::class,'powiadomienie'])->name('deliveryman.powiadomienie')->middleware('can:isDeliveryman');
 
 
-Route::get('klients',[KlientController::class,'index'])->name('users.hello')->middleware('can:isUser');
+Route::get('klients',[KlientController::class,'index'])->name('klient.hello')->middleware('can:isUser');
+Route::get('klients/mapa1',[KlientController::class,'mapa1'])->name('klient.mapa1')->middleware('can:isUser');
+
 Route::get('magazyniers',[MagazynierController::class,'getData']);
 
 Auth::routes();

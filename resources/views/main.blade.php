@@ -47,8 +47,6 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link active">Strona główna</a>
                         <a href="/about" class="nav-item nav-link">O nas</a>
-                        <a href="/service" class="nav-item nav-link">Serwis</a>
-                        <a href="/project" class="nav-item nav-link">Projekt</a>
                         <a href="/contact" class="nav-item nav-link">Kontakt</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
@@ -58,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Sprawdź</a>
+                    <a href="/register" class="btn btn-primary mr-3 d-none d-lg-block">Sprawdź</a>
                 </div>
             </nav>
         </div>
@@ -82,7 +80,7 @@
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
                         <h1 class="display-3 text-white mb-md-4">Najlepsi w dostarczaniu Twoich paczek</h1>
-                        <a href="" class="btn btn-primary">Sprawdź</a>
+                        <a href="/register" class="btn btn-primary">Sprawdź</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +90,7 @@
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
                         <h1 class="display-3 text-white mb-md-4">Pełen profesjonalizm naszych kurierów</h1>
-                        <a href="" class="btn btn-primary">Sprawdź</a>
+                        <a href="/register" class="btn btn-primary">Sprawdź</a>
                     </div>
                 </div>
             </div>
@@ -102,7 +100,7 @@
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
                         <h1 class="display-3 text-white mb-md-4">Szybko oraz bezpieczenie do celu</h1>
-                        <a href="" class="btn btn-primary">Sprawdź</a>
+                        <a href="/register" class="btn btn-primary">Sprawdź</a>
                     </div>
                 </div>
             </div>
@@ -173,11 +171,9 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="font-weight-semi-bold text-primary mb-4">Skróty</h4>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Strona główna</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>O nas</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Nasz serwis</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Nasz projekt</a>
-                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Kontakt</a>
+                <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Strona główna</a>
+                <a class="text-white mb-2" href="/about"><i class="fa fa-angle-right mr-2"></i>O nas</a>
+                <a class="text-white" href="/contact"><i class="fa fa-angle-right mr-2"></i>Kontakt</a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
