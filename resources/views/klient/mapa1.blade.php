@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<div id="map-canvas" style="width: 1520px; height: 710px;">
+<div id="map-canvas" style="width: 1518px; height: 722px;">
 </div>
 
 </body>

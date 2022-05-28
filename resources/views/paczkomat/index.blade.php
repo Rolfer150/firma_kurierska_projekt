@@ -16,15 +16,14 @@
             <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Imie</th>
-                    <th scope="col">Rodzaj platnosci</th>
-                    <th scope="col">Rodzaj dostawy</th>
-                    <th scope="col">Wielkosc paczki</th>
-                    <th scope="col">Cena</th>
-                    <th scope="col">Data dostarczenia</th>
-                    <th scope="col">Adres</th>
-                    <th scope="col">Akcje</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Powiat</th>
+                    <th scope="col">Szerokość geograficzna</th>
+                    <th scope="col">Długość geograficzna</th>
+                    <th scope="col">Miasto</th>
+                    <th scope="col">Ulica</th>
+                    <th scope="col">Numer ulicy</th>
+                    <th scope="col">Kod pocztowy</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,8 +34,8 @@
                         <td>{{$paczkomat->lat}}</td>
                         <td>{{$paczkomat->lng}}</td>
                         <td>{{$paczkomat->miasto_paczkomat}}</td>
-                        <td>{{$paczkomat->numer_ulicy_paczkomat	}}</td>
                         <td>{{$paczkomat->ulica_paczkomat}}</td>
+                        <td>{{$paczkomat->numer_ulicy_paczkomat	}}</td>
                         <td>{{$paczkomat->kod_pocztowy_paczkomat}}</td>
                         <td>
                             <a href="{{ route('paczkomat.show', $paczkomat->id) }}">
