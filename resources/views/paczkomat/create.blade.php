@@ -59,6 +59,20 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="opis_paczkomat" class="col-md-4 col-form-label text-md-end">Opis</label>
+
+                                <div class="col-md-6">
+                                    <input id="opis_paczkomat" type="text" class="form-control @error('opis_paczkomat') is-invalid @enderror" name="opis_paczkomat" autofocus>
+
+                                    @error('opis_paczkomat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label for="miasto_paczkomat" class="col-md-4 col-form-label text-md-end">Miasto</label>
 
                                 <div class="col-md-6">
