@@ -24,6 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('css/home/style.css')}}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>
@@ -50,11 +51,27 @@
                     <a href="/contact" class="nav-item nav-link">Kontakt</a>
                     <div class="nav-item dropdown">
                         @guest
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
-                            <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
-                        </div>
+                            @if (Route::has('login'))
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
+                                </div>
+                            @endif
+                            @if (Route::has('register'))
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
+                                </div>
+                            @endif
+                        @else
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="#" class="dropdown-item">Edycja konta</a>
+                                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Wyloguj się</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                         @endguest
                     </div>
                 </div>
@@ -68,6 +85,7 @@
 
 
 <!-- Carousel Start -->
+<main
 <div class="container-fluid p-0">
     <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -222,11 +240,9 @@
     <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
-
     <!-- Contact Javascript File -->
     <script src="{{asset('mail/jqBootstrapValidation.min.js')}}"></script>
     <script src="{{asset('mail/contact.js')}}"></script>
-
     <!-- Template Javascript -->
     <script src="{{asset('js/home/main.js')}}"></script>
 </body>

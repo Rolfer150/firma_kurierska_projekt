@@ -1,17 +1,35 @@
-@extends('layouts.app')
-<link href="{{ asset('css/home/login.css') }}" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-@section('content')
-    <section class="login-block">
+<head>
+    <meta charset="utf-8">
+    <title>Firma kurierska - Strona główna</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicon -->
+    <link href="{{asset('img/favicon.ico')}}" rel="icon">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('css/home/login.css') }}" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<section class="login-block" style="height: 721px">
     <div class="container">
+        <div class="navbar">
+            <div class="row">
+                <a class="btn" href="/">Strona główna</a>
+            </div>
+            <div class="row">
+                <a class="btn float-right" href="{{ route('login') }}">{{ __('Logowanie') }}</a>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">{{ __('Rejestracja') }}</div>
+            <div class="col-md-12 register-sec">
+                    <h2 class="text-center">{{ __('Rejestracja') }}</h2>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -105,5 +123,6 @@
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+</section>
+</body>
+</html>
