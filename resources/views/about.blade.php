@@ -35,38 +35,7 @@
                 <h1 class="m-0 display-7 text-primary">Firma kurierska</h1>
             </a>
         </div>
-        <div class="col-lg-9">
-            <div class="row bg-dark d-none d-lg-flex">
-                <div class="col-lg-7 text-left text-white">
-                    <div class="h-100 d-inline-flex align-items-center border-right border-primary py-2 px-3">
-                        <i class="fa fa-envelope text-primary mr-2"></i>
-                        <small>firma_kurierska@projekt.com</small>
-                    </div>
-                    <div class="h-100 d-inline-flex align-items-center py-2 px-2">
-                        <i class="fa fa-phone-alt text-primary mr-2"></i>
-                        <small>+123 456 789</small>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-right">
-                    <div class="d-inline-flex align-items-center pr-2">
-                        <a class="text-primary p-2" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-primary p-2" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-primary p-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-primary p-2" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-primary p-2" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
                 <a href="" class="navbar-brand d-block d-lg-none">
                     <h1 class="m-0 display-4 text-primary">Firma kurierska</h1>

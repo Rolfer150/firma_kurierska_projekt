@@ -27,9 +27,7 @@ use App\Http\Controllers\PaczkomatController;
 Route::get('/kuriers/mapa', [GoogleController::class, 'deliveryman']);
 Route::get('/klients/mapa1', [GoogleController::class, 'klient']);
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::redirect('/', 'login');
 Route::get('/about', [HelloWorldController::class, 'about']);
 Route::get('/service', [HelloWorldController::class, 'service']);
 Route::get('/project', [HelloWorldController::class, 'project']);

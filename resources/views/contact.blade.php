@@ -77,8 +77,8 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link">Strona główna</a>
-                        <a href="/about" class="nav-item nav-link active">O nas</a>
-                        <a href="/contact" class="nav-item nav-link">Kontakt</a>
+                        <a href="/about" class="nav-item nav-link">O nas</a>
+                        <a href="/contact" class="nav-item nav-link active">Kontakt</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
                             <div class="dropdown-menu rounded-0 m-0">

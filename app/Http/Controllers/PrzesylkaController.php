@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Adres;
+use App\Models\Paczkomat;
 use App\Models\Przesylka;
 use App\Models\Rodzaj_dostawy;
 use App\Models\Wielkosc_paczki;
@@ -39,7 +39,7 @@ class PrzesylkaController extends Controller
             'platnosci' => Rodzaj_platnosci::all(),
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
-            'adresy' => Adres::all(),
+            'paczkomaty' => Paczkomat::all(),
         ]);
 
     }

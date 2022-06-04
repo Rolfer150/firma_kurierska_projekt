@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('zawartosc')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -49,13 +52,11 @@
                     <a href="/about" class="nav-item nav-link">O nas</a>
                     <a href="/contact" class="nav-item nav-link">Kontakt</a>
                     <div class="nav-item dropdown">
-                        @guest
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
                             <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
                         </div>
-                        @endguest
                     </div>
                 </div>
                 <a href="/register" class="btn btn-primary mr-3 d-none d-lg-block">Sprawdź</a>
@@ -232,3 +233,4 @@
 </body>
 
 </html>
+@endsection
