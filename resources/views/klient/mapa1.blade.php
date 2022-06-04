@@ -23,30 +23,10 @@
     $(document).ready(function() {
         //get data set from the backend in a json structure
         var data = [{
-                "description": "Paczkomat na Jojku",
-                "latitude": "49.6176267",
-                "longitude": "20.7166797"
-            },
-            {
-                "description": "Paczkomat na ul. Lwowskiej",
-                "latitude": "49.624616",
-                "longitude": "20.706526"
-            },
-
-            {
-                "description": "Paczkomat w Parku Strzeleckim",
-                "latitude": "49.617521",
-                "longitude": "20.686003"
-            },
-
-            {
-                "description": "Paczkomat w Piątkowej",
-                "latitude": "49.626869",
-                "longitude": "20.760680"
-            }
-
-
-        ]
+            "description": "Siedziba firmy - Firma kurierska",
+            "latitude": "49.609104",
+            "longitude": "20.703868"
+            }]
         ViewCustInGoogleMap(data);
     });
 
@@ -54,8 +34,8 @@
         var gm = google.maps; //create instance of google map
         //add initial map option
         var mapOptions = {
-            center: new google.maps.LatLng(49.6176267, 20.7166797),
-            zoom: 13.1,
+            center: new google.maps.LatLng(49.609104, 20.703868),
+            zoom: 15,
         };
         //bine html tag to show the google map and bind mapoptions
         map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
