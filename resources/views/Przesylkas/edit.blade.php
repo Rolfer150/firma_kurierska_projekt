@@ -15,7 +15,12 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
 
                                 <div class="col-md-6">
-                                    <input id="rodzaj_platnosci" type="text" class="form-control @error('rodzaj_platnosci') is-invalid @enderror" name="rodzaj_platnosci" value="{{ $przesylka->rodzaj_platnosci }}" required autocomplete="rodzaj_platnosci" autofocus>
+                                    <select id="platnosc_id" class="form-control @error('platnosc_id') is-invalid @enderror" name="platnosc_id" required>
+                                        <option>Brak</option>
+                                        @foreach($platnosci as $platnosc)
+                                            <option value="{{$platnosc->id}}">{{$platnosc->platnosc}}</option>
+                                        @endforeach
+                                    </select>
 
                                     @error('rodzaj_platnosci')
                                     <span class="invalid-feedback" role="alert">
@@ -43,8 +48,12 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj przesyłki</label>
 
                                 <div class="col-md-6">
-                                    <input id="rodzaj_przesylki" type="text" class="form-control @error('rodzaj_przesylki') is-invalid @enderror" name="rodzaj_przesylki" value="{{ $przesylka->rodzaj_przesylki }}" required autocomplete="rodzaj_przesylki">
-
+                                    <select id="platnosc_id" class="form-control @error('platnosc_id') is-invalid @enderror" name="platnosc_id" required>
+                                        <option>Brak</option>
+                                        @foreach($dostawy as $dostawa)
+                                            <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
+                                        @endforeach
+                                    </select>
                                     @error('rodzaj_przesylki')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -54,11 +63,15 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="cena" class="col-md-4 col-form-label text-md-end">Cena (w złotówkach)</label>
+                                <label for="cena" class="col-md-4 col-form-label text-md-end">Wielkość przesyłki i cena(zł)</label>
 
                                 <div class="col-md-6">
-                                    <input id="cena" type="number" step="0.01" min="0" class="form-control @error('cena') is-invalid @enderror" name="cena" value="{{ $przesylka->cena }}" required autocomplete="cena">
-
+                                    <select id="wielkosc_id" class="form-control @error('wielkosc_id') is-invalid @enderror" name="wielkosc_id" required>
+                                        <option>Brak</option>
+                                        @foreach($wielkosci as $wielkosc)
+                                            <option value="{{$wielkosc->id}}">{{$wielkosc->wielkosc}}, {{$wielkosc->cena}} zł</option>
+                                        @endforeach
+                                    </select>
                                     @error('cena')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

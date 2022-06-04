@@ -17,10 +17,10 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności </label>
 
                                 <div class="col-md-6">
-                                    <input id="rodzaj_platnosci" type="text" class="form-control" name="rodzaj_platnosci" value="{{ $przesylka->rodzaj_platnosci }}" disabled>
+                                    <input id="rodzaj_platnosci" type="text" class="form-control" name="rodzaj_platnosci" value="{{ $przesylka->platnosc->platnosc }}" disabled>
                                 </div>
                             </div>
 
@@ -33,10 +33,10 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj przesyłki</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
 
                                 <div class="col-md-6">
-                                    <input id="rodzaj_przesylki" type="text" class="form-control" name="rodzaj_przesylki" value="{{ $przesylka->rodzaj_przesylki }}" disabled>
+                                    <input id="rodzaj_przesylki" type="text" class="form-control" name="rodzaj_dostawy" value="{{ $przesylka->dostawa->dostawa }}" disabled>
                                 </div>
                             </div>
 
@@ -44,7 +44,7 @@
                                 <label for="cena" class="col-md-4 col-form-label text-md-end">Cena (w złotówkach)</label>
 
                                 <div class="col-md-6">
-                                    <input id="cena" type="number" step="0.01" min="0" class="form-control" name="cena" value="{{ $przesylka->cena }}" disabled>
+                                    <input id="cena" type="number" step="0.01" min="0" class="form-control" name="cena" value="{{ $przesylka->wielkosc->cena }}" disabled>
                                 </div>
                             </div>
                     </div>
