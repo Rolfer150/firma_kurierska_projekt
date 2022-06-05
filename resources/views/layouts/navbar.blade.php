@@ -58,7 +58,7 @@
                     @else
                         @can('isUser')
                             <a href="{{ route('klient.hello') }}" class="nav-item nav-link active">Strona główna - klient</a>
-                            <a href="/about" class="nav-item nav-link">Nadaj przesyłkę</a>
+                            <a href="{{ route('Przesylkas.indexklient') }}" class="nav-item nav-link">Nadaj przesyłkę</a>
                             <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
                         @endcan
                         @can('isDeliveryman')

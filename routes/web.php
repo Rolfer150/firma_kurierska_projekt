@@ -67,9 +67,15 @@ Route::get('kuriers/przesylki',[KurierController::class,'przesylka'])->name('del
 Route::get('kuriers/mapa',[KurierController::class,'mapa'])->name('deliveryman.mapa')->middleware('can:isDeliveryman');
 Route::get('kuriers/powiadomienie',[KurierController::class,'powiadomienie'])->name('deliveryman.powiadomienie')->middleware('can:isDeliveryman');
 
-
-Route::get('klients',[KlientController::class,'index'])->name('klient.hello')->middleware('can:isUser');
+Route::get('klients',[KlientController::class, 'index'])->name('klient.hello')->middleware('can:isUser');
 Route::get('klients/mapa1',[KlientController::class,'mapa1'])->name('klient.mapa1')->middleware('can:isUser');
+Route::get('klients/przesylkas',[PrzesylkaController::class,'indexklient'])->name('Przesylkas.indexklient')->middleware('can:isUser');
+Route::get('klients/przesylkas/create', [PrzesylkaController::class, 'createklient'])->name('Przesylkas.createklient')->middleware('can:isUser');
+Route::get('klients/przesylkas/{przesylka}', [PrzesylkaController::class, 'showklient'])->name('Przesylkas.showklient')->middleware('can:isUser');
+Route::post('klients/przesylkas/store', [PrzesylkaController::class, 'storeklient'])->name('Przesylkas.storeklient')->middleware('can:isUser');
+Route::get('klients/przesylkas/edit/{przesylka}', [PrzesylkaController::class, 'editklient'])->name('Przesylkas.editklient')->middleware('can:isUser');
+Route::post('klients/przesylkas/{przesylka}', [PrzesylkaController::class, 'updateklient'])->name('Przesylkas.updateklient')->middleware('can:isUser');
+Route::delete('klients/przesylkas/{przesylka}', [PrzesylkaController::class, 'destroy'])->name('Przesylkas.destroy');
 
 Route::get('magazyniers',[MagazynierController::class,'getData']);
 
