@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Powiaty::class,
             Rodzaj_platnosci1::class,
-            Rodzaj_dostawy1::class
+            Rodzaj_dostawy1::class,
+            WielkoscSeeder::class,
         ]);
     }
 }
