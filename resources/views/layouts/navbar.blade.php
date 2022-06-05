@@ -41,29 +41,61 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                @guest
                 <div class="navbar-nav mr-auto py-0">
                     <a href="/" class="nav-item nav-link active">Strona główna</a>
                     <a href="/about" class="nav-item nav-link">O nas</a>
                     <a href="/contact" class="nav-item nav-link">Kontakt</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
-                            <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
-                        </div>
+                        @if (Route::has('login') && Route::has('register'))
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
+                                <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
+                            </div>
+                        @endif
+                        @else
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="#" class="dropdown-item">Edycja profilu</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Wyloguj się') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                     </div>
                 </div>
                 <a href="/register" class="btn btn-primary mr-3 d-none d-lg-block">Sprawdź</a>
+                @endguest
             </div>
         </nav>
     </div>
 </div>
-<main class="container-fluid">
+
     @yield('zawartosc')
-</main>
+
 </div>
-<script src="{{ asset('js/app.js') }}"></script>
-<script type="text/javascript">
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+<script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+
+<!-- Contact Javascript File -->
+<script src="{{asset('mail/jqBootstrapValidation.min.js')}}"></script>
+<script src="{{asset('mail/contact.js')}}"></script>
+
+<!-- Template Javascript -->
+<script src="{{asset('js/home/main.js')}}"></script>
     @yield('javascript')
 </script>
 @yield('js-files')
