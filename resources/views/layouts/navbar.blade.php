@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <title>Firma kurierska - Strona główna</title>
+    <title>Firma kurierska - Strona główna dla klienta</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -43,18 +43,30 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 @guest
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Strona główna</a>
-                    <a href="/about" class="nav-item nav-link">O nas</a>
-                    <a href="/contact" class="nav-item nav-link">Kontakt</a>
-                    <div class="nav-item dropdown">
-                        @if (Route::has('login') && Route::has('register'))
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
-                                <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
-                            </div>
+                    @if (Route::has('login') && Route::has('register'))
+                        <a href="/" class="nav-item nav-link active">Strona główna</a>
+                        <a href="/about" class="nav-item nav-link">O nas</a>
+                        <a href="/contact" class="nav-item nav-link">Kontakt</a>
+                        <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zaloguj się</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{{ route('login') }}" class="dropdown-item">Logowanie</a>
+                                    <a href="{{ route('register') }}" class="dropdown-item">Rejestracja</a>
+                                </div>
+                        </div>
                         @endif
-                        @else
+                    @else
+                        @can('isUser')
+                            <a href="{{ route('klient.hello') }}" class="nav-item nav-link active">Strona główna - klient</a>
+                            <a href="/about" class="nav-item nav-link">Nadaj przesyłkę</a>
+                            <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                        @endcan
+                        @can('isDeliveryman')
+                            <a href="{{ route('deliveryman.hello') }}" class="nav-item nav-link active">Strona główna - kurier</a>
+                            <a href="/about" class="nav-item nav-link">Przesyłki do dostarczenia</a>
+                            <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                        @endcan
+                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="#" class="dropdown-item">Edycja profilu</a>
@@ -68,7 +80,7 @@
                                     @csrf
                                 </form>
                             </div>
-                    </div>
+                        </div>
                 </div>
                 <a href="/register" class="btn btn-primary mr-3 d-none d-lg-block">Sprawdź</a>
                 @endguest
