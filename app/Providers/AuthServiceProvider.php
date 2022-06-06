@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Enums\UserRole;
+use App\Models\Przesylka;
 use App\Models\User;
+use App\Policies\PrzesylkaPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -16,7 +18,20 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        Przesylka::class => PrzesylkaPolicy::class,
     ];
+
+    /**
+     * Determine if the given Model can be Viewed by the user.
+     *
+     * @param  User  $user
+     * @param  Przesylka $digitizingorder
+     * @return bool
+     */
+    public function view(User $user, Przesylka $przesylka)
+    {
+        return $user->id === $przesylka->user_id;
+    }
 
     /**
      * Register any authentication / authorization services.

@@ -28,6 +28,14 @@ class PrzesylkaController extends Controller
         ]);
     }
 
+    public function indexklient(): View
+    {
+        return view("Przesylkas.indexklient",[
+            'przesylkas' => Przesylka::paginate(10),
+
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -36,6 +44,23 @@ class PrzesylkaController extends Controller
     public function create(): View
     {
         return view("Przesylkas.create", [
+            'platnosci' => Rodzaj_platnosci::all(),
+            'dostawy' => Rodzaj_dostawy::all(),
+            'wielkosci' => Wielkosc_paczki::all(),
+            'paczkomaty' => Paczkomat::all(),
+        ]);
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return View
+     */
+
+    public function createklient(): View
+    {
+        return view("Przesylkas.createklient", [
             'platnosci' => Rodzaj_platnosci::all(),
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
@@ -58,6 +83,20 @@ class PrzesylkaController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return RedirectResponse
+     */
+
+    public function storeklient(Request $request): RedirectResponse
+    {
+        $przesylka = new Przesylka($request->all());
+        $request->user()->przesylkas()->save($przesylka);
+        return redirect(route('Przesylkas.indexklient'));
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  Przesylka  $przesylka
@@ -68,6 +107,19 @@ class PrzesylkaController extends Controller
         return view("Przesylkas.show", [
         'przesylka' => $przesylka
     ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Przesylka  $przesylka
+     * @return View
+     */
+    public function showklient(Przesylka $przesylka): View
+    {
+        return view("Przesylkas.showklient", [
+            'przesylka' => $przesylka
+        ]);
     }
 
     /**
@@ -87,6 +139,22 @@ class PrzesylkaController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Przesylka  $przesylka
+     * @return View
+     */
+    public function editklient(Przesylka $przesylka): View
+    {
+        return view("Przesylkas.editklient", [
+            'przesylka' => $przesylka,
+            'platnosci' => Rodzaj_platnosci::all(),
+            'dostawy' => Rodzaj_dostawy::all(),
+            'wielkosci' => Wielkosc_paczki::all(),
+        ]);
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  Request  $request
@@ -98,6 +166,20 @@ class PrzesylkaController extends Controller
         $przesylka->fill($request->all());
         $przesylka->save();
         return redirect(route('Przesylkas.index'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request  $request
+     * @param  Przesylka  $przesylka
+     * @return RedirectResponse
+     */
+    public function updateklient(Request $request, Przesylka $przesylka): RedirectResponse
+    {
+        $przesylka->fill($request->all());
+        $przesylka->save();
+        return redirect(route('Przesylkas.indexklient'));
     }
 
     /**
