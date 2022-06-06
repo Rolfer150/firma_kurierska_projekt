@@ -17,19 +17,19 @@
 </head>
 
 <body>
-<div class="login-block" style="height: 721px">
+<div class="login-block" style="height: 821px">
     <div class="container1">
                     <div class="main-page">
                         @can('isDeliveryman')
-                        <button type="button" class="btn btn-success"><a class="navbar-brand" href="{{ url('kuriers') }}">Kliknij aby przejść do strony głównej</a></button>
+                        <button type="button" class="btn btn-outline-dark"><a class="navbar-brand" href="{{ url('kuriers') }}">Kliknij aby przejść do strony głównej</a></button>
                         @endcan
 
                         @can('isUser')
-                        <button type="button" class="btn btn-success"><a class="navbar-brand" href="{{ url('klients') }}">Kliknij aby przejść do strony głównej</a></button>
+                        <button type="button" class="btn btn-danger"><a class="navbar-brand" href="{{ url('klients') }}">Kliknij aby przejść do strony głównej</a></button>
                         @endcan
 
                         @can('isAdmin')
-                        <button type="button" class="btn btn-success"><a class="navbar-brand" href="{{ url('admin.home') }}">Kliknij aby przejść do strony głównej</a></button>
+                        <button type="button" class="btn btn-danger"><a class="navbar-brand" href="{{ url('admin.home') }}">Kliknij aby przejść do strony głównej</a></button>
                         @endcan
                     </div>
             </div>
