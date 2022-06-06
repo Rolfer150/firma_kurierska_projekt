@@ -56,6 +56,12 @@
                         </div>
                         @endif
                     @else
+                            @can('isAdmin')
+                                <a href="{{ route('klient.hello') }}" class="nav-item nav-link active">Strona główna - administrator</a>
+                                <a href="{{ route('Przesylkas.indexklient') }}" class="nav-item nav-link">Kontroluj przesyłki</a>
+                                <a href="{{ route('Przesylkas.indexklient') }}" class="nav-item nav-link">Dodaj paczkomat</a>
+                                <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                            @endcan
                         @can('isUser')
                             <a href="{{ route('klient.hello') }}" class="nav-item nav-link active">Strona główna - klient</a>
                             <a href="{{ route('Przesylkas.indexklient') }}" class="nav-item nav-link">Nadaj przesyłkę</a>

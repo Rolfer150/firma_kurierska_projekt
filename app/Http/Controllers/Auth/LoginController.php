@@ -32,7 +32,7 @@ class LoginController extends Controller
     {
         if (Auth::user()->role == 'admin')
         {
-            return route('home');
+            return route('adminmain');
         }
         elseif (Auth::user()->role == 'user')
         {

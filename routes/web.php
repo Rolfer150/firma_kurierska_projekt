@@ -77,9 +77,8 @@ Route::get('klients/przesylkas/edit/{przesylka}', [PrzesylkaController::class, '
 Route::post('klients/przesylkas/{przesylka}', [PrzesylkaController::class, 'updateklient'])->name('Przesylkas.updateklient')->middleware('can:isUser');
 Route::delete('klients/przesylkas/{przesylka}', [PrzesylkaController::class, 'destroy'])->name('Przesylkas.destroy');
 
-Route::get('magazyniers',[MagazynierController::class,'getData']);
+Route::get('admin',[MagazynierController::class,'index'])->name('adminmain');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin.home', [App\Http\Controllers\HomeController::class, 'index1'])->name('admin');
