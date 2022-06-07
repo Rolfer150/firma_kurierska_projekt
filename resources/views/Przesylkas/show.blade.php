@@ -17,6 +17,30 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="id_user" class="col-md-4 col-form-label text-md-end">Imię i nazwisko nadawcy</label>
+
+                                <div class="col-md-6">
+                                    <input id="id_user" type="text" class="form-control" name="name" value="{{ $przesylka->user->name }} {{ $przesylka->user->surname }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="nr_tel_nadawca" class="col-md-4 col-form-label text-md-end">Numer telefonu nadawcy</label>
+
+                                <div class="col-md-6">
+                                    <input id="nr_tel_nadawca" type="text" class="form-control" name="name" value="{{ $przesylka->user->phone_number }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="email_nadawca" class="col-md-4 col-form-label text-md-end">E-mail nadawcy</label>
+
+                                <div class="col-md-6">
+                                    <input id="email_nadawca" type="text" class="form-control" name="name" value="{{ $przesylka->user->email }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności </label>
 
                                 <div class="col-md-6">

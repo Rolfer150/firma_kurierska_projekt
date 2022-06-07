@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h1>Lista paczkomatów</h1>
+                <h1>Lista kurierów</h1>
             </div>
             <div class="col-6">
                 <a class="float-end" href="{{ route('paczkomat.create') }}">
@@ -60,5 +60,5 @@
     const deleteUrl = "{{ url('paczkomats') }}/";
 @endsection
 @section('js-files')
-    <script src="{{ asset('js/delete_paczkomat.js') }}"></script>
+    <script src="{{ asset('js/delete_pojazd.js') }}"></script>
 @endsection

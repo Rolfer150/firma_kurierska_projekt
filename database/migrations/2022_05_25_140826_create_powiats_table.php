@@ -23,6 +23,10 @@ return new class extends Migration
             $table->unsignedBigInteger('powiat_id')->nullable()->after('id');
             $table->foreign('powiat_id')->references('id')->on('powiats');
         });
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->unsignedBigInteger('powiat_id')->nullable()->after('id');
+            $table->foreign('powiat_id')->references('id')->on('powiats');
+        });
     }
 
     /**
@@ -36,6 +40,11 @@ return new class extends Migration
 
         Schema::table('paczkomats', function (Blueprint $table) {
             $table->dropForeign('paczkomats_powiat_id_foreign');
+            $table->dropColumn('powiat_id');
+        });
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->dropForeign('przesylkas_powiat_id_foreign');
             $table->dropColumn('powiat_id');
         });
     }

@@ -18,4 +18,9 @@ class Powiat extends Model
     {
         return $this->hasMany(Paczkomat::class);
     }
+
+    public function przesylkas(): HasMany
+    {
+        return $this->hasMany(Przesylka::class);
+    }
 }

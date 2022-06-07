@@ -28,7 +28,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(Auth::user()->przesylkas as $przesylka)
+                @foreach($przesylkas as $przesylka)
                     <tr>
                         <th scope="row">{{$przesylka->id}}</th>
                         <td>{{$przesylka->user->name}}</td>
@@ -37,7 +37,7 @@
                         <td>{{$przesylka->wielkosc->wielkosc}}</td>
                         <td>{{$przesylka->wielkosc->cena}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
-                        <td>{{$przesylka->miasto_odbiorca}}</td>
+                        <td>{{$przesylka->adres_id}}</td>
                         <td>
                             <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
                                 <button class="btn btn-primary btn-sm">P</button>

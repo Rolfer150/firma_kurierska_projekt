@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pojazd;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
+use Exception;
 
 class PojazdController extends Controller
 {
@@ -12,9 +16,11 @@ class PojazdController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('pojazd.index', [
+            'pojazdy' => Pojazd::paginate(10)
+        ]);
     }
 
     /**
@@ -44,9 +50,11 @@ class PojazdController extends Controller
      * @param  \App\Models\Pojazd  $pojazd
      * @return \Illuminate\Http\Response
      */
-    public function show(Pojazd $pojazd)
+    public function show(Pojazd $pojazd): View
     {
-        //
+        return view("pojazd.show", [
+            'pojazd' => $pojazd
+        ]);
     }
 
     /**
@@ -55,31 +63,45 @@ class PojazdController extends Controller
      * @param  \App\Models\Pojazd  $pojazd
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pojazd $pojazd)
+    public function edit(Pojazd $pojazd): View
     {
-        //
+        return view("pojazd.edit", [
+            'pojazd' => $pojazd
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pojazd  $pojazd
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Pojazd  $pojazd
+     * @return RedirectResponse
      */
-    public function update(Request $request, Pojazd $pojazd)
+    public function update(Request $request, Pojazd $pojazd): RedirectResponse
     {
-        //
+        $pojazd->fill($request->all());
+        $pojazd->save();
+        return redirect(route('pojazd.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pojazd  $pojazd
-     * @return \Illuminate\Http\Response
+     * @param  Pojazd  $pojazd
+     * @return JsonResponse
      */
-    public function destroy(Pojazd $pojazd)
+    public function destroy(Pojazd $pojazd): JsonResponse
     {
-        //
+        try {
+            $pojazd->delete();
+            return response()->json([
+                'status' => 'success'
+            ]);
+        } catch (Exception $e) {
+            return Response()->json([
+                'status' => 'error',
+                'message' => 'Wystąpił błąd!'
+            ])->setStatusCode(500);
+        }
     }
 }

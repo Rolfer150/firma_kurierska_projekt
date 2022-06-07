@@ -45,6 +45,11 @@ class Przesylka extends Model
         return $this->belongsTo(Wielkosc_paczki::class);
     }
 
+    public function powiat(): BelongsTo
+    {
+        return $this->belongsTo(Powiat::class);
+    }
+
     public function adres(): HasOne
     {
         return $this->hasOne(Adres::class);
