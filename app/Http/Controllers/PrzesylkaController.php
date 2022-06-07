@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paczkomat;
+use App\Models\Powiat;
 use App\Models\Przesylka;
 use App\Models\Rodzaj_dostawy;
 use App\Models\Wielkosc_paczki;
@@ -48,6 +49,7 @@ class PrzesylkaController extends Controller
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
             'paczkomaty' => Paczkomat::all(),
+            'powiaty' => Powiat::all(),
         ]);
 
     }
@@ -65,6 +67,7 @@ class PrzesylkaController extends Controller
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
             'paczkomaty' => Paczkomat::all(),
+            'powiaty' => Powiat::all(),
         ]);
 
     }

@@ -12,13 +12,22 @@ class Przesylka extends Model
     use HasFactory;
 
     protected $fillable = array(
-        'user_id',
+        'powiat_id',
         'platnosc_id',
         'dostawa_id',
-        'wielkosc_id',
         'paczkomat_id',
+        'wielkosc_id',
+        'user_id',
+        'imie_odbiorca',
+        'nazwisko_odbiorca',
+        'telefon_odbiorca',
+        'email_odbiorca',
+        'miasto_odbiorca',
+        'ulica_odbiorca',
+        'numer_domu_odbiorca',
+        'numer_mieszkania_odbiorca',
+        'kod_pocztowy_odbiorca',
         'data_dostarczenia',
-        'kod_paczkomat'
     );
 
     protected $hidden = [

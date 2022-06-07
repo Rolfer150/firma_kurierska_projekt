@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('paczkomats', function (Blueprint $table) {
             $table->id();
-            $table->double('lat', 9, 6);
-            $table->double('lng', 9, 6);
+            $table->unsignedDecimal('lat', 9, 7);
+            $table->unsignedDecimal('lng', 9, 7);
             $table->string('opis_paczkomat');
             $table->string('miasto_paczkomat');
             $table->string('ulica_paczkomat');
