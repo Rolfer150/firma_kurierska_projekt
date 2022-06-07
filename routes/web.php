@@ -54,6 +54,7 @@ Route::get('/przesylkas/create', [PrzesylkaController::class, 'create'])->name('
 Route::get('/przesylkas/{przesylka}', [PrzesylkaController::class, 'show'])->name('Przesylkas.show');
 Route::post('/przesylkas/store', [PrzesylkaController::class, 'store'])->name('Przesylkas.store');
 Route::get('/przesylkas/edit/{przesylka}', [PrzesylkaController::class, 'edit'])->name('Przesylkas.edit');
+Route::get('/przesylkas/editdata/{przesylka}', [PrzesylkaController::class, 'editdata'])->name('Przesylkas.editdata');
 Route::post('/przesylkas/{przesylka}', [PrzesylkaController::class, 'update'])->name('Przesylkas.update');
 Route::delete('/przesylkas/{przesylka}', [PrzesylkaController::class, 'destroy'])->name('Przesylkas.destroy');
 
@@ -63,7 +64,8 @@ Route::post('/przesylkas/adres/store', [AdresController::class, 'store'])->name(
 Route::get('/users/list', [UserController::class, 'index'])->middleware('can:isAdmin');
 
 Route::get('kuriers',[KurierController::class,'index'])->name('deliveryman.hello')->middleware('can:isDeliveryman');
-Route::get('kuriers/przesylki',[KurierController::class,'przesylka'])->name('deliveryman.przesylka')->middleware('can:isDeliveryman');
+Route::get('kuriers/przesylkas',[PrzesylkaController::class,'indexkurier'])->name('Przesylkas.indexkurier')->middleware('can:isDeliveryman');
+Route::get('kuriers/przesylkas/{przesylka}',[PrzesylkaController::class,'showkurier'])->name('Przesylkas.showkurier')->middleware('can:isDeliveryman');
 Route::get('kuriers/mapa',[KurierController::class,'mapa'])->name('deliveryman.mapa')->middleware('can:isDeliveryman');
 Route::get('kuriers/edit/{przesylkas}',[KurierController::class,'editkurier'])->name('deliveryman.editkurier')->middleware('can:isDeliveryman');
 Route::post('kuriers/przesylkas/{przesylka}', [PrzesylkaController::class, 'updatekurier'])->name('Przesylkas.updatekurier')->middleware('can:isUser');

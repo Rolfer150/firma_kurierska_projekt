@@ -38,6 +38,14 @@ class PrzesylkaController extends Controller
         ]);
     }
 
+    public function indexkurier(): View
+    {
+        return view("Przesylkas.indexkurier",[
+            'przesylkas' => Przesylka::paginate(10),
+
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -141,6 +149,19 @@ class PrzesylkaController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  Przesylka  $przesylka
+     * @return View
+     */
+    public function showkurier(Przesylka $przesylka): View
+    {
+        return view("Przesylkas.showkurier", [
+            'przesylka' => $przesylka
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  Przesylka  $przesylka
@@ -153,6 +174,21 @@ class PrzesylkaController extends Controller
             'platnosci' => Rodzaj_platnosci::all(),
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
+            'paczkomaty' => Paczkomat::all(),
+            'powiaty' => Powiat::all(),
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Przesylka  $przesylka
+     * @return View
+     */
+    public function editdata(Przesylka $przesylka): View
+    {
+        return view("Przesylkas.editdata", [
+            'przesylka' => $przesylka,
         ]);
     }
 
@@ -169,6 +205,8 @@ class PrzesylkaController extends Controller
             'platnosci' => Rodzaj_platnosci::all(),
             'dostawy' => Rodzaj_dostawy::all(),
             'wielkosci' => Wielkosc_paczki::all(),
+            'paczkomaty' => Paczkomat::all(),
+            'powiaty' => Powiat::all(),
         ]);
     }
 

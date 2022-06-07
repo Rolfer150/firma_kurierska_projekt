@@ -74,7 +74,7 @@
                         @can('isDeliveryman')
                             <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('deliveryman.hello') }}" class="nav-item nav-link">Strona główna - kurier</a>
-                            <a href="/about" class="nav-item nav-link">Przesyłki do dostarczenia</a>
+                            <a href="{{ route('Przesylkas.indexkurier') }}" class="nav-item nav-link">Przesyłki do dostarczenia</a>
                             <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
                             </div>
                         @endcan
