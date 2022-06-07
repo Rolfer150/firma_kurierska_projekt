@@ -61,7 +61,7 @@
                                 <a href="{{ route('adminmain') }}" class="nav-item nav-link">Strona główna - administrator</a>
                                 <a href="{{ route('Przesylkas.index') }}" class="nav-item nav-link">Kontroluj przesyłki</a>
                                 <a href="{{ route('paczkomat.index') }}" class="nav-item nav-link">Dodaj paczkomat</a>
-                                <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                                <a href="https://konto.onet.pl/pl/signin?state=https%3A%2F%2Fpoczta.onet.pl%2F&client_id=poczta.onet.pl.front.onetapi.pl" class="nav-item nav-link">Powiadomienia</a>
                                 </div>
                             @endcan
                             @can('isUser')
@@ -82,19 +82,19 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="#" class="dropdown-item">Edycja profilu</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Wyloguj się') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
                             </div>
                         </div>
                 </div>
-                <a href="/register" class="btn btn-primary mr-3 d-none d-lg-block">Sprawdź</a>
+
+                    <a class="btn btn-primary mr-3 d-none d-lg-block" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Wyloguj się') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 @endguest
             </div>
         </nav>

@@ -13,7 +13,7 @@
                     <img class="img-fluid" style="width: 100%;" src="{{ asset('img/carousel-4.jpg') }}" alt="Image">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska</h5>
+                            <h5 class="text-primary text-uppercase mb-md-3">Firma kurierska - administrator</h5>
                             <h1 class="display-3 text-white mb-md-4">Kontrola kluczem do sukcesu firmy</h1>
                         </div>
                     </div>
@@ -87,8 +87,8 @@
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="/admin"><i class="fa fa-angle-right mr-2"></i>Strona główna - administrator</a>
                     <a class="text-white mb-2" href="/#"><i class="fa fa-angle-right mr-2"></i>Lista pracowników</a>
-                    <a class="text-white" href="/paczkomats/create"><i class="fa fa-angle-right mr-2"></i>Dodaj paczkomat</a>
-                    <a class="text-white mb-2" href="/#"><i class="fa fa-angle-right mr-2"></i>Powiadomienia</a>
+                    <a class="text-white mb-2" href="/paczkomats/create"><i class="fa fa-angle-right mr-2"></i>Dodaj paczkomat</a>
+                    <a class="text-white mb-2" href="https://konto.onet.pl/pl/signin?state=https%3A%2F%2Fpoczta.onet.pl%2F&client_id=poczta.onet.pl.front.onetapi.pl"><i class="fa fa-angle-right mr-2"></i>Powiadomienia</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
