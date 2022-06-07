@@ -23,6 +23,7 @@
                     <th scope="col">Wielkosc paczki</th>
                     <th scope="col">Cena (zł)</th>
                     <th scope="col">Data dostarczenia</th>
+                    <th scope="col">Status przesyłki</th>
                     <th scope="col">Akcje</th>
                 </tr>
                 </thead>
@@ -37,6 +38,7 @@
                         <td>{{$przesylka->wielkosc->wielkosc}}</td>
                         <td>{{$przesylka->wielkosc->cena}}</td>
                         <td>{{$przesylka->data_dostarczenia}}</td>
+                        <td>{{$przesylka->status_przesylki->status_realizacji}}</td>
                         <td>
                             <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
                                 <button class="btn btn-primary btn-sm">P</button>
