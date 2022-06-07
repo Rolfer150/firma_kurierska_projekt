@@ -108,9 +108,9 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Skróty</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Strona główna - kurier</a>
-                    <a class="text-white mb-2" href="/about"><i class="fa fa-angle-right mr-2"></i>Przesyłki do dostarczenia</a>
-                    <a class="text-white" href="/contact"><i class="fa fa-angle-right mr-2"></i>Powiadomienia</a>
+                    <a class="text-white mb-2" href="/kuriers"><i class="fa fa-angle-right mr-2"></i>Strona główna - kurier</a>
+                    <a class="text-white mb-2" href="/#"><i class="fa fa-angle-right mr-2"></i>Przesyłki do dostarczenia</a>
+                    <a class="text-white" href="/#"><i class="fa fa-angle-right mr-2"></i>Powiadomienia</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

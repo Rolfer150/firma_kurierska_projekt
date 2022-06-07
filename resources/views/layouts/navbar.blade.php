@@ -61,7 +61,7 @@
                                 <a href="{{ route('adminmain') }}" class="nav-item nav-link">Strona główna - administrator</a>
                                 <a href="{{ route('Przesylkas.index') }}" class="nav-item nav-link">Kontroluj przesyłki</a>
                                 <a href="{{ route('paczkomat.index') }}" class="nav-item nav-link">Dodaj paczkomat</a>
-                                <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                                <a href="https://konto.onet.pl/pl/signin?state=https%3A%2F%2Fpoczta.onet.pl%2F&client_id=poczta.onet.pl.front.onetapi.pl" class="nav-item nav-link">Powiadomienia</a>
                                 </div>
                             @endcan
                             @can('isUser')
