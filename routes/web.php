@@ -67,8 +67,8 @@ Route::get('kuriers',[KurierController::class,'index'])->name('deliveryman.hello
 Route::get('kuriers/przesylkas',[PrzesylkaController::class,'indexkurier'])->name('Przesylkas.indexkurier')->middleware('can:isDeliveryman');
 Route::get('kuriers/przesylkas/{przesylka}',[PrzesylkaController::class,'showkurier'])->name('Przesylkas.showkurier')->middleware('can:isDeliveryman');
 Route::get('kuriers/mapa',[KurierController::class,'mapa'])->name('deliveryman.mapa')->middleware('can:isDeliveryman');
-Route::get('kuriers/edit/{przesylkas}',[KurierController::class,'editkurier'])->name('deliveryman.editkurier')->middleware('can:isDeliveryman');
-Route::post('kuriers/przesylkas/{przesylka}', [PrzesylkaController::class, 'updatekurier'])->name('Przesylkas.updatekurier')->middleware('can:isUser');
+Route::get('kuriers/edit/{przesylkas}',[PrzesylkaController::class,'editkurier'])->name('Przesylkas.editkurier')->middleware('can:isDeliveryman');
+Route::post('kuriers/przesylkas/{przesylka}', [PrzesylkaController::class, 'updatekurier'])->name('Przesylkas.updatekurier')->middleware('can:isDeliveryman');
 
 Route::get('klients',[KlientController::class, 'index'])->name('klient.hello')->middleware('can:isUser');
 Route::get('klients/mapa1',[KlientController::class,'mapa1'])->name('klient.mapa1')->middleware('can:isUser');

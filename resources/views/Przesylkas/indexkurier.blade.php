@@ -38,6 +38,9 @@
                             <a href="{{ route('Przesylkas.showkurier', $przesylka->id) }}">
                                 <button class="btn btn-primary btn-sm">P</button>
                             </a>
+                            <a href="{{ route('Przesylkas.editkurier', $przesylka->id) }}">
+                                <button class="btn btn-success btn-sm">E</button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
