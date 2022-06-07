@@ -6,11 +6,7 @@
             <div class="col-6">
                 <h1>Lista przesyłek</h1>
             </div>
-            <div class="col-6">
-                <a class="float-end" href="{{ route('Przesylkas.create') }}">
-                    <button type="button" class="btn btn-primary">Dodaj</button>
-                </a>
-            </div>
+
         </div>
         <div class="row">
             <table class="table table-hover">
@@ -39,13 +35,9 @@
                         <td>{{$przesylka->data_dostarczenia}}</td>
                         <td>{{$przesylka->adres_id}}</td>
                         <td>
-                            <a href="{{ route('Przesylkas.show', $przesylka->id) }}">
+                            <a href="{{ route('Przesylkas.showkurier', $przesylka->id) }}">
                                 <button class="btn btn-primary btn-sm">P</button>
                             </a>
-                            <a href="{{ route('Przesylkas.edit', $przesylka->id) }}">
-                                <button class="btn btn-success btn-sm">E</button>
-                            </a>
-                            <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id }}">X</button>
                         </td>
                     </tr>
                 @endforeach
@@ -59,5 +51,5 @@
     const deleteUrl = "{{ url('przesylkas') }}/";
 @endsection
 @section('js-files')
-    <script src="{{ asset('js/delete1.js') }}"></script>
+
 @endsection
