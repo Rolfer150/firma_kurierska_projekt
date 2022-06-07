@@ -28,7 +28,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(Auth::user()->przesylkas as $przesylka)
+                @foreach($przesylkas as $przesylka)
                     <tr>
                         <th scope="row">{{$przesylka->id}}</th>
                         <td>{{$przesylka->user->name}}</td>

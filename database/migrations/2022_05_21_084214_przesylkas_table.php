@@ -32,11 +32,11 @@ return new class extends Migration
             $table->string('telefon_odbiorca', 9);
             $table->string('email_odbiorca', 255);
             $table->string('miasto_odbiorca', 255);
-            $table->string('ulica', 255);
-            $table->string('numer_domu', 5);
-            $table->string('numer_mieszkania', 5)->nullable();
-            $table->date('data_dostarczenia');
-            $table->string('kod_pocztowy', 6);
+            $table->string('ulica_odbiorca', 255);
+            $table->string('numer_domu_odbiorca', 5);
+            $table->string('numer_mieszkania_odbiorca', 5)->nullable();
+            $table->string('kod_pocztowy_odbiorca', 6);
+            $table->date('data_dostarczenia')->nullable();
             $table->timestamps();
         });
     }
