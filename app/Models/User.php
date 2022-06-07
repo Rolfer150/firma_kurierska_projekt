@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Pojazd::class);
     }
+
+    public function przesylkas(): HasMany
+    {
+        return $this->hasMany(Przesylka::class);
+    }
 }

@@ -202,7 +202,7 @@
                                     <label for="numer_mieszkania" class="col-md-4 col-form-label text-md-end">Numer mieszkania</label>
 
                                     <div class="col-md-6">
-                                        <input id="numer_mieszkania_odbiorca" type="text" class="form-control @error('numer_mieszkania_odbiorca') is-invalid @enderror" name="numer_mieszkania_odbiorca" value="{{ old('numer_mieszkania_odbiorca') }}" required>
+                                        <input id="numer_mieszkania_odbiorca" type="text" class="form-control @error('numer_mieszkania_odbiorca') is-invalid @enderror" name="numer_mieszkania_odbiorca" value="{{ old('numer_mieszkania_odbiorca') }}">
                                         @error('numer_mieszkania_odbiorca')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
