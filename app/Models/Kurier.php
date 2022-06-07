@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+
 
 class Kurier extends Model
 {
@@ -29,8 +29,5 @@ class Kurier extends Model
         'email_verified_at_kurier' => 'datetime',
     ];
 
-    public function pojazd(): HasOne
-    {
-        return $this->hasOne(Pojazd::class);
-    }
+
 }

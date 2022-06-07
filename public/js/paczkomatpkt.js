@@ -1,6 +1,6 @@
 function initMap() {
-    var lat = parseFloat(document.getElementById('lat').value);
-    var lng = parseFloat(document.getElementById('lng').value);
+    let lat = parseFloat(document.getElementById('lat').value);
+    let lng = parseFloat(document.getElementById('lng').value);
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: { lat: lat, lng: lng},

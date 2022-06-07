@@ -10,19 +10,19 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Podgląd paczkomatów</div>
+                    <div class="card-header">Podgląd kuriera</div>
 
                     <div class="card-body">
                             <div class="row mb-3">
-                                <label for="id_paczkomatu" class="col-md-4 col-form-label text-md-end">Id paczkomatów</label>
+                                <label for="id_pojazdu" class="col-md-4 col-form-label text-md-end">Imię i nazwisko kuriera</label>
 
                                 <div class="col-md-6">
-                                    <input id="id_paczkomatu" type="text" class="form-control" name="id_paczkomatu" value="{{ $paczkomat->id }}" disabled>
+                                    <input id="id_pojazdu" type="text" class="form-control" name="id_pojazdu" value="{{ $pojazd->id_pojazdu }}" disabled>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="lat" class="col-md-4 col-form-label text-md-end">Szerokość geograficzna</label>
+                                <label for="lat" class="col-md-4 col-form-label text-md-end">Imię i nazwisko kuriera</label>
 
                                 <div class="col-md-6">
                                     <input id="lat" type="text" class="form-control" name="lat" value="{{ $paczkomat->lat }}" disabled>

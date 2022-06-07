@@ -11,14 +11,14 @@ class Pojazd extends Model
     use HasFactory;
 
     protected $fillable = array(
+        'kurier_id',
         'marka',
-        'nazwisko_kuriera',
         'model',
         'nr_rejestracyjny',
     );
 
-    public function kurier(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(Kurier::class, 'pojazd_id');
+        return $this->belongsTo(User::class);
     }
 }
