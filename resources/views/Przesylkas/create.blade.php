@@ -68,23 +68,6 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <label for="paczkomat" class="col-md-4 col-form-label text-md-end">Paczkomat</label>
-
-                                <div class="col-md-6">
-                                    <select id="paczkomat_id" class="form-control @error('paczkomat_id') is-invalid @enderror" name="paczkomat_id">
-                                        <option>Brak</option>
-                                        @foreach($paczkomaty as $paczkomat)
-                                            <option value="{{$paczkomat->id}}">{{$paczkomat->opis_paczkomat}}, {{$paczkomat->miasto_paczkomat}}, {{$paczkomat->ulica_paczkomat}}, {{$paczkomat->numer_ulicy_paczkomat}}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('paczkomat')
-                                    <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
 
                             <div class="banner-text">
                                 <label class="col-md-3">Dane odbiorcy</label>

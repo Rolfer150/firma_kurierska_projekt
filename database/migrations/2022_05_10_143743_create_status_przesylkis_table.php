@@ -15,12 +15,18 @@ return new class extends Migration
     {
         Schema::create('status_przesylkis', function (Blueprint $table) {
             $table->id('id_statusu_przesylki');
-            $table->date('data_dostarczenia');
-            $table->date('data_zamownienia');
+            $table->date('data_dostarczenia')->nullable();
+            $table->date('data_zamownienia')->nullable();
             $table->string('status_realizacji');
             $table->timestamps();
         });
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->unsignedBigInteger('status_id')->nullable()->after('user_id');
+            $table->foreign('status_id')->references('id_statusu_przesylki')->on('status_przesylkis');
+        });
     }
+
+
 
     /**
      * Reverse the migrations.
@@ -30,5 +36,10 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('status_przesylkis');
+
+        Schema::table('przesylkas', function (Blueprint $table) {
+            $table->dropForeign('przesylkas_status_id_foreign');
+            $table->dropColumn('status_id');
+        });
     }
 };

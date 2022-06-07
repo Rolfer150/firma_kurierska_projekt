@@ -63,4 +63,9 @@ class Przesylka extends Model
     {
         return $this->hasOne(Adres::class);
     }
+
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(Status_przesylki::class);
+    }
 }

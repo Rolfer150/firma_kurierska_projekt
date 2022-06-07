@@ -6,6 +6,7 @@ use App\Models\Paczkomat;
 use App\Models\Powiat;
 use App\Models\Przesylka;
 use App\Models\Rodzaj_dostawy;
+use App\Models\Status_przesylki;
 use App\Models\Wielkosc_paczki;
 use Exception;
 use App\Models\Rodzaj_platnosci;
@@ -70,6 +71,20 @@ class PrzesylkaController extends Controller
             'powiaty' => Powiat::all(),
         ]);
 
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Przesylka  $przesylka
+     * @return View
+     */
+    public function editkurier(Przesylka $przesylka): View
+    {
+        return view("Przesylkas.editkurier", [
+            'przesylka' => $przesylka,
+            'statusy_przesylki' => Status_przesylki::all(),
+        ]);
     }
 
     /**
@@ -183,6 +198,20 @@ class PrzesylkaController extends Controller
         $przesylka->fill($request->all());
         $przesylka->save();
         return redirect(route('Przesylkas.indexklient'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request  $request
+     * @param  Przesylka  $przesylka
+     * @return RedirectResponse
+     */
+    public function updatekurier(Request $request, Przesylka $przesylka): RedirectResponse
+    {
+        $przesylka->fill($request->all());
+        $przesylka->save();
+        return redirect(route('Przesylkas.indexkurier'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Status_przesylki extends Model
 {
@@ -14,4 +15,8 @@ class Status_przesylki extends Model
         'data_zamownienia',
         'status_realizacji',
     );
+    public function przesylkas(): HasMany
+    {
+        return $this->hasMany(Przesylka::class);
+    }
 }
