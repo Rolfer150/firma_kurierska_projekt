@@ -46,7 +46,7 @@ class RegisterController extends Controller
             return route('deliveryman.hello');
         }
     }
-    
+
     /**
      * Create a new controller instance.
      *
