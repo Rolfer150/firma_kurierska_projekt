@@ -15,8 +15,4 @@ class Status_przesylki extends Model
         'data_zamownienia',
         'status_realizacji',
     );
-    public function przesylkas(): HasMany
-    {
-        return $this->hasMany(Przesylka::class);
-    }
 }

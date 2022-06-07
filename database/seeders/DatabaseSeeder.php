@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             Rodzaj_platnosci1::class,
             Rodzaj_dostawy1::class,
             WielkoscSeeder::class,
-            Status_przesylki1::class,
+
         ]);
     }
 }

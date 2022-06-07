@@ -16,8 +16,8 @@
                                 <div class="col-md-6">
                                     <select id="status_id" class="form-control @error('status_id') is-invalid @enderror" name="status_id" required>
                                         <option>Brak</option>
-                                        @foreach($statusy_przesylki as $status_przesylki)
-                                            <option value="{{$status_przesylki->id}}">{{$status_przesylki->status_realizacji}}</option>
+                                        @foreach($przesylka as $przes)
+                                            <option value="{{$przes->id}}">{{$przes->przesylkas->status_przesylki}}</option>
                                         @endforeach
                                     </select>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\Status;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -27,6 +28,7 @@ return new class extends Migration
     {
         Schema::create('przesylkas', function (Blueprint $table) {
             $table->id();
+            $table->enum('status_przesylki', Status::STATUSTYPES)->default('przygotowywanie');
             $table->string('imie_odbiorca', 255);
             $table->string('nazwisko_odbiorca', 255);
             $table->string('telefon_odbiorca', 9);

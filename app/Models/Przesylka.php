@@ -18,6 +18,7 @@ class Przesylka extends Model
         'paczkomat_id',
         'wielkosc_id',
         'user_id',
+        'status_przesylki',
         'imie_odbiorca',
         'nazwisko_odbiorca',
         'telefon_odbiorca',
@@ -62,10 +63,5 @@ class Przesylka extends Model
     public function adres(): HasOne
     {
         return $this->hasOne(Adres::class);
-    }
-
-    public function status(): BelongsTo
-    {
-        return $this->belongsTo(Status_przesylki::class);
     }
 }
