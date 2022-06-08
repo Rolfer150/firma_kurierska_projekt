@@ -91,7 +91,7 @@ class PrzesylkaController extends Controller
     {
         return view("Przesylkas.editkurier", [
             'przesylka' => $przesylka,
-            'statusy_przesylki' => Status_przesylki::all(),
+
         ]);
     }
 
