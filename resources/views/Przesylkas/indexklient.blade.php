@@ -7,7 +7,7 @@
                 <h1>Lista przesyłek</h1>
             </div>
             <div class="col-6">
-                <a class="float-end" href="{{ route('Przesylkas.create') }}">
+                <a class="float-end" href="{{ route('Przesylkas.createklient') }}">
                     <button type="button" class="btn btn-primary">Dodaj</button>
                 </a>
             </div>
@@ -30,7 +30,7 @@
                 <tbody>
                 @foreach(Auth::user()->przesylkas as $przesylka)
                     <tr>
-                        <td>{{$przesylka->user->name}}</td>
+                        <td>{{$przesylka->imie_odbiorca}} {{$przesylka->nazwisko_odbiorca}}</td>
                         <td>Powiat {{$przesylka->powiat->powiat}} {{ $przesylka->miasto_odbiorca }} {{ $przesylka->ulica_odbiorca }}
                             {{ $przesylka->numer_domu_odbiorca }} {{ $przesylka->numer_mieszkania_odbiorca }} {{ $przesylka->kod_pocztowy_odbiorca }}</td>
                         <td>{{$przesylka->platnosc->platnosc}}</td>
