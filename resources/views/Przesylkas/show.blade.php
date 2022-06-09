@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Podgląd przesyłki</div>
+                    <div class="card-header"><strong>Podgląd przesyłki</strong></div>
 
                     <div class="card-body">
                         <div class="banner-text">
-                            <label class="col-md-3">Dane nadawcy</label>
+                            <label class="col-md-3 m-4"><strong>Dane nadawcy</strong></label>
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Imię i nazwisko nadawcy</label>
 
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="banner-text">
-                            <label class="col-md-3">Dane przesyłki</label>
+                            <label class="col-md-6 m-4">Dane przesyłki</label>
 
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Rodzaj płatności </label>
@@ -72,7 +72,7 @@
                     </div>
 
                         <div class="banner-text">
-                            <label class="col-md-3">Dane odbiorcy</label>
+                            <label class="col-md-3 m-4">Dane odbiorcy</label>
 
                             <div class="row mb-3">
                                 <label for="imie_odbiorca" class="col-md-4 col-form-label text-md-end">Imię i nazwisko odbiorcy</label>

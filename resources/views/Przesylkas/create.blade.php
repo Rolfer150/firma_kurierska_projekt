@@ -1,17 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <form method="POST" action="{{ route('Przesylkas.store') }}">
                 <div class="card">
-                    <div class="card-header">Dodawanie przesyłek</div>
+                    <div class="card-header"><strong>Dodawanie przesyłek</strong></div>
                         <div class="card-body">
                             @csrf
 
                             <div class="banner-text">
-                                <label class="col-md-3">Właściwości przesyłki</label>
+                                <label class="col-md-3 m-4"><strong>Właściwości przesyłki</strong></label>
 
                                 <div class="row mb-3">
                                     <label for="platnosc" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
@@ -70,7 +70,7 @@
 
 
                             <div class="banner-text">
-                                <label class="col-md-3">Dane odbiorcy</label>
+                                <label class="col-md-3 m-4"><strong>Dane odbiorcy</strong></label>
 
                                 <div class="row mb-3">
                                     <label for="name" class="col-md-4 col-form-label text-md-end">Imię</label>

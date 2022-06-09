@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Edycja daty dostarczenia</div>
+                    <div class="card-header"><strong>Edycja daty dostarczenia</strong></div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('Przesylkas.update', $przesylka->id) }}">

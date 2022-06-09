@@ -1,21 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-5 mt-5">
                 <h1>Lista przesyłek</h1>
             </div>
             <div class="col-6">
                 <a class="float-end" href="{{ route('Przesylkas.create') }}">
-                    <button type="button" class="btn btn-primary">Dodaj</button>
+                    <button type="button" class="btn btn-secondary mt-5">Dodaj</button>
                 </a>
             </div>
         </div>
-        <div class="row">
+        <div class="row bg-white">
             <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr>
+                    <th scope="col">Imie i nazwisko nadawcy</th>
                     <th scope="col">Imie i nazwisko odbiorcy</th>
                     <th scope="col">Adres odbiorcy</th>
                     <th scope="col">Rodzaj platnosci</th>
@@ -30,9 +31,10 @@
                 <tbody>
                 @foreach($przesylkas as $przesylka)
                     <tr>
-                        <td>{{$przesylka->user->name}}</td>
-                        <td>Powiat {{$przesylka->powiat->powiat}} {{ $przesylka->miasto_odbiorca }} {{ $przesylka->ulica_odbiorca }}
-                            {{ $przesylka->numer_domu_odbiorca }} {{ $przesylka->numer_mieszkania_odbiorca }} {{ $przesylka->kod_pocztowy_odbiorca }}</td>
+                        <td>{{$przesylka->user->name}} {{$przesylka->user->surname}}</td>
+                        <td>{{$przesylka->imie_odbiorca}} {{$przesylka->nazwisko_odbiorca}}</td>
+                        <td>Powiat {{$przesylka->powiat->powiat}}, {{ $przesylka->miasto_odbiorca }}, {{ $przesylka->ulica_odbiorca }}
+                            {{ $przesylka->numer_domu_odbiorca }} {{ $przesylka->numer_mieszkania_odbiorca }}, {{ $przesylka->kod_pocztowy_odbiorca }}</td>
                         <td>{{$przesylka->platnosc->platnosc}}</td>
                         <td>{{$przesylka->dostawa->dostawa}}</td>
                         <td>{{$przesylka->wielkosc->wielkosc}}</td>
@@ -47,7 +49,7 @@
                                 <button class="btn btn-success btn-sm">E</button>
                             </a>
                             <a href="{{ route('Przesylkas.editdata', $przesylka->id) }}">
-                                <button class="btn btn-success btn-sm">D</button>
+                                <button class="btn btn-info btn-sm">D</button>
                             </a>
                             <button class="btn btn-danger btn-sm delete" data-id="{{ $przesylka->id }}">X</button>
                         </td>

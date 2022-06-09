@@ -1,16 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
-
+@section('zawartosc')
     <link rel="stylesheet" type="text/css" href="{{asset('css/mapa.css')}}" />
     <script type="module" src="{{asset('js/paczkomatpkt.js')}}"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Podgląd paczkomatów</div>
+                    <div class="card-header"><strong>Podgląd paczkomatów</strong></div>
 
                     <div class="card-body">
                             <div class="row mb-3">
@@ -84,8 +83,8 @@
 
 
                 <div class="card">
-                    <div class="card-header">Mapa</div>
-                    <div id="map" style="width: 855px; height: 500px;">
+                    <div class="card-header"><strong>Mapa</strong></div>
+                    <div id="map" style="width: auto; height: 500px;">
                 </div>
 
 

@@ -61,28 +61,26 @@
                                 <a href="{{ route('adminmain') }}" class="nav-item nav-link">Strona główna - administrator</a>
                                 <a href="{{ route('Przesylkas.index') }}" class="nav-item nav-link">Kontroluj przesyłki</a>
                                 <a href="{{ route('paczkomat.index') }}" class="nav-item nav-link">Dodaj paczkomat</a>
-                                <a href="https://konto.onet.pl/pl/signin?state=https%3A%2F%2Fpoczta.onet.pl%2F&client_id=poczta.onet.pl.front.onetapi.pl" class="nav-item nav-link">Powiadomienia</a>
+                                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="nav-item nav-link">Powiadomienia</a>
                                 </div>
                             @endcan
                             @can('isUser')
                             <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('klient.hello') }}" class="nav-item nav-link">Strona główna - klient</a>
                             <a href="{{ route('Przesylkas.indexklient') }}" class="nav-item nav-link">Nadaj przesyłkę</a>
-                            <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="nav-item nav-link">Powiadomienia</a>
                             </div>
                             @endcan
                         @can('isDeliveryman')
                             <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('deliveryman.hello') }}" class="nav-item nav-link">Strona główna - kurier</a>
                             <a href="{{ route('Przesylkas.indexkurier') }}" class="nav-item nav-link">Przesyłki do dostarczenia</a>
-                            <a href="/contact" class="nav-item nav-link">Powiadomienia</a>
+                            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="nav-item nav-link">Powiadomienia</a>
                             </div>
                         @endcan
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="#" class="dropdown-item">Edycja profilu</a>
-                            </div>
+
                         </div>
                 </div>
 
@@ -100,10 +98,11 @@
         </nav>
     </div>
 </div>
-
+<main>
     @yield('zawartosc')
+</main>
 
-</div>
+
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -119,7 +118,8 @@
 <script src="{{asset('mail/contact.js')}}"></script>
 
 <!-- Template Javascript -->
-<script src="{{asset('js/home/main.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
+<script type="text/javascript">
     @yield('javascript')
 </script>
 @yield('js-files')

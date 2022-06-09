@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 mt-5">
                 <h1>Lista przesyłek</h1>
             </div>
 

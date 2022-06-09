@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <form method="POST" action="{{ route('Przesylkas.storeklient') }}">
                     <div class="card">
@@ -11,7 +11,7 @@
                             @csrf
 
                             <div class="banner-text">
-                                <label class="col-md-3">Właściwości przesyłki</label>
+                                <label class="col-md-3 m-4"><strong>Właściwości przesyłki</strong></label>
 
                                 <div class="row mb-3">
                                     <label for="platnosc" class="col-md-4 col-form-label text-md-end">Rodzaj płatności</label>
@@ -35,12 +35,10 @@
                                     <label for="dostawa" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
 
                                     <div class="col-md-6">
-                                        <select id="dostawa_id" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" required>
-                                            <option>Brak</option>
-                                            @foreach($dostawy as $dostawa)
-                                                <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
-                                            @endforeach
-                                        </select>
+                                        @foreach($dostawy as $dostawa)
+                                            <label for="vehicle1">{{$dostawa->dostawa}}</label><br>
+                                        <input id="dostawa_id" type="checkbox" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" value="{{$dostawa->id}}" required>
+                                        @endforeach
                                         @error('rodzaj_platnosci')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -70,7 +68,7 @@
 
 
                             <div class="banner-text">
-                                <label class="col-md-3">Dane odbiorcy</label>
+                                <label class="col-md-3 m-4"><strong>Dane odbiorcy</strong></label>
 
                                 <div class="row mb-3">
                                     <label for="name" class="col-md-4 col-form-label text-md-end">Imię</label>
@@ -210,7 +208,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-secondary">
                                         Zapisz wszystko
                                     </button>
                                 </div>
@@ -224,5 +222,5 @@
     </div>
 @endsection
 @section('js-files')
-    <script src="{{ asset('js/nrprzesylki.js') }}"></script>
+    <script src="{{ asset('js/rodzajzamowienia.js') }}"></script>
 @endsection

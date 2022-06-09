@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <img class="img-fluid" style="width: 80%;" src="{{asset('img/box.png')}}">
+                <img class="img-fluid" style="width: 80%;" src="{{asset('img/box.png')}}" alt="Image">
             </div>
         </div>
         <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">

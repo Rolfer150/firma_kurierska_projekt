@@ -1,14 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('content')
+@section('zawartosc')
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 mt-5">
                 <h1>Lista przesyłek</h1>
             </div>
             <div class="col-6">
                 <a class="float-end" href="{{ route('Przesylkas.createklient') }}">
-                    <button type="button" class="btn btn-primary">Dodaj</button>
+                    <button type="button" class="btn btn-secondary mt-5">Dodaj</button>
                 </a>
             </div>
         </div>

@@ -72,7 +72,8 @@ class PaczkomatController extends Controller
     public function edit(Paczkomat $paczkomat): View
     {
         return view("paczkomat.edit", [
-            'paczkomat' => $paczkomat
+            'paczkomat' => $paczkomat,
+            'powiaty' => Powiat::all(),
         ]);
     }
 
