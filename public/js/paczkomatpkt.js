@@ -11,6 +11,7 @@ function initMap() {
         map,
         title: "Hello World!",
     });
+
 }
 
 window.initMap = initMap;

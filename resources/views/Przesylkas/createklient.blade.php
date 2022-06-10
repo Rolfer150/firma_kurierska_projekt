@@ -4,6 +4,24 @@
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
+                <script type="text/javascript">
+                    function dostawaPaczkomat() {
+                        if (document.getElementById("Paczkomat").checked) {
+                            document.getElementById('paczkomat').style.display = 'block';
+                        } else {
+                            document.getElementById('paczkomat').style.display = 'none';
+                        }
+                    }
+                </script>
+                <script type="text/javascript">
+                    function dostawaKurier() {
+                        if (document.getElementById("Kurier").checked) {
+                            document.getElementById('adresodbiorca').style.display = 'block';
+                        } else {
+                            document.getElementById('adresodbiorca').style.display = 'none';
+                        }
+                    }
+                </script>
                 <form method="POST" action="{{ route('Przesylkas.storeklient') }}">
                     <div class="card">
                         <div class="card-header">Dodawanie przesyłek</div>
@@ -37,9 +55,27 @@
                                     <div class="col-md-6">
                                         @foreach($dostawy as $dostawa)
                                             <label for="vehicle1">{{$dostawa->dostawa}}</label><br>
-                                        <input id="dostawa_id" type="checkbox" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" value="{{$dostawa->id}}" required>
+                                            <input id="{{$dostawa->dostawa}}" type="checkbox" onclick="dostawaPaczkomat(); dostawaKurier();" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" value="{{$dostawa->id}}">
                                         @endforeach
                                         @error('rodzaj_platnosci')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3" id="paczkomat" style="display:none">
+                                    <label for="name" class="col-md-4 col-form-label text-md-end">Paczkomat</label>
+
+                                    <div class="col-md-10">
+                                        <select id="paczkomat_id" class="form-control @error('paczkomat_id') is-invalid @enderror" name="paczkomat_id">
+                                            <option></option>
+                                            @foreach($paczkomaty as $paczkomat)
+                                                <option value="{{$paczkomat->id}}">{{$paczkomat->opis_paczkomat}}, powiat {{$paczkomat->powiat->powiat}}, {{$paczkomat->miasto_paczkomat}}, {{$paczkomat->ulica_paczkomat}} {{$paczkomat->numer_ulicy_paczkomat}}, {{$paczkomat->kod_pocztowy_paczkomat}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('paczkomat_id')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

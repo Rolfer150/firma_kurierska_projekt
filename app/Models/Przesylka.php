@@ -60,8 +60,8 @@ class Przesylka extends Model
         return $this->belongsTo(Powiat::class);
     }
 
-    public function adres(): HasOne
+    public function paczkomat(): BelongsTo
     {
-        return $this->hasOne(Adres::class);
+        return $this->belongsTo(Paczkomat::class);
     }
 }

@@ -25,7 +25,7 @@ class PrzesylkaController extends Controller
     public function index(): View
     {
         return view("Przesylkas.index",[
-            'przesylkas' => Przesylka::paginate(10),
+            'przesylkas' => Przesylka::all(),
 
         ]);
     }
@@ -33,7 +33,8 @@ class PrzesylkaController extends Controller
     public function indexklient(): View
     {
         return view("Przesylkas.indexklient",[
-            'przesylkas' => Przesylka::paginate(10),
+            'przesylkas' => Przesylka::all(),
+
 
         ]);
     }
@@ -41,7 +42,8 @@ class PrzesylkaController extends Controller
     public function indexkurier(): View
     {
         return view("Przesylkas.indexkurier",[
-            'przesylkas' => Przesylka::paginate(10),
+            'przesylkas' => Przesylka::all(),
+
 
         ]);
     }

@@ -33,11 +33,11 @@ return new class extends Migration
             $table->string('nazwisko_odbiorca', 255);
             $table->string('telefon_odbiorca', 9);
             $table->string('email_odbiorca', 255);
-            $table->string('miasto_odbiorca', 255);
-            $table->string('ulica_odbiorca', 255);
-            $table->string('numer_domu_odbiorca', 5);
+            $table->string('miasto_odbiorca', 255)->nullable();
+            $table->string('ulica_odbiorca', 255)->nullable();
+            $table->string('numer_domu_odbiorca', 5)->nullable();
             $table->string('numer_mieszkania_odbiorca', 5)->nullable();
-            $table->string('kod_pocztowy_odbiorca', 6);
+            $table->string('kod_pocztowy_odbiorca', 6)->nullable();
             $table->date('data_dostarczenia')->nullable();
             $table->timestamps();
         });
