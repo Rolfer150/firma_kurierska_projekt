@@ -31,8 +31,14 @@
                 @foreach(Auth::user()->przesylkas as $przesylka)
                     <tr>
                         <td>{{$przesylka->imie_odbiorca}} {{$przesylka->nazwisko_odbiorca}}</td>
-                        <td>Powiat {{$przesylka->powiat->powiat}} {{ $przesylka->miasto_odbiorca }} {{ $przesylka->ulica_odbiorca }}
-                            {{ $przesylka->numer_domu_odbiorca }} {{ $przesylka->numer_mieszkania_odbiorca }} {{ $przesylka->kod_pocztowy_odbiorca }}</td>
+                        @if($przesylka->dostawa->dostawa == 'Kurier')
+                            <td> powiat {{$przesylka->powiat->powiat}} {{ $przesylka->miasto_odbiorca }} {{ $przesylka->ulica_odbiorca }}
+                                {{ $przesylka->numer_domu_odbiorca }} {{ $przesylka->numer_mieszkania_odbiorca }} {{ $przesylka->kod_pocztowy_odbiorca }}</td>
+                        @endif
+                        @if($przesylka->dostawa->dostawa == 'Paczkomat')
+                            <td> powiat {{$przesylka->paczkomat->miasto_paczkomat}}, {{$przesylka->paczkomat->ulica_paczkomat}}
+                                {{$przesylka->paczkomat->numer_ulicy_paczkomat}}, {{$przesylka->paczkomat->kod_pocztowy_paczkomat}}</td>
+                        @endif
                         <td>{{$przesylka->platnosc->platnosc}}</td>
                         <td>{{$przesylka->dostawa->dostawa}}</td>
                         <td>{{$przesylka->wielkosc->wielkosc}}</td>
@@ -52,7 +58,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{ $przesylkas->links() }}
+
         </div>
     </div>
 @endsection

@@ -57,6 +57,12 @@
                                             <label for="vehicle1">{{$dostawa->dostawa}}</label><br>
                                             <input id="{{$dostawa->dostawa}}" type="checkbox" onclick="dostawaPaczkomat(); dostawaKurier();" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" value="{{$dostawa->id}}">
                                         @endforeach
+                                        <select id="dostawa_id" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" required>
+                                            <option>Brak</option>
+                                            @foreach($dostawy as $dostawa)
+                                                <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
+                                            @endforeach
+                                        </select>
                                         @error('rodzaj_platnosci')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
