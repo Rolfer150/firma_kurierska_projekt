@@ -4,6 +4,15 @@
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
+                <script type="text/javascript">
+                    function dostawaPaczkomat() {
+                        if (document.getElementById("Paczkomat").checked) {
+                            document.getElementById('paczkomat').style.display = 'block';
+                        } else {
+                            document.getElementById('paczkomat').style.display = 'none';
+                        }
+                    }
+                </script>
                 <form method="POST" action="{{ route('Przesylkas.storeklient') }}">
                     <div class="card">
                         <div class="card-header">Dodawanie przesyłek</div>
@@ -35,10 +44,12 @@
                                     <label for="dostawa" class="col-md-4 col-form-label text-md-end">Rodzaj dostawy</label>
 
                                     <div class="col-md-6">
-                                        @foreach($dostawy as $dostawa)
-                                            <label for="vehicle1">{{$dostawa->dostawa}}</label><br>
-                                        <input id="dostawa_id" type="checkbox" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" value="{{$dostawa->id}}" required>
-                                        @endforeach
+                                        <select id="dostawa_id" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" required>
+                                            <option>Brak</option>
+                                            @foreach($dostawy as $dostawa)
+                                                <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
+                                            @endforeach
+                                        </select>
                                         @error('rodzaj_platnosci')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

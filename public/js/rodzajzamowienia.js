@@ -2,5 +2,12 @@
     $('input:checkbox').click(function() {
         $('input:checkbox').not(this).prop('checked', false);
     });
-    if(checkBox.checked())
+
+    function dostawaPaczkomat() {
+        if (document.getElementById("Paczkomat").checked) {
+            document.getElementById('paczkomat').style.display = 'block';
+        } else {
+            document.getElementById('paczkomat').style.display = 'none';
+        }
+    }
 });

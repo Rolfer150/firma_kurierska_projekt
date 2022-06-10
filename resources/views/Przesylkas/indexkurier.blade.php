@@ -12,8 +12,9 @@
             <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Imie</th>
+                    <th scope="col">Imie i nazwisko nadawcy</th>
+                    <th scope="col">Imie i nazwisko odbiorcy</th>
+                    <th scope="col">Adres odbiorcy</th>
                     <th scope="col">Rodzaj platnosci</th>
                     <th scope="col">Rodzaj dostawy</th>
                     <th scope="col">Wielkosc paczki</th>
@@ -26,8 +27,16 @@
                 <tbody>
                 @foreach($przesylkas as $przesylka)
                     <tr>
-                        <th scope="row">{{$przesylka->id}}</th>
-                        <td>{{$przesylka->user->name}}</td>
+                        <td>{{$przesylka->user->name}} {{$przesylka->user->surname}}</td>
+                        <td>{{$przesylka->imie_odbiorca}} {{$przesylka->nazwisko_odbiorca}}</td>
+                        @if($przesylka->dostawa->dostawa == 'Kurier')
+                            <td> powiat {{$przesylka->powiat->powiat}} {{ $przesylka->miasto_odbiorca }} {{ $przesylka->ulica_odbiorca }}
+                                {{ $przesylka->numer_domu_odbiorca }} {{ $przesylka->numer_mieszkania_odbiorca }} {{ $przesylka->kod_pocztowy_odbiorca }}</td>
+                        @endif
+                        @if($przesylka->dostawa->dostawa == 'Paczkomat')
+                            <td> powiat {{$przesylka->paczkomat->miasto_paczkomat}}, {{$przesylka->paczkomat->ulica_paczkomat}}
+                                {{$przesylka->paczkomat->numer_ulicy_paczkomat}}, {{$przesylka->paczkomat->kod_pocztowy_paczkomat}}</td>
+                        @endif
                         <td>{{$przesylka->platnosc->platnosc}}</td>
                         <td>{{$przesylka->dostawa->dostawa}}</td>
                         <td>{{$przesylka->wielkosc->wielkosc}}</td>
@@ -46,7 +55,6 @@
                 @endforeach
                 </tbody>
             </table>
-            {{ $przesylkas->links() }}
         </div>
     </div>
 @endsection
