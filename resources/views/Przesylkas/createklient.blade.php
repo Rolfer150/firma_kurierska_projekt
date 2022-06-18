@@ -23,8 +23,8 @@
                     }
                 </script>
                 <form method="POST" action="{{ route('Przesylkas.storeklient') }}">
-                    <div class="card">
-                        <div class="card-header">Dodawanie przesyłek</div>
+                <div class="card">
+                    <div class="card-header"><strong>Dodawanie przesyłek</strong></div>
                         <div class="card-body">
                             @csrf
 
@@ -57,12 +57,6 @@
                                             <label for="vehicle1">{{$dostawa->dostawa}}</label><br>
                                             <input id="{{$dostawa->dostawa}}" type="checkbox" onclick="dostawaPaczkomat(); dostawaKurier();" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" value="{{$dostawa->id}}">
                                         @endforeach
-                                        <select id="dostawa_id" class="form-control @error('dostawa_id') is-invalid @enderror" name="dostawa_id" required>
-                                            <option>Brak</option>
-                                            @foreach($dostawy as $dostawa)
-                                                <option value="{{$dostawa->id}}">{{$dostawa->dostawa}}</option>
-                                            @endforeach
-                                        </select>
                                         @error('rodzaj_platnosci')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -88,6 +82,7 @@
                                         @enderror
                                     </div>
                                 </div>
+
 
                                 <div class="row mb-3">
                                     <label for="wielkosc" class="col-md-4 col-form-label text-md-end">Wielkosc paczki</label>
@@ -164,12 +159,13 @@
                                     </div>
                                 </div>
 
+                                <div class="row mb-3" id="adresodbiorca" style="display:none">
                                 <div class="row mb-3">
                                     <label for="powiat" class="col-md-4 col-form-label text-md-end">Powiat</label>
 
                                     <div class="col-md-6">
-                                        <select id="powiat_id" class="form-control @error('powiat_id') is-invalid @enderror" name="powiat_id" required autocomplete="powiat_id">
-                                            <option>Brak</option>
+                                        <select id="powiat_id" class="form-control @error('powiat_id') is-invalid @enderror" name="powiat_id">
+                                            <option></option>
                                             @foreach($powiaty as $powiat)
                                                 <option value="{{$powiat->id}}">{{$powiat->powiat}}</option>
                                             @endforeach
@@ -186,7 +182,7 @@
                                     <label for="miasto" class="col-md-4 col-form-label text-md-end">Miasto</label>
 
                                     <div class="col-md-6">
-                                        <input id="miasto_odbiorca" type="text" class="form-control @error('miasto_odbiorca') is-invalid @enderror" name="miasto_odbiorca" value="{{ old('miasto_odbiorca') }}" required>
+                                        <input id="miasto_odbiorca" type="text" class="form-control @error('miasto_odbiorca') is-invalid @enderror" name="miasto_odbiorca" value="{{ old('miasto_odbiorca') }}">
                                         @error('miasto_odbiorca')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -199,7 +195,7 @@
                                     <label for="ulica" class="col-md-4 col-form-label text-md-end">Ulica</label>
 
                                     <div class="col-md-6">
-                                        <input id="ulica_odbiorca" type="text" class="form-control @error('ulica_odbiorca') is-invalid @enderror" name="ulica_odbiorca" value="{{ old('ulica_odbiorca') }}" required>
+                                        <input id="ulica_odbiorca" type="text" class="form-control @error('ulica_odbiorca') is-invalid @enderror" name="ulica_odbiorca" value="{{ old('ulica_odbiorca') }}">
                                         @error('ulica_odbiorca')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -212,7 +208,7 @@
                                     <label for="numer_domu" class="col-md-4 col-form-label text-md-end">Numer domu</label>
 
                                     <div class="col-md-6">
-                                        <input id="numer_domu_odbiorca" type="text" class="form-control @error('numer_domu_odbiorca') is-invalid @enderror" name="numer_domu_odbiorca" value="{{ old('numer_domu_odbiorca') }}" required>
+                                        <input id="numer_domu_odbiorca" type="text" class="form-control @error('numer_domu_odbiorca') is-invalid @enderror" name="numer_domu_odbiorca" value="{{ old('numer_domu_odbiorca') }}">
                                         @error('numer_domu_odbiorca')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -238,7 +234,7 @@
                                     <label for="kod_pocztowy" class="col-md-4 col-form-label text-md-end">Kod pocztowy</label>
 
                                     <div class="col-md-6">
-                                        <input id="kod_pocztowy_odbiorca" type="text" class="form-control @error('kod_pocztowy_odbiorca') is-invalid @enderror" name="kod_pocztowy_odbiorca" value="{{ old('kod_pocztowy_odbiorca') }}" required>
+                                        <input id="kod_pocztowy_odbiorca" type="text" class="form-control @error('kod_pocztowy_odbiorca') is-invalid @enderror" name="kod_pocztowy_odbiorca" value="{{ old('kod_pocztowy_odbiorca') }}">
                                         @error('kod_pocztowy_odbiorca')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -248,13 +244,13 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-secondary">
-                                        Zapisz wszystko
-                                    </button>
+                                <div class="row mb-0">
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Zapisz wszystko
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
 
                         </div>
                     </div>
@@ -264,5 +260,5 @@
     </div>
 @endsection
 @section('js-files')
-    <script src="{{ asset('js/rodzajzamowienia.js') }}"></script>
+    <script src="{{ asset('js/nrprzesylki.js') }}"></script>
 @endsection
